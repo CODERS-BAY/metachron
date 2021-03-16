@@ -54,11 +54,13 @@
 
 | **<c1>AS</c1>** | **PRIVILEDGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
 |:-:|:-|:-:|:-|:-:|:-|
-| As a | <c1>_type of user_</c1> | , I want to | <c1>read the course-database</c1>                   | so that | <c1>I am able to see all if my course-specific information.</c1> | 
-| As a | <c1>_type of user_</c1> | , I want to | <c1>see in which training-group I am attending</c1> | so that | <c1>I am able to see my colleagues.</c1>                         | 
-| As a | <c1>_type of user_</c1> | , I want to | <c1>see which training-group</c1>                   | so that | <c1>I am able to see my colleagues.</c1>                         | 
+| As a | <c1>_type of user_</c1> | , I want to | <c1>read the course-database</c1>                                  | so that | <c1>I am able to see all if my course-specific information.</c1> | 
+| As a | <c1>_type of user_</c1> | , I want to | <c1>see in which training-group I am attending</c1>                | so that | <c1>I am able to see my colleagues.</c1>                         | 
+| As a | <c1>_type of user_</c1> | , I want to | <c1>see infos about day, topic, trainer in my training-group</c1>  | so that | <c1>I am able to see all specific infos about my course.</c1>    | 
 
 </c2>
+
+<br>
 
 <style>
     c1 { color: rgba(0,170,255,1) }
