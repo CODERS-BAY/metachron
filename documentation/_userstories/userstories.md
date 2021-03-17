@@ -8,7 +8,7 @@
 
 <br>
 
-| **<c1>AS</c1>** | **PRIVILEDGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
+| **<c1>AS</c1>** | **PRIVILEGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
 |:-:|:-|:-:|:-|:-:|:-|
 | As a | <c1>_type of admin_</c1>   | , I want to | <c1>login on the landingpage</c1> | so that | <c1>I am further able to use the Web-App as a AdminUser.   </c1> |
 | As a | <c1>_type of trainer_</c1> | , I want to | <c1>login on the landingpage</c1> | so that | <c1>I am further able to use the Web-App as a TrainerUser. </c1> |      
@@ -17,7 +17,7 @@
 <br>
 
 >## admin definition
-| **<c1>AS</c1>** | **PRIVILEDGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
+| **<c1>AS</c1>** | **PRIVILEGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
 |:-:|:-|:-:|:-|:-:|:-|
 | As a | <c1>_type of admin_</c1> | , I want to | <c1>read the user-database</c1>                             | so that | <c1>I am able to see all database-specific information.</c1>    | 
 | As a | <c1>_type of admin_</c1> | , I want to | <c1>create new trainer-data-sets in the user-database</c1>  | so that | <c1>the user-database can grow.</c1>                            |
@@ -37,7 +37,7 @@
 
 <br>
 
-| **<c1>AS</c1>** | **PRIVILEDGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
+| **<c1>AS</c1>** | **PRIVILEGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
 |:-:|:-|:-:|:-|:-:|:-|
 | As a | <c1>_type of trainer_</c1> | , I want to | <c1>read the course-database</c1>                           | so that | <c1>I am able to see all database-specific information.</c1>      |
 | As a | <c1>_type of trainer_</c1> | , I want to | <c1>create new course-data-sets in the course-database</c1> | so that | <c1>the course-database can grow.</c1>                            |
@@ -52,7 +52,7 @@
 
 <br>
 
-| **<c1>AS</c1>** | **PRIVILEDGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
+| **<c1>AS</c1>** | **PRIVILEGES** | **<c1>WANT</c1>** | **WHAT** | **<c1>THAT</c1>** | **FOR WHAT** |
 |:-:|:-|:-:|:-|:-:|:-|
 | As a | <c1>_type of user_</c1> | , I want to | <c1>read the course-database</c1>                                  | so that | <c1>I am able to see all if my course-specific information.</c1> | 
 | As a | <c1>_type of user_</c1> | , I want to | <c1>see in which training-group I am attending</c1>                | so that | <c1>I am able to see my colleagues.</c1>                         | 
