@@ -1,0 +1,36 @@
+version: "3.7"
+
+services: 
+  db:
+    container_name: metachron-db
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ***************
+      MYSQL_DATABASE: metachron-database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: ***************
+    ports:
+      - 10000:3306
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: metachron-pma
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    depends_on:
+      - db
+    links:
+      - db:db
+    environment: 
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ***************
+    ports: 
+      - 11000:80
+
+volumes:
+  db_data:
+
+# 192.168.0.7
