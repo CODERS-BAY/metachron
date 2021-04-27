@@ -1,0 +1,82 @@
+<mxfile host="65bd71144e" modified="2021-03-09T20:54:26.152Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.54.1 Chrome/87.0.4280.141 Electron/11.3.0 Safari/537.36" version="14.2.4" etag="_i0yxE8Nt9fR6B9zJDxt" type="embed">
+    <diagram id="hfbAE3U3j8HyTmZpCU2T" name="_projectmanagement">
+        <mxGraphModel dx="1921" dy="468" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="16" value="&lt;b style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;metachron&lt;/b&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;WebApp&lt;/i&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="20" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;b&gt;&lt;font&gt;Frontend&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="60" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;b&gt;&lt;font&gt;Login Page&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;b&gt;&lt;font&gt;EventHandling&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f9f7ed;strokeColor=#36393d;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;b&gt;&lt;font&gt;Backend&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="60" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;b&gt;App Page&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="140" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;b&gt;UI&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="180" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;b&gt;&lt;font&gt;Servlet&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;b&gt;DB Connection (Data)&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="140" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;b&gt;Auth&lt;br&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="180" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;b&gt;DB Connection (User)&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="270" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&lt;b&gt;Auth&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="310" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="&lt;b&gt;Verification&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f9f7ed;strokeColor=#36393d;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="140" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;b&gt;Google?&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f9f7ed;strokeColor=#36393d;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="310" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;b&gt;GitHub&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f9f7ed;strokeColor=#36393d;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="350" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;b&gt;&lt;font&gt;Docker&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="60" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;b&gt;&lt;font&gt;Tomcat Servlet&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;b&gt;&lt;font&gt;DB (Data)&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="140" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;b&gt;&lt;font&gt;DB (User)&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="220" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="&lt;b&gt;&lt;font&gt;Tomcat Servlet&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="180" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="&lt;b&gt;&lt;font&gt;Database&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="60" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="&lt;b&gt;&lt;font&gt;Data Course&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="&lt;b&gt;&lt;font&gt;Data User&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="140" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="&lt;b&gt;Framework (React?)&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#b1ddf0;strokeColor=#10739e;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="220" width="160" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
