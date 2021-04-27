@@ -51,3 +51,5 @@ yarn-error.log*
 00_metachron/client/node_modules/
 
 00_metachron/server/node_modules/
+
+.history/

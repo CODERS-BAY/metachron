@@ -24,17 +24,10 @@ app.use(cors(corsOptions));
 // simple home route
 app.get("/", (req, res) => {
     res.json({ message: "express is running" });
-    // const password = "admin";
-    // bcrypt.genSalt(10,(err, salt) => {
-    //     bcrypt.hash(password, salt, (error, hash) => {
-    //         res.json(hash);
-    //     });
-    // });
 });
 
 // user routes
 app.use("/", require("./routes/user.routes"));
-
 
 // set port, listen for requests
 if (require.main === module) {
