@@ -47,3 +47,5 @@ documentation/_databases/_docker_database_containers/.history/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+00_metachron/client/node_modules/
