@@ -1,0 +1,159 @@
+.container__dashboard {
+  font-size: 1.5rem;
+  display: flex;
+  // position: relative;
+
+  
+  .tool__navbar {
+    position: fixed;
+    z-index: 99;
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+
+    .tool__nav__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+      width: 50px;
+      height: 50px;
+      margin: 0rem 1rem;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      .tool__btn__burger {
+        width: 35px;
+        height: 4px;
+        background-color: rgb(55, 155, 255);
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 4px;
+          background-color: rgb(55, 155, 255);
+          border-radius: 5px;
+          transition: all 0.5s ease-in-out;
+        }
+        &::before {
+          transform: translateY(-10px);
+        }
+        &::after {
+          transform: translateY(10px);
+        }
+      }
+    }
+
+    .tool__nav__logged__as {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      height: 50px;
+      padding: 0rem 1rem;
+      color: white;
+    }
+  }
+  
+  .tool__control {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s ease-in-out;
+
+    .tool__items ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .tool__items li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: white;
+      height: auto;
+      width: 100%;
+      margin: 0.1rem 0rem;
+
+      & a {
+        width: 100%;
+        padding: .75rem .75rem;
+        height: 100%;
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgb(221, 221, 221);
+        }
+        &:focus {
+          background-color: rgb(55, 155, 255);
+        }
+      }
+
+      .tool__link--active {
+        background-color: rgb(55, 155, 255);
+        color: white;
+      }
+    }
+  }
+
+  .dashboard__loggout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    width: 100%;
+    background: black;
+
+    & a {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgb(55, 155, 255);
+      }
+    }
+  }
+
+  
+}
+
+/********************************************************************************/
+/* animation tool-control & view */
+/********************************************************************************/
+
+.tool__control.swipe {
+  transform:translateX(-200px);
+}
+.view.swipe {
+  margin-left: -200px;
+}
+.tool__nav__btn.swipe .tool__btn__burger {
+  transform: rotate(450deg);
+}

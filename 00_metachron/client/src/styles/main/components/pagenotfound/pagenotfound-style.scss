@@ -1,0 +1,59 @@
+/********************************************************************************/
+/* display 404 page not found */
+/********************************************************************************/
+
+.wrapper__notfound {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .notfound {
+    // border: 1px dashed red;
+
+    .notfound__main__heading {
+      font-size: 10vw;
+      line-height: 175%;
+    }
+
+    .notfound__sub__heading {
+      font-size: 4vw;
+      padding: 1rem 0rem;
+    }
+
+    .notfound__404 {
+      font-size: 3.5vw;
+      padding: 2rem;
+    }
+
+    .notfound__txt {
+      font-size: 2vw;
+      font-family: "Playfair Display, serif";
+      font-style: italic;
+    }
+
+    .accent {
+      color: rgb(55, 155, 255);
+    }
+
+    .notfound__btn {
+      width: fit-content;
+      height: auto;
+      background: rgb(55, 155, 255);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+      margin-top: 2rem;
+      &:hover {
+        background: black;
+      }
+    }
+  }
+}

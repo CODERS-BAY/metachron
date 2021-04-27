@@ -1,0 +1,104 @@
+/* 
+* display overlay, menu, navlinks
+*/
+/********************************************************************************/
+/* overlay */
+/********************************************************************************/
+.nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 98;
+  /* for fade in and fade out */
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+  /********************************************************************************/
+  /* nav-links */
+  /********************************************************************************/
+}
+
+.nav__overlay .nav__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__overlay .nav__items .nav__link {
+  cursor: pointer;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 8vh;
+  height: 10vh;
+  position: relative;
+  margin: 0.25rem 0;
+}
+
+.nav__overlay .nav__items .nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  display: block;
+  width: 0;
+  height: 5px;
+  background: black;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s, right 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s, right 0.3s ease 0s;
+}
+
+.nav__overlay .nav__items .nav__link:hover {
+  color: #379bff;
+}
+
+.nav__overlay .nav__items .nav__link:hover:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.nav__overlay .nav__items .nav__link--active {
+  text-decoration: line-through;
+  color: #379bff;
+}
+
+/********************************************************************************/
+/* for fade in and fade out */
+/********************************************************************************/
+.fade {
+  visibility: visible;
+  opacity: 1;
+}
+/*# sourceMappingURL=overlay-style.css.map */
