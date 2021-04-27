@@ -1,0 +1,52 @@
+.view {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.view__main__dashboard {
+  background: lightblue;
+}
+
+.view__one {
+  background: lightcoral;
+}
+
+.view__two {
+  background: lightgreen;
+}
+
+.view__three {
+  background: lightgoldenrodyellow;
+}
+
+.view__four {
+  background: lightpink;
+}
+
+.view__five {
+  background: lightcoral;
+}
+
+.view__six {
+  background: lightgreen;
+}
+
+.view__seven {
+  background: lightgoldenrodyellow;
+}
+
+.view__eight {
+  background: lightseagreen;
+}
+/*# sourceMappingURL=dashboard-content-style.css.map */

@@ -1,0 +1,139 @@
+/********************************************************************************/
+/* display login form */
+/********************************************************************************/
+
+.form-wrapper {
+  // background: linear-gradient(-135deg, rgba(0,0,0,1) 25%, rgba(9,9,121,1) 50%, rgba(55,155,255,1) 100%);
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100%;
+  // border: 1px dashed rgb(55, 155, 255);
+  // i.fa-sign-in {
+  //   font-size: 100px;
+  // }
+}
+
+.form__login {
+  padding: 1rem;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  padding-bottom: 80px;
+  border-radius: 10px;
+
+  .form__input {
+    display: block;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid white;
+    transition: border-width 0.2s ease;
+    color: black;
+    background-color: lightgray;
+    border-radius: 30px;
+    text-align: center;
+
+    &::placeholder {
+      text-align: center;
+    }
+
+    & + i.fa {
+      color: white;
+      font-size: 0.45em;
+      position: absolute;
+      margin-top: -48px;
+      margin-left: -2px;
+      opacity: 0;
+      left: 0;
+      transition: all 0.1s ease-in;
+    }
+
+    &:focus {
+      outline: none;
+      color: rgb(55, 155, 255);
+      border-color: rgb(55, 155, 255);
+      border-left-width: 35px;
+
+      & + i.fa {
+        opacity: 1;
+        left: 30px;
+        transition: all 0.25s ease-out;
+      }
+    }
+  }
+
+  .invalid {
+    border: 1px solid red;
+    color: white;
+    background-color: rgb(255, 125, 125);
+
+    & + i.fa {
+      color: white;
+      font-size: 0.45em;
+      position: absolute;
+      margin-top: -48px;
+      margin-left: -2px;
+      opacity: 0;
+      left: 0;
+      transition: all 0.1s ease-in;
+    }
+
+    &:focus {
+      outline: none;
+      color: white;
+      border-color: red;
+      border-left-width: 35px;
+
+      & + i.fa {
+        opacity: 1;
+        left: 30px;
+        transition: all 0.25s ease-out;
+      }
+    }
+  }
+
+  .form__title,
+  .form__or {
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1rem 0;
+    // padding-bottom: 20px;
+  }
+
+  .form__info {
+    color: red;
+    text-align: center;
+    // font-family: "Playfair Display", serif;
+    font-size: 0.5em;
+    font-style: italic;
+    margin: 1rem 0;
+  }
+
+  .form__btn {
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    border: 1px solid white;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background: rgb(55, 155, 255);
+      // border: 1px solid $secondary;
+      color: white;
+      border: 1px solid black;
+    }
+  }
+}

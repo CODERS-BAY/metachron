@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "user",
+    "password": "mysupersecretpassword",
+    "database": "metachron_db",
+    "host": "127.0.0.1",
+    "port": 10000,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "user",
+    "password": "mysupersecretpassword",
+    "database": "metachron_db",
+    "host": "127.0.0.1",
+    "port": 10000,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "user",
+    "password": "mysupersecretpassword",
+    "database": "metachron_db",
+    "host": "127.0.0.1",
+    "port": 10000,
+    "dialect": "mysql"
+  }
+}
