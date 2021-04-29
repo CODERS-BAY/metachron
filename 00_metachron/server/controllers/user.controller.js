@@ -97,7 +97,9 @@ exports.verifyUser = async (req, res) => {
                 return res.json({
                     msg: "valid credentials",
                     username: user.username,
-                    userrole_id: user.userrole_id
+                    pic_path: user.pic_path,
+                    userrole_id: user.userrole_id,
+                    userdata_id: user.userdata_id
                 });
             } else {
                 return res.json({

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 
 function Login() {
@@ -13,6 +13,15 @@ function Login() {
     });
 
     const [validation, setValidation] = useState("");
+
+
+    /* check if localStorage is already populated then forward to dashboard */
+    useEffect(() => {
+        if (localStorage.getItem("userCredentials") !== null) {
+            window.location.href = "/dashboard";
+        }
+    }, []);
+
 
     /* handle user input */
     const handleInputChange = (event) => {
@@ -47,32 +56,36 @@ function Login() {
 
                 // set Storage
                 const userCredentials = {
-                    user: response.data.username,
-                    role: response.data.userrole_id,
-                    loginDate: new Date(),
-                    expirationDate: "expire ..."
+                    username: response.data.username,
+                    pic_path: response.data.pic_path,
+                    userrole_id: response.data.userrole_id,
+                    userdata_id: response.data.userdata_id,
+                    logDate: new Date().getTime(),
+                    expDate: "expire ..."
                 }
                 localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
                 // redirect to dashboard as default
                 window.location.href = "/dashboard";
-
+                
             }
             
         }).catch((error) => {
             console.log(error);
         });
     }
-
+    
     /* handle default click */
     function handleClickDefault(event) {
         event.preventDefault();
-
+        
         // set Storage
         const userCredentials = {
-            user: "default",
-            role: "student",
-            loginDate: new Date(),
-            expirationDate: "expire ..."
+            username: "default",
+            pic_path: "https://lh3.googleusercontent.com/proxy/jcnSRsPq-EuNgxzLKKUW8Ave6UdIcYTtO3ZGScaVonSznjPteATmZmyxON1wiEEJfmAyaAp0pzcUCjgZfHIaDKppz9Ha9Eo",
+            userrole_id: 3,
+            userdata_id: "--",
+            logDate: new Date().getTime(),
+            expDate: "expire ..."
         }
         localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
         // redirect to dashboard as default
