@@ -83,10 +83,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: auto;
   height: 50px;
   padding: 0rem 1rem;
   color: white;
+  font-size: 1.2rem;
+}
+
+.container__dashboard .tool__navbar .tool__nav__logged__as p {
+  padding: 0rem 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container__dashboard .tool__navbar .tool__nav__logged__as #profile_pic {
+  height: 50px;
+  -webkit-clip-path: circle();
+          clip-path: circle();
 }
 
 .container__dashboard .tool__control {

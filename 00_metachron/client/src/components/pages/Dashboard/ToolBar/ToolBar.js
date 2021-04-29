@@ -40,7 +40,9 @@ function ToolBar() {
     }
 
     /* set logged user */
-    const [user, setUser] = useState("");
+    const [username, setUsername] = useState("");
+    /* set user pic */
+    const [picpath, setPicpath] = useState("");
 
 
     /* check if localStorage is populated */
@@ -50,7 +52,8 @@ function ToolBar() {
             const userCredentials = localStorage.getItem("userCredentials");
             // parse JSON string to js object
             const retrievedCredentials = JSON.parse(userCredentials);
-            setUser(retrievedCredentials.user);
+            setUsername(retrievedCredentials.username);
+            setPicpath(retrievedCredentials.pic_path);
             console.log(retrievedCredentials);
         } else {
             window.location.href = "/login";
@@ -64,9 +67,12 @@ function ToolBar() {
                     <div className="tool__btn__burger"></div>
                 </div>
                 <div className="tool__nav__logged__as">
-                    <p>logged in as: <span className="accent">
-                        {user}
-                    </span></p>
+                    <p>logged in as: &nbsp;
+                        <span className="accent">
+                            {username}
+                        </span>
+                    </p>
+                    <img src={picpath} alt="profile_pic" id="profile_pic" />
                 </div>
             </div>
             <div className="tool__control">
