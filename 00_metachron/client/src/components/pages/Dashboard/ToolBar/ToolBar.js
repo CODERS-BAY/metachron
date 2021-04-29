@@ -84,7 +84,7 @@ function ToolBar() {
                 <div className="dashboard__loggout">
                     <a href="/login" onClick={handleClickLogout}>
                         Logout
-                        </a>
+                                </a>
                 </div>
             </div>
         </div>

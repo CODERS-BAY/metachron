@@ -19,7 +19,6 @@
     height: 25px !important;
     bottom: -2px !important;
 
-    
     &::after {
       // content: "";
       // position: absolute;
@@ -32,7 +31,16 @@
   .container__snippet__txt {
     font-size: 0.3em !important;
   }
-  
+
+  .tool__nav__logged__as p {
+    margin-left: -2.5rem;
+    font-size: .85rem;
+  }
+
+  .tool__nav__btn {
+    transform: scale(.8);
+  }
+
   footer {
     height: auto !important;
 
