@@ -33,14 +33,14 @@ function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        
+
         const inputFields = document.querySelectorAll(".form__input");
-        
+
         axios.post(`${url}login`, {
             username: state.username,
             password: state.password
         }).then((response) => {
-            
+
             setValidation(response.data);
             console.log(response.data);
 
@@ -48,7 +48,7 @@ function Login() {
                 inputFields.forEach(input => {
                     input.classList.add("invalid");
                 });
-                
+
             } else {
                 inputFields.forEach(input => {
                     input.classList.remove("invalid");
@@ -66,18 +66,18 @@ function Login() {
                 localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
                 // redirect to dashboard as default
                 window.location.href = "/dashboard";
-                
+
             }
-            
+
         }).catch((error) => {
             console.log(error);
         });
     }
-    
+
     /* handle default click */
     function handleClickDefault(event) {
         event.preventDefault();
-        
+
         // set Storage
         const userCredentials = {
             username: "default",
@@ -89,7 +89,7 @@ function Login() {
         }
         localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
         // redirect to dashboard as default
-        window.location.href="/dashboard";
+        window.location.href = "/dashboard";
     }
 
     /* renders to screen */
@@ -123,20 +123,20 @@ function Login() {
 
                     <i className="fa fa-key"></i>
 
-                    <button 
-                        className="form__btn" 
-                        name="login" 
+                    <button
+                        className="form__btn"
+                        name="login"
                         type="submit">
-                            Permissioned Login
+                        Permissioned Login
                     </button>
 
                     <p className="form__or">or, if you don't care</p>
 
-                    <button 
-                        className="form__btn" 
+                    <button
+                        className="form__btn"
                         name="default"
                         onClick={handleClickDefault}>
-                            Proceed as Default
+                        Proceed as Default
                      </button>
 
                     <p className="form__info">{validation.msg}</p>
