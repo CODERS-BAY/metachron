@@ -53,11 +53,12 @@ function Login() {
 
 
     /* handle default click ***********************************************/
-    // function handleClickDefault(event) {
-    //     event.preventDefault();
-    //     console.log(data);
-    //     console.log(error);
-    // }
+    function handleClickDefault(event) {
+        event.preventDefault();
+        window.location.href="/dashboard";
+        // console.log(data);
+        // console.log(error);
+    }
 
     // useEffect(() => {
     //     axios.get(`${url}users`)
@@ -103,14 +104,20 @@ function Login() {
 
                     <i className="fa fa-key"></i>
 
-                    <button className="form__btn" name="login" type="submit">
-                        Permissioned Login
+                    <button 
+                        className="form__btn" 
+                        name="login" 
+                        type="submit">
+                            Permissioned Login
                     </button>
 
                     <p className="form__or">or, if you don't care</p>
 
-                    <button className="form__btn" name="default">
-                        Proceed as Default
+                    <button 
+                        className="form__btn" 
+                        name="default"
+                        onClick={handleClickDefault}>
+                            Proceed as Default
                      </button>
 
                     <p className="form__info">{validation}</p>
