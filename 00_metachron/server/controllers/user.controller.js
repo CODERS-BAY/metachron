@@ -93,13 +93,21 @@ exports.verifyUser = async (req, res) => {
         if (user != null) {
             const checkedPWD = await bcrypt.compareSync(password, user.password);
             // console.log(checkPWD);
-            if (checkedPWD) {                
-                return res.json("valid credentials");
+            if (checkedPWD) {
+                return res.json({
+                    msg: "valid credentials",
+                    username: user.username,
+                    userrole_id: user.userrole_id
+                });
             } else {
-                return res.json("invalid credentials");
+                return res.json({
+                    msg: "invalid credentials",
+                });
             }
         } else {
-            return res.json("invalid credentials");
+            return res.json({
+                msg: "invalid credentials",
+            });
         }
     } catch (error) {
         console.log(error);
