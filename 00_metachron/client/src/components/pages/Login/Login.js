@@ -7,9 +7,6 @@ function Login() {
 
     const url = "http://localhost:3001/";
 
-    // const [data, setData] = useState([]);
-    // const [error, setError] = useState("");
-
     const [state, setState] = useState({
         username: "",
         password: ""
@@ -17,7 +14,7 @@ function Login() {
 
     const [validation, setValidation] = useState("");
 
-    /* handle user input ***********************************************/
+    /* handle user input */
     const handleInputChange = (event) => {
         setState((prevState) => ({
             ...prevState,
@@ -27,53 +24,62 @@ function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        // console.log(state);
-
+        
+        const inputFields = document.querySelectorAll(".form__input");
+        
         axios.post(`${url}login`, {
             username: state.username,
             password: state.password
         }).then((response) => {
+            
             setValidation(response.data);
-            if (response.data !== "valid credentials") {
-                const inputFields = document.querySelectorAll(".form__input");
+            console.log(response.data);
+
+            if (response.data.msg !== "valid credentials") {
                 inputFields.forEach(input => {
                     input.classList.add("invalid");
                 });
+                
             } else {
-                const inputFields = document.querySelectorAll(".form__input");
                 inputFields.forEach(input => {
                     input.classList.remove("invalid");
                 });
+
+                // set Storage
+                const userCredentials = {
+                    user: response.data.username,
+                    role: response.data.userrole_id,
+                    loginDate: new Date(),
+                    expirationDate: "expire ..."
+                }
+                localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
+                // redirect to dashboard as default
+                window.location.href = "/dashboard";
+
             }
-            console.log(response.data);
+            
         }).catch((error) => {
             console.log(error);
         });
     }
 
-
-    /* handle default click ***********************************************/
+    /* handle default click */
     function handleClickDefault(event) {
         event.preventDefault();
+
+        // set Storage
+        const userCredentials = {
+            user: "default",
+            role: "student",
+            loginDate: new Date(),
+            expirationDate: "expire ..."
+        }
+        localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
+        // redirect to dashboard as default
         window.location.href="/dashboard";
-        // console.log(data);
-        // console.log(error);
     }
 
-    // useEffect(() => {
-    //     axios.get(`${url}users`)
-    //     .then(res => {
-    //         setData(res.data);
-    //         setError({ msg: "fetch success" });
-    //         // console.log(res);
-    //     })
-    //     .catch(err => {
-    //         setError({ msg: "fetch error" });
-    //         // console.log(`Error: ${err}`);
-    //     })
-    // }, []);
-
-    /* renders to screen ***********************************************/
+    /* renders to screen */
     return (
         <div className="container container-login">
             <div className="form-wrapper">
@@ -120,7 +126,7 @@ function Login() {
                             Proceed as Default
                      </button>
 
-                    <p className="form__info">{validation}</p>
+                    <p className="form__info">{validation.msg}</p>
                 </form>
             </div>
         </div>

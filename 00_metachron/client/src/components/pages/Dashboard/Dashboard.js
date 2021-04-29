@@ -6,6 +6,7 @@ import DashboardRoutes from "../../../routes/DashboardRoutes";
 import ToolBar from "./ToolBar/ToolBar";
 
 function Dashboard() {
+
     return (
         <div className="container container__dashboard">
             <Router>
