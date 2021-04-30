@@ -81,7 +81,7 @@ function Login() {
         // set Storage
         const userCredentials = {
             username: "default",
-            pic_path: "https://lh3.googleusercontent.com/proxy/jcnSRsPq-EuNgxzLKKUW8Ave6UdIcYTtO3ZGScaVonSznjPteATmZmyxON1wiEEJfmAyaAp0pzcUCjgZfHIaDKppz9Ha9Eo",
+            pic_path: "https://image.shutterstock.com/image-vector/glowing-neon-document-icon-isolated-600w-1606897852.jpg",
             userrole_id: 3,
             userdata_id: "--",
             logDate: new Date().getTime(),

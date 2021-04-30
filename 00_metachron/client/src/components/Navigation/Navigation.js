@@ -12,7 +12,7 @@ function Navigation() {
         document.body.style.overflow === "auto" ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
     }
     return (
-        <div>
+        <div id="nav-main">
             <nav>
                 <div className="nav__btn" onClick={handleClickBurger}>
                     <div className="nav__btn__burger"></div>

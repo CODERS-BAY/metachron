@@ -41,6 +41,8 @@ function ToolBar() {
 
     /* set logged user */
     const [username, setUsername] = useState("");
+    /* set logged userrole */
+    const [userrole, setUserrole] = useState("");
     /* set user pic */
     const [picpath, setPicpath] = useState("");
 
@@ -52,8 +54,19 @@ function ToolBar() {
             const userCredentials = localStorage.getItem("userCredentials");
             // parse JSON string to js object
             const retrievedCredentials = JSON.parse(userCredentials);
+
             setUsername(retrievedCredentials.username);
+
+            if (retrievedCredentials.userrole_id === 1) {
+                setUserrole("Admin");
+            } else if (retrievedCredentials.userrole_id === 2) {
+                setUserrole("Trainer");
+            } else {
+                setUserrole("Student");
+            }
+
             setPicpath(retrievedCredentials.pic_path);
+
             console.log(retrievedCredentials);
         } else {
             window.location.href = "/login";
@@ -69,7 +82,7 @@ function ToolBar() {
                 <div className="tool__nav__logged__as">
                     <p>logged in as: &nbsp;
                         <span className="accent">
-                            {username}
+                            {username} ({userrole})
                         </span>
                     </p>
                     <img src={picpath} alt="profile_pic" id="profile_pic" />

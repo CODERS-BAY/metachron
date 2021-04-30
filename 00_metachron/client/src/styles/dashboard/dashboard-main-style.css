@@ -3,6 +3,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   /****************************************************/
 }
 
@@ -87,7 +90,7 @@
   height: 50px;
   padding: 0rem 1rem;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .container__dashboard .tool__navbar .tool__nav__logged__as p {
@@ -117,7 +120,7 @@
   top: 0;
   left: 0;
   width: 200px;
-  height: 100%;
+  min-height: 100vh;
   background-color: #f2f2f2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,9 +166,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1rem;
   background-color: white;
+  width: 185px;
   height: auto;
-  width: 100%;
   margin: 0.1rem 0rem;
 }
 
