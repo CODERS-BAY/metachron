@@ -81,7 +81,7 @@
     top: 0;
     left: 0;
     width: 200px;
-    min-height: 100vh;
+    height: clamp(100vh, 100%, 100%);
     background-color: #f2f2f2;
     display: flex;
     justify-content: center;
