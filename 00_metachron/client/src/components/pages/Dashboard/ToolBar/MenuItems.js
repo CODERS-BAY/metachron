@@ -9,21 +9,21 @@ const MenuItems = [
     {
         id:2,
         to: "/dashboard/viewone",
-        name: "ViewOne",
+        name: "List all Users",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
         id:3,
         to: "/dashboard/viewtwo",
-        name: "ViewTwo",
+        name: "ViewThree",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
         id:4,
         to: "/dashboard/viewthree",
-        name: "ViewThree",
+        name: "ViewFour",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
