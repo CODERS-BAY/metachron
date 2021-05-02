@@ -71,6 +71,10 @@
   color: black;
 }
 
+.view__one .filter-control .red {
+  background: red;
+}
+
 .view__one .card-container {
   width: 100%;
   height: 100%;
@@ -94,8 +98,6 @@
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   line-height: 1.3rem;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
 }
 
 .view__one .userCard .card__txt {

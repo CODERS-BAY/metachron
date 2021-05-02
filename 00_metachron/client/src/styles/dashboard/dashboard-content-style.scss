@@ -47,6 +47,9 @@
         color: black;
       }
     }
+    .red {
+      background: red;
+    }
   }
 
   .card-container {
@@ -70,7 +73,7 @@
     border-radius: 15px;
     line-height: 1.3rem;
 
-    transition: all 0.5s ease-in-out;
+
 
     .card__txt {
       font-family: "Playfair Display", serif;
