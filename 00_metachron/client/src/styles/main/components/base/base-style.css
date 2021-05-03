@@ -1,0 +1,30 @@
+/********************************************************************************/
+/* base setup */
+/********************************************************************************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "ITC Avant Garde Gothic Std Bold";
+  font-size: 250%;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+body .App {
+  width: 100%;
+  height: 100%;
+}
+
+body .overflow {
+  overflow: hidden;
+}
+/*# sourceMappingURL=base-style.css.map */
