@@ -37,7 +37,7 @@
     align-items: center;
     padding: 4rem;
     font-size: 12vw;
-        // font-size: clamp(50px, 12vw, 20vw);
+    // font-size: clamp(50px, 12vw, 20vw);
     letter-spacing: -0.05em;
     line-height: 80%;
 
@@ -90,7 +90,7 @@
 /********************************************************************************/
 .about__section {
   overflow: hidden;
-  
+
   // background-repeat: no-repeat;
   // background-position: center;
   // background-size: cover;
@@ -177,6 +177,7 @@
     }
   }
 }
+
 /********************************************************************************/
 /* section contact */
 /********************************************************************************/
@@ -292,7 +293,6 @@
 /********************************************************************************/
 /* keyframes for bouncing */
 /********************************************************************************/
-
 @keyframes bounce {
   from {
     transform: translateY(0px);

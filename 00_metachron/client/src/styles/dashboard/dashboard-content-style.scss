@@ -13,6 +13,9 @@
   background: lightblue;
 }
 
+/********************************************************************************/
+/* setup list all/filter users-grid */
+/********************************************************************************/
 .view__one {
   height: 100%;
   width: 100%;
@@ -22,7 +25,7 @@
 
   .filter-control {
     width: 100%;
-    
+
     & ul {
       list-style: none;
       display: flex;
@@ -30,17 +33,17 @@
       align-items: center;
       font-size: 1rem;
       font-style: italic;
-      
+
       .filter--link {
-        padding: 0 .25rem;
+        padding: 0 0.25rem;
         cursor: pointer;
         color: lightgray;
 
         &:hover {
-          color:rgb(55, 155, 255);
+          color: rgb(55, 155, 255);
         }
         &:focus {
-          color:black;
+          color: black;
         }
       }
       .filter--link--active {
@@ -72,8 +75,6 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     line-height: 1.3rem;
-
-
 
     .card__txt {
       font-family: "Playfair Display", serif;
