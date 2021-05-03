@@ -1498,6 +1498,15 @@ footer .footer__legal {
   background: lightseagreen;
 }
 
+.createNewUserModal {
+  width: 100%;
+  background-color: red;
+}
+
+.createNewUserModal .modalClose {
+  cursor: pointer;
+}
+
 @media only screen and (min-device-width: 200px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .txt__about,
   .txt__contact {

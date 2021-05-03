@@ -1,0 +1,9 @@
+.createNewUserModal {
+  width: 100%;
+  background-color: yellow;
+}
+
+.createNewUserModal .modalClose {
+  cursor: pointer;
+}
+/*# sourceMappingURL=dashboard-createNewUserModal-style.css.map */

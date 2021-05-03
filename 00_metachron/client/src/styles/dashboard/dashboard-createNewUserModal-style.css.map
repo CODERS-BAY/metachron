@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,mBAAmB,CAAC;EAChB,KAAK,EAAE,IAAI;EAEX,gBAAgB,EAAE,MAAM;CAK3B;;AARD,AAKI,mBALe,CAKf,WAAW,CAAC;EACR,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "dashboard-createNewUserModal-style.scss"
+    ],
+    "names": [],
+    "file": "dashboard-createNewUserModal-style.css"
+}
