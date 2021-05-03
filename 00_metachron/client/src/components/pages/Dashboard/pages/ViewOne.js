@@ -90,6 +90,22 @@ function ViewOne() {
         return null;
     });
 
+    function handleAddClick () {
+        alert("here comes adding action");
+    }
+
+    const emptyUserCard = (
+            <div className="userCard emptyUserCard" onClick={handleAddClick}>
+                <p>
+                    want to add a new {((clickNavLink === "admin") ? "admin" : (clickNavLink === "trainer") ? "trainer" : "user")}?
+                </p>
+                <div className="plusSymbole"></div>
+            </div>
+    );
+    
+
+
+
     const [activeLink, setActiveLink] = useState();
     useEffect(() => {
         setClickNavLink("all");
@@ -115,6 +131,7 @@ function ViewOne() {
                 </ul>
             </div>
             <div className="card-container">
+                {emptyUserCard}
                 {userFilterSnippets}
             </div>
         </div>

@@ -4,7 +4,6 @@ import Routes from "./routes/Routes";
 
 import Navigation from "./components/Navigation/Navigation";
 
-import "./fonts/font-style.css";
 import "./styles/main/main-style.css";
 
 function App() {

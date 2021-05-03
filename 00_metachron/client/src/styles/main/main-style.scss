@@ -11,6 +11,7 @@
   }
 }
 
+@import "./fonts/fonts.scss";
 @import "../main/components/base/base-style.scss";
 
 @import "../main/components/pagenotfound/pagenotfound-style.scss";
@@ -27,5 +28,4 @@
 @import "../dashboard/dashboard-navigation-style.scss";
 @import "../dashboard/dashboard-content-style.scss";
 
-// @import "../../fonts/font-style.scss";
 @import "../media-queries/media-query-style.scss";

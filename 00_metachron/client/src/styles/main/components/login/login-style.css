@@ -1,0 +1,161 @@
+/********************************************************************************/
+/* display login form */
+/********************************************************************************/
+.form-wrapper {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.form__login {
+  padding: 1rem;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  padding-bottom: 80px;
+  border-radius: 10px;
+}
+
+.form__login .form__input {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid white;
+  -webkit-transition: border-width 0.2s ease;
+  transition: border-width 0.2s ease;
+  color: black;
+  background-color: lightgray;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.form__login .form__input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.form__login .form__input:-ms-input-placeholder {
+  text-align: center;
+}
+
+.form__login .form__input::-ms-input-placeholder {
+  text-align: center;
+}
+
+.form__login .form__input::placeholder {
+  text-align: center;
+}
+
+.form__login .form__input + i.fa {
+  color: white;
+  font-size: 0.45em;
+  position: absolute;
+  margin-top: -48px;
+  margin-left: -2px;
+  opacity: 0;
+  left: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.form__login .form__input:focus {
+  outline: none;
+  color: #379bff;
+  border-color: #379bff;
+  border-left-width: 35px;
+}
+
+.form__login .form__input:focus + i.fa {
+  opacity: 1;
+  left: 30px;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.form__login .invalid {
+  border: 1px solid red;
+  color: white;
+  background-color: #ff7d7d;
+}
+
+.form__login .invalid + i.fa {
+  color: white;
+  font-size: 0.45em;
+  position: absolute;
+  margin-top: -48px;
+  margin-left: -2px;
+  opacity: 0;
+  left: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.form__login .invalid:focus {
+  outline: none;
+  color: white;
+  border-color: red;
+  border-left-width: 35px;
+}
+
+.form__login .invalid:focus + i.fa {
+  opacity: 1;
+  left: 30px;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.form__login .form__title,
+.form__login .form__or {
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.form__login .form__info {
+  color: red;
+  text-align: center;
+  font-size: 0.5em;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.form__login .form__btn {
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  border-radius: 30px;
+  border: 1px solid white;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.form__login .form__btn:hover {
+  background: #379bff;
+  color: white;
+  border: 1px solid black;
+}
+/*# sourceMappingURL=login-style.css.map */
