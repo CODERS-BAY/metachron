@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
+import CreateNewUserModal from "../partials/CreateNewUserModal";
+
 function ViewOne() {
 
     const url = "http://localhost:3001/";
@@ -90,8 +92,12 @@ function ViewOne() {
         return null;
     });
 
+    const [addClick, setAddClick] = useState(false);
     function handleAddClick () {
-        alert("here comes adding action");
+        setAddClick(true);
+    }
+    const updateAddClick = () => {
+        setAddClick(false);
     }
 
     const emptyUserCard = (
@@ -101,10 +107,7 @@ function ViewOne() {
                 </p>
                 <div className="plusSymbole"></div>
             </div>
-    );
-    
-
-
+    );  
 
     const [activeLink, setActiveLink] = useState();
     useEffect(() => {
@@ -114,21 +117,24 @@ function ViewOne() {
 
     return (
         <div className="view view__one">
-            <div className="filter-control">
-                <ul onClick={handleClickFilter}>
-                    <p>Listview: </p>
-                    {filterNavlinks.map((filterNavLink) => {
-                        return (
-                            <li key={filterNavLink.id}
-                                id={filterNavLink.id}
-                                onClick={() => setActiveLink(filterNavLink.id)}
-                                className={`${filterNavLink.className} ${activeLink === filterNavLink.id ? filterNavLink.activeClassName : ""}`}
-                                value={filterNavLink.value}>
-                                -- {filterNavLink.name}
-                            </li>
-                        );
-                    })}
-                </ul>
+        <div className="filter-control">
+        <ul onClick={handleClickFilter}>
+        <p>Listview: </p>
+        {filterNavlinks.map((filterNavLink) => {
+            return (
+                <li key={filterNavLink.id}
+                id={filterNavLink.id}
+                onClick={() => setActiveLink(filterNavLink.id)}
+                className={`${filterNavLink.className} ${activeLink === filterNavLink.id ? filterNavLink.activeClassName : ""}`}
+                value={filterNavLink.value}>
+                -- {filterNavLink.name}
+                </li>
+                );
+            })}
+            </ul>
+            </div>
+            <div className="createNewUserModal__overlay">
+                <CreateNewUserModal updateAddClick={updateAddClick} addClick={addClick}/>
             </div>
             <div className="card-container">
                 {emptyUserCard}
