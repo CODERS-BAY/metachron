@@ -1,16 +1,38 @@
 import React from 'react'
 
-function CreateNewUserModal({updateAddClick, addClick}) {
+function CreateNewUserModal() {
 
-    if (addClick) {
-        return (
-            <div className="createNewUserModal">
-               <h1>is active</h1>
-               <div className="modalClose" onClick={() => updateAddClick()}>Close</div>
-            </div>
-        );
-    } 
-    return null;
+    function onSubmit() {
+        alert("submitted!");
+    }
+
+    return (
+        <div className="createNewUserModal">
+            <form on Submit={onSubmit}>
+                <p>
+                    <label for="username">Username:</label>
+                    <input 
+                        type="text"
+                        name="username"
+                        placeholder="enter Username"
+                    />
+                    <label for="password">Password:</label>
+                    <input 
+                        type="password"
+                        name="password"
+                        placeholder="enter Username"
+                    />
+                </p>
+                <button
+                    className=""
+                    name="addUser"
+                    type="submit">
+                    add user
+                </button>
+            </form>
+
+        </div>
+    );
     
 }
 

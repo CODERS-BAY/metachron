@@ -4,7 +4,7 @@ function ViewMainDashboard() {
 
     return (
         <div className="view view__main__dashboard">
-            <h2>ViewMain here.</h2>
+            <h2>Main Dashboard</h2>
         </div>
     );
 }
