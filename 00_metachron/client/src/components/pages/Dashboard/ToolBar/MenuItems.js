@@ -16,42 +16,42 @@ const MenuItems = [
     {
         id:3,
         to: "/dashboard/viewtwo",
-        name: "ViewThree",
+        name: "Add User",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
         id:4,
         to: "/dashboard/viewthree",
-        name: "ViewFour",
+        name: "ViewThree",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
         id:5,
+        to: "/dashboard/viewfour",
+        name: "ViewFour",
+        className: "tool__link",
+        activeClassName: "tool__link--active"
+    },
+    {
+        id:6,
         to: "/dashboard/viewfive",
         name: "ViewFive",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
-        id:6,
+        id:7,
         to: "/dashboard/viewsix",
         name: "ViewSix",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
-        id:7,
+        id:8,
         to: "/dashboard/viewseven",
         name: "ViewSeven",
-        className: "tool__link",
-        activeClassName: "tool__link--active"
-    },
-    {
-        id:8,
-        to: "/dashboard/vieweight",
-        name: "ViewEight",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },

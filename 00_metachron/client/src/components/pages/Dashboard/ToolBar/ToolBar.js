@@ -9,6 +9,25 @@ import { NavLink } from "react-router-dom";
 
 function ToolBar() {
 
+    const [windowWidth, setWindowWidth] = useState();
+    window.addEventListener("resize", function (event) {
+        event.preventDefault();
+        setWindowWidth(window.innerWidth);
+        const toolControl = document.querySelector(".tool__control");
+        const view = document.querySelector(".view");
+        const toolNavBtn = document.querySelector(".tool__nav__btn");
+        if (windowWidth < 555) {
+            toolControl.classList.add("swipe");
+            view.classList.add("swipe");
+            toolNavBtn.classList.add("swipe");
+        } else {
+            toolControl.classList.remove("swipe");
+            view.classList.remove("swipe");
+            toolNavBtn.classList.remove("swipe");
+        }
+    });
+
+
     /* populate nav */
     const MenuItemComponents = MenuItems.map((MenuItem) => {
         return (
