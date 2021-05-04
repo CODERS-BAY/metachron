@@ -11,22 +11,22 @@
   }
 }
 
-@import "./fonts/fonts.scss";
+@import "./fonts/_fonts.scss";
 @import "../main/components/base/base-style.scss";
 
-@import "../main/components/pagenotfound/pagenotfound-style.scss";
+@import "../main/components/pagenotfound/_pagenotfound-style.scss";
 
-@import "../main/components/navigation/navigation-style.scss";
-@import "../main/components/overlay/overlay-style.scss";
+@import "../main/components/navigation/_navigation-style.scss";
+@import "../main/components/overlay/_overlay-style.scss";
 
-@import "../main/components/content/content-style.scss";
-@import "../main/components/login/login-style.scss";
+@import "../main/components/content/_content-style.scss";
+@import "../main/components/login/_login-style.scss";
 
-@import "../main/components/footer/footer-style.scss";
+@import "../main/components/footer/_footer-style.scss";
 
-@import "../dashboard/dashboard-main-style.scss";
-@import "../dashboard/dashboard-navigation-style.scss";
-@import "../dashboard/dashboard-content-style.scss";
-@import "../dashboard/dashboard-createNewUserModal-style.scss";
+@import "../dashboard/_dashboard-main-style.scss";
+@import "../dashboard/_dashboard-navigation-style.scss";
+@import "../dashboard/_dashboard-content-style.scss";
+@import "../dashboard/_dashboard-createNewUserModal-style.scss";
 
-@import "../media-queries/media-query-style.scss";
+@import "../media-queries/_media-query-style.scss";
