@@ -30,6 +30,7 @@ module.exports = {
       },
       email: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false
       },
       phone: {
