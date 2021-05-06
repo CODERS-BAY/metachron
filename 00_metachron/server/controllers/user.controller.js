@@ -65,6 +65,55 @@ exports.createUserData = async (req, res) => {
     }
 };
 
+/* create user set **************************************************/
+exports.createUserSet = async (req, res) => {
+    const { username, password, userrole_id, firstName, lastName, address, zip, place, email, phone, github } = req.body;
+
+    let profilePic;
+    if (userrole_id === "1") {
+        profilePic = "https://image.shutterstock.com/image-vector/glowing-neon-crossed-arrows-icon-600w-1937094904.jpg";
+    }
+    else if (userrole_id === "2") {
+        profilePic = "https://image.shutterstock.com/image-vector/glowing-neon-old-wooden-wheel-600w-1937095906.jpg";
+    } else {
+        profilePic = "https://image.shutterstock.com/image-vector/glowing-neon-document-icon-isolated-600w-1606897852.jpg";
+    }
+
+    try {
+        const userData = await Userdata.create({
+            firstName,
+            lastName,
+            address,
+            zip,
+            place,
+            email,
+            phone,
+            github
+        });
+        const userFindData = await Userdata.findOne({
+            where: {
+                email: email
+            }
+        });
+
+
+        const user = await User.create({
+            username,
+            password,
+            pic_path: profilePic,
+            userrole_id,
+            userdata_id: userFindData.id
+        });
+        const userSet = { user, userData };
+
+        return res.json(userSet);
+
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json(error);
+    }
+};
+
 /* findOne user by uuid */
 exports.findOneUser = async (req, res) => {
     const uuid = req.params.uuid;
@@ -75,6 +124,45 @@ exports.findOneUser = async (req, res) => {
             }
         });
         return res.json(user);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};
+
+/* findDuplicate user by username ******************************/
+exports.findDuplicateUser = async (req, res) => {
+    const { username } = req.body;
+    try {
+        const duplicateUser = await User.findOne({
+            where: {
+                username: username
+            }
+        });
+        if (duplicateUser != null) {
+            return res.json({ duplicate: true });
+        } else {
+            return res.json({ duplicate: false });
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};
+/* findDuplicate user email ******************************/
+exports.findDuplicateUserEmail = async (req, res) => {
+    const { email } = req.body;
+    try {
+        const duplicateUserEmail = await Userdata.findOne({
+            where: {
+                email: email
+            }
+        });
+        if (duplicateUserEmail != null) {
+            return res.json({ duplicate: true });
+        } else {
+            return res.json({ duplicate: false });
+        }
     } catch (error) {
         console.log(error);
         return res.status(500).json(error);

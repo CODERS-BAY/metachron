@@ -22,6 +22,12 @@ router.get("/users", userController.findAllUsers);
 // find one user by uuid
 router.get("/users/:uuid", userController.findOneUser);
 
+// find one user by username
+router.post("/checkDuplicateUser", userController.findDuplicateUser);
+
+// find one user by email
+router.post("/checkDuplicateUserEmail", userController.findDuplicateUserEmail);
+
 // find login-user by username & password
 router.post("/login", userController.verifyUser);
 
@@ -36,6 +42,13 @@ router.post("/userdata", userController.createUserData);
 
 // get all usersets (user-userrole-userdata)
 router.get("/usersets", userController.findAllUserSets);
+
+// create userset (user-userrole-userdata)
+router.post("/usersets", userController.createUserSet);
+
+
+
+
 
 // get one userset by uuid (user-userrole-userdata)
 router.get("/usersets/:uuid", userController.findOneUserSet);

@@ -71,7 +71,7 @@ function ViewOne() {
                         <br />
                     Address: <span className="card__txt">{user.Userdatum.address}</span>
                         <br />
-                    ZIP/Place: <span className="card__txt">{user.Userdatum.zip} {user.Userdatum.place}</span>
+                    ZIP/City: <span className="card__txt">{user.Userdatum.zip} {user.Userdatum.place}</span>
                         <br />
                     Email: <span className="card__txt">{user.Userdatum.email}</span>
                         <br />
