@@ -4,7 +4,19 @@ const { sequelize } = require("../models");
 
 const { User } = require("../models");
 const { Userrole } = require("../models");
-const { Userdata } = require("../models");
+const { Userdatainfo } = require("../models");
+
+const { user_has_qualification } = require("../models");
+const { user_has_trainingGroup } = require("../models");
+const { user_attend_on_event } = require("../models");
+
+const { Qualification } = require("../models");
+const { TrainingGroup } = require("../models");
+const { Event } = require("../models");
+const { TrainingSubject } = require("../models");
+const { TrainingContent } = require("../models");
+
+
 
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -44,10 +56,10 @@ exports.createUserRole = async (req, res) => {
 };
 
 /* create user data */
-exports.createUserData = async (req, res) => {
+exports.createUserdatainfo = async (req, res) => {
     const { firstName, lastName, address, zip, place, email, phone, github } = req.body;
     try {
-        const userdata = await Userdata.create({
+        const userdata = await Userdatainfo.create({
             firstName,
             lastName,
             address,
@@ -80,7 +92,7 @@ exports.createUserSet = async (req, res) => {
     }
 
     try {
-        const userData = await Userdata.create({
+        const userData = await Userdatainfo.create({
             firstName,
             lastName,
             address,
@@ -90,13 +102,11 @@ exports.createUserSet = async (req, res) => {
             phone,
             github
         });
-        const userFindData = await Userdata.findOne({
+        const userFindData = await Userdatainfo.findOne({
             where: {
                 email: email
             }
         });
-
-
         const user = await User.create({
             username,
             password,
@@ -105,9 +115,7 @@ exports.createUserSet = async (req, res) => {
             userdata_id: userFindData.id
         });
         const userSet = { user, userData };
-
         return res.json(userSet);
-
     } catch (error) {
         console.error(error);
         return res.status(500).json(error);
@@ -153,7 +161,7 @@ exports.findDuplicateUser = async (req, res) => {
 exports.findDuplicateUserEmail = async (req, res) => {
     const { email } = req.body;
     try {
-        const duplicateUserEmail = await Userdata.findOne({
+        const duplicateUserEmail = await Userdatainfo.findOne({
             where: {
                 email: email
             }
@@ -236,7 +244,7 @@ exports.findAllUserSets = async (req, res) => {
                     model: Userrole
                 },
                 {
-                    model: Userdata
+                    model: Userdatainfo
                 }
             ]
         });
@@ -257,7 +265,7 @@ exports.findOneUserSet = async (req, res) => {
                     model: Userrole
                 },
                 {
-                    model: Userdata
+                    model: Userdatainfo
                 }
             ],
             where: {
@@ -271,7 +279,66 @@ exports.findOneUserSet = async (req, res) => {
     }
 };
 
+/* delete userset by username */
+exports.deleteUserSet = async (req, res) => {
+    const { username } = req.body;
+
+    try {
+        
+        //find user to delete
+        const user = await User.findOne({
+            where: {
+                username: username,
+            }
+        });
+        
+        if (user === null) {
+            return res.json({ msg: "no such user found" });
+        }
+        
+        // delete from event table
+        await Event.destroy({
+            where: {
+                trainer_id: user.id,
+            }
+        });
+        // delete from user_has_trainingGroup table
+        await user_has_trainingGroup.destroy({
+            where: {
+                user_id: user.id,
+            }
+        });
+        // delete from user_has_trainingGroup table
+        await user_has_trainingGroup.destroy({
+            where: {
+                supervisor: user.id,
+            }
+        });
+        // delete from user table
+        await User.destroy({
+            where: {
+                id: user.id,
+            }
+        });
+        // delete from userdatainfo table
+        await Userdatainfo.destroy({
+            where: {
+                id: user.id,
+            }
+        });
+        // delete from user_attend_on_event table
+        await user_attend_on_event.destroy({
+            where: {
+                user_id: user.id,
+            }
+        });
+
+        return res.json({ msg: `user ${username} successfully deleted` });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};
+
+
 /* update user */
-
-/* delete user */
-

@@ -33,11 +33,10 @@ app.use("/", require("./routes/user.routes"));
 if (require.main === module) {
     app.listen(port, async () => {
         console.log(`Server started on http://localhost:${port}.`);
-        await sequelize.authenticate();
-        console.log("Database connected.");
-        // await sequelize.sync();
-        // await sequelize.sync({ force: true });
-        // console.log("Database synced.");
+        // await sequelize.authenticate();
+        // console.log("Database connected.");
+        await sequelize.sync({ force: true });
+        console.log("Database synced.");
     });
 } else {
     module.exports = app;

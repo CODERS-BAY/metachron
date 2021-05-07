@@ -131,10 +131,7 @@ function ViewTwo() {
             setAddMessage({ msg: "take care of your input" });
         }
     }
-
-    
-
-
+  
     function handleCheckUsers() {
         window.location.href = "/dashboard/viewone";
     }
