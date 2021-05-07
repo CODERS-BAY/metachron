@@ -1467,11 +1467,18 @@ footer .footer__legal {
   margin: 0.25rem auto;
 }
 
-.view__one .card-container .userCard .btn:hover, .view__one .card-container .userCard .btn:focus {
-  background: white;
+.view__one .card-container .userCard .btn__edit:hover,
+.view__one .card-container .userCard .btn__edit:focus {
+  background: black;
   outline: none;
-  color: #379bff;
-  border: 1px solid #379bff;
+  color: white;
+}
+
+.view__one .card-container .userCard .btn__delete:hover,
+.view__one .card-container .userCard .btn__delete:focus {
+  background: red;
+  outline: none;
+  color: white;
 }
 
 /********************************************************************************/

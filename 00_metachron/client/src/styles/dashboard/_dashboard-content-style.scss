@@ -156,14 +156,20 @@
         cursor: pointer;
         transition: all 0.25s ease-in-out;
         margin: 0.25rem auto;
+      }
 
-        &:hover,
-        &:focus {
-          background: white;
-          outline: none;
-          color: rgb(55, 155, 255);
-          border: 1px solid rgb(55, 155, 255);
-        }
+      .btn__edit:hover,
+      .btn__edit:focus {
+        background: black ;
+        outline: none;
+        color: white;
+      }
+      
+      .btn__delete:hover,
+      .btn__delete:focus {
+        background: red;
+        outline: none;
+        color: white;
       }
     }
   }
@@ -243,7 +249,7 @@
     padding: 1rem;
   }
   .invalid {
-    background-color: rgba(255, 0, 0, .25) !important;
+    background-color: rgba(255, 0, 0, 0.25) !important;
     border: 2px solid red !important;
   }
 }

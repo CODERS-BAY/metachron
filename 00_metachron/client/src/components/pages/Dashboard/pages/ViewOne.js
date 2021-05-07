@@ -7,6 +7,22 @@ function ViewOne() {
 
     const url = "http://localhost:3001/";
 
+    /*** delete user ***/
+    const [toDelete, setToDelete] = useState({ username: "" });
+    function handleDeleteClick(user, event) {
+        event.preventDefault();
+        axios.delete(`${url}usersets/delete`, {
+            data: {
+                username: user.username,
+            }
+        }).then((response) => {
+            console.log(response.data);
+            setToDelete({ username: user.username });
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
     const [users, setUsers] = useState([]);
     useEffect(() => {
         axios.get(`${url}usersets`)
@@ -16,7 +32,7 @@ function ViewOne() {
             }).catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [toDelete]);
 
     const filterNavlinks = [
         { id: "all", name: "all", value: "all", className: "filter--link", activeClassName: "filter--link--active" },
@@ -40,50 +56,50 @@ function ViewOne() {
                     <p>
                         Username: <span className="card__txt">{user.username}</span>
                         <br />
-                           RealName: <span className="card__txt">{user.Userdatum.firstName} {user.Userdatum.lastName}</span>
+                           RealName: <span className="card__txt">{user.Userdatainfo.firstName} {user.Userdatainfo.lastName}</span>
                         <br />
-                           Address: <span className="card__txt">{user.Userdatum.address}</span>
+                           Address: <span className="card__txt">{user.Userdatainfo.address}</span>
                         <br />
-                           ZIP/Place: <span className="card__txt">{user.Userdatum.zip} {user.Userdatum.place}</span>
+                           ZIP/Place: <span className="card__txt">{user.Userdatainfo.zip} {user.Userdatainfo.place}</span>
                         <br />
-                           Email: <span className="card__txt">{user.Userdatum.email}</span>
+                           Email: <span className="card__txt">{user.Userdatainfo.email}</span>
                         <br />
-                           Phone: <span className="card__txt">{user.Userdatum.phone}</span>
+                           Phone: <span className="card__txt">{user.Userdatainfo.phone}</span>
                         <br />
-                           Github: <span className="card__txt"><a href="https://github.com">{user.Userdatum.github}</a></span>
+                           Github: <span className="card__txt"><a href="https://github.com">{user.Userdatainfo.github}</a></span>
                         <br />
                            Pic: <span className="card__txt"><a href={user.pic_path}>profile-picture-link</a></span>
                         <br />
                     </p>
-                    <button className="btn btn__util">Edit</button>
-                    <button className="btn btn__util">Delete</button>
+                    <button className="btn btn__edit">Edit</button>
+                    <button className="btn btn__delete" onClick={(event) => { handleDeleteClick(user, event); }}>Delete</button>
                 </div>
             );
         }
         if (clickNavLink === "all") {
             return (
-                <div key={user.uuid} className={`userCard ${user.Userrole.name}`}>
+                <div key={user.uuid} className={`userCard $`}>
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
                         Username: <span className="card__txt">{user.username}</span>
                         <br />
-                    RealName: <span className="card__txt">{user.Userdatum.firstName} {user.Userdatum.lastName}</span>
+                    RealName: <span className="card__txt">{user.Userdatainfo.firstName} {user.Userdatainfo.lastName}</span>
                         <br />
-                    Address: <span className="card__txt">{user.Userdatum.address}</span>
+                    Address: <span className="card__txt">{user.Userdatainfo.address}</span>
                         <br />
-                    ZIP/City: <span className="card__txt">{user.Userdatum.zip} {user.Userdatum.place}</span>
+                    ZIP/City: <span className="card__txt">{user.Userdatainfo.zip} {user.Userdatainfo.place}</span>
                         <br />
-                    Email: <span className="card__txt">{user.Userdatum.email}</span>
+                    Email: <span className="card__txt">{user.Userdatainfo.email}</span>
                         <br />
-                    Phone: <span className="card__txt">{user.Userdatum.phone}</span>
+                    Phone: <span className="card__txt">{user.Userdatainfo.phone}</span>
                         <br />
-                    Github: <span className="card__txt"><a href="https://github.com">{user.Userdatum.github}</a></span>
+                    Github: <span className="card__txt"><a href={`https://github.com/${user.Userdatainfo.github}`}>{user.Userdatainfo.github}</a></span>
                         <br />
-                    Pic: <span className="card__txt"><a href={user.pic_path}>profile-picture-link</a></span>
+                    Pic: <span className="card__txt"><a href={user.pic_path}>{user.Userrole.name}</a></span>
                         <br />
                     </p>
-                    <button className="btn btn__util">Edit</button>
-                    <button className="btn btn__util">Delete</button>
+                    <button className="btn btn__edit">Edit</button>
+                    <button className="btn btn__delete" onClick={(event) => { handleDeleteClick(user, event); }}>Delete</button>
                 </div>
             );
         }
@@ -108,6 +124,17 @@ function ViewOne() {
         setClickNavLink("all");
         setActiveLink("all");
     }, []);
+
+
+    
+ 
+    
+    
+    
+
+
+
+
 
     return (
         <div className="view view__one">

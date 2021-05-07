@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 
 const { User } = require("../models");
 const { Userrole } = require("../models");
-const { Userdata } = require("../models");
+const { Userdatainfo } = require("../models");
 const { Qualification } = require("../models");
 
 const router = express.Router();
@@ -37,8 +37,8 @@ router.post("/userroles", userController.createUserRole);
 // get all userroles
 router.get("/userroles", userController.findAllUserroles);
 
-// create userdata
-router.post("/userdata", userController.createUserData);
+// create userdatainfo
+router.post("/userdata", userController.createUserdatainfo);
 
 // get all usersets (user-userrole-userdata)
 router.get("/usersets", userController.findAllUserSets);
@@ -46,12 +46,10 @@ router.get("/usersets", userController.findAllUserSets);
 // create userset (user-userrole-userdata)
 router.post("/usersets", userController.createUserSet);
 
-
-
-
-
 // get one userset by uuid (user-userrole-userdata)
 router.get("/usersets/:uuid", userController.findOneUserSet);
 
+// delete userset (user-userdata)
+router.delete("/usersets/delete", userController.deleteUserSet);
 
 module.exports = router;

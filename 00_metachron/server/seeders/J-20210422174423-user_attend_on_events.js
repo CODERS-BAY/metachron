@@ -1,6 +1,6 @@
 'use strict';
 
-const userdataSeedData = require("../seeders/data/userdata.seed.data");
+const user_attend_on_eventSeedData = require("./data/user_attend_on_event.seed.data");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -13,8 +13,8 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert("userdata",
-      userdataSeedData, {});
+    await queryInterface.bulkInsert("user_attend_on_event",
+      user_attend_on_eventSeedData, {});
   },
 
   down: async (queryInterface, Sequelize) => {

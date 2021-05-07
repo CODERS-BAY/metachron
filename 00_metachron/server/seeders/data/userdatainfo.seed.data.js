@@ -1,4 +1,4 @@
-let userdataSeedData = [
+let userdatainfoSeedData = [
     {
         firstName: "Max",
         lastName: "Muster",
@@ -241,4 +241,4 @@ let userdataSeedData = [
     },
 ];
 
-module.exports = userdataSeedData;
+module.exports = userdatainfoSeedData;
