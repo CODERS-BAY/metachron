@@ -11,16 +11,22 @@ function ViewOne() {
     const [toDelete, setToDelete] = useState({ username: "" });
     function handleDeleteClick(user, event) {
         event.preventDefault();
-        axios.delete(`${url}usersets/delete`, {
-            data: {
-                username: user.username,
-            }
-        }).then((response) => {
-            console.log(response.data);
-            setToDelete({ username: user.username });
-        }).catch((error) => {
-            console.log(error);
-        });
+        
+        if (window.confirm(`ensure deletion of entry from database!`)) {
+            console.log("deletion confirmed");
+            axios.delete(`${url}usersets/delete`, {
+                data: {
+                    username: user.username,
+                }
+            }).then((response) => {
+                console.log(response.data);
+                setToDelete({ username: user.username });
+            }).catch((error) => {
+                console.log(error);
+            });
+        } else {
+            console.log("deletion aborted");
+        }
     }
 
     const [users, setUsers] = useState([]);
@@ -47,11 +53,27 @@ function ViewOne() {
         setClickNavLink(event.target.getAttribute("value"));
     }
 
+
+    /* border for hover usercards */
+    function handleMouseOver(uuid, event) {
+        const userCard = document.getElementById(uuid);
+        userCard.style.border = "2px solid rgb(55,155,255)";
+    }
+    function handleMouseOut(uuid, event) {
+        const userCard = document.getElementById(uuid);
+        userCard.style.border = "none";
+    }
+
     /* filtered users */
     const userFilterSnippets = users.map((user) => {
         if (user.Userrole.name === clickNavLink) {
             return (
-                <div key={user.uuid} className={`userCard ${user.Userrole.name}`}>
+                <div key={user.uuid} 
+                id={user.uuid}
+                className={`userCard ${user.Userrole.name}`}
+                onMouseOver={(event) => handleMouseOver(user.uuid, event)}
+                onMouseOut={(event) => handleMouseOut(user.uuid, event)}
+                >
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
                         Username: <span className="card__txt">{user.username}</span>
@@ -71,14 +93,19 @@ function ViewOne() {
                            Pic: <span className="card__txt"><a href={user.pic_path}>profile-picture-link</a></span>
                         <br />
                     </p>
-                    <button className="btn btn__edit">Edit</button>
+                    <button className="btn btn__edit" onClick={(event) => { handleEditClick(user, event); }}>Edit</button>
                     <button className="btn btn__delete" onClick={(event) => { handleDeleteClick(user, event); }}>Delete</button>
                 </div>
             );
         }
         if (clickNavLink === "all") {
             return (
-                <div key={user.uuid} className={`userCard $`}>
+                <div key={user.uuid}
+                    id={user.uuid}
+                    className={`userCard`}
+                    onMouseOver={(event) => handleMouseOver(user.uuid, event)}
+                    onMouseOut={(event) => handleMouseOut(user.uuid, event)}
+                >
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
                         Username: <span className="card__txt">{user.username}</span>
@@ -98,7 +125,7 @@ function ViewOne() {
                     Pic: <span className="card__txt"><a href={user.pic_path}>{user.Userrole.name}</a></span>
                         <br />
                     </p>
-                    <button className="btn btn__edit">Edit</button>
+                    <button className="btn btn__edit" onClick={(event) => { handleEditClick(user, event); }}>Edit</button>
                     <button className="btn btn__delete" onClick={(event) => { handleDeleteClick(user, event); }}>Delete</button>
                 </div>
             );
@@ -109,7 +136,7 @@ function ViewOne() {
     function handleAddClick() {
         window.location.href = "/dashboard/viewtwo";
     }
-
+   
     const emptyUserCard = (
         <div className="userCard emptyUserCard" onClick={handleAddClick}>
             <p>
@@ -119,22 +146,23 @@ function ViewOne() {
         </div>
     );
 
+
     const [activeLink, setActiveLink] = useState();
     useEffect(() => {
         setClickNavLink("all");
         setActiveLink("all");
     }, []);
 
+    function handleEditClick(user, event) {
 
-    
- 
-    
-    
-    
+        const searchUserCredentials = {
+            uuid: user.uuid,
+            username: user.username
+        }
 
-
-
-
+        localStorage.setItem("searchUserCredentials", JSON.stringify(searchUserCredentials));
+        window.location.href = "/dashboard/viewthree";
+    }
 
     return (
         <div className="view view__one">

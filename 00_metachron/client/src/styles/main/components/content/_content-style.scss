@@ -91,9 +91,81 @@
 .about__section {
   overflow: hidden;
 
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
+  background: rgb(0, 0, 0);
+
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+
+  .line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 15vh;
+      width: 100%;
+      top: -50%;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(55,155,255) 75%, rgb(55,155,255) 100%);
+      animation: drop 5s 0s infinite;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+    }
+
+    &:nth-child(1) {
+      margin-left: -35%;
+    
+      &::after {
+        animation-delay: 2s;
+      }
+    }
+    
+    &:nth-child(3) {
+      margin-left: 35%;
+      
+      &::after {
+        animation-delay: 2.5s;
+      }
+    }
+  }
+}
+  
+@keyframes drop {
+  0% {
+    top: -50%
+  }
+  100% {
+    top: 110%
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   .wrapper__content__about {
     width: 100%;
@@ -107,7 +179,7 @@
     .heading__about {
       width: 100%;
       text-align: center;
-      color: black;
+      color: white;
       font-size: 5vw;
       line-height: 150%;
       padding-bottom: 1.5rem;
@@ -120,7 +192,7 @@
 
       & p {
         text-align: center;
-        color: black;
+        color: white;
         font-family: "Playfair Display", serif;
         font-size: 1.2rem;
         letter-spacing: 0.05em;
@@ -135,7 +207,7 @@
         transform: translateX(-50%);
         width: 100px;
         height: 1px;
-        background-color: black;
+        background-color: white;
       }
     }
   }
@@ -153,7 +225,7 @@
 
     & a {
       text-decoration: none;
-      color: black;
+      color: white;
       display: inline-flex;
 
       .container__snippet__txt {
@@ -173,7 +245,7 @@
       bottom: -25px;
       height: 45px;
       width: 1px;
-      background-color: black;
+      background-color: white;
     }
   }
 }

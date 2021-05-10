@@ -540,6 +540,81 @@ body .overflow {
 /********************************************************************************/
 .about__section {
   overflow: hidden;
+  background: black;
+}
+
+.about__section .lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+
+.about__section .lines .line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0);
+  overflow: hidden;
+}
+
+.about__section .lines .line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(75%, #379bff), to(#379bff));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #379bff 75%, #379bff 100%);
+  -webkit-animation: drop 5s 0s infinite;
+          animation: drop 5s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+          animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.about__section .lines .line:nth-child(1) {
+  margin-left: -35%;
+}
+
+.about__section .lines .line:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.about__section .lines .line:nth-child(3) {
+  margin-left: 35%;
+}
+
+.about__section .lines .line:nth-child(3)::after {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
 }
 
 .about__section .wrapper__content__about {
@@ -564,7 +639,7 @@ body .overflow {
 .about__section .wrapper__content__about .heading__about {
   width: 100%;
   text-align: center;
-  color: black;
+  color: white;
   font-size: 5vw;
   line-height: 150%;
   padding-bottom: 1.5rem;
@@ -578,7 +653,7 @@ body .overflow {
 
 .about__section .wrapper__content__about .txt__about p {
   text-align: center;
-  color: black;
+  color: white;
   font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   letter-spacing: 0.05em;
@@ -594,7 +669,7 @@ body .overflow {
           transform: translateX(-50%);
   width: 100px;
   height: 1px;
-  background-color: black;
+  background-color: white;
 }
 
 .about__section .container__snippet {
@@ -614,7 +689,7 @@ body .overflow {
 
 .about__section .container__snippet a {
   text-decoration: none;
-  color: black;
+  color: white;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -637,7 +712,7 @@ body .overflow {
   bottom: -25px;
   height: 45px;
   width: 1px;
-  background-color: black;
+  background-color: white;
 }
 
 /********************************************************************************/
@@ -1426,6 +1501,15 @@ footer .footer__legal {
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   line-height: 1.3rem;
+  cursor: pointer;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .view__one .card-container .userCard .card__txt {
@@ -1452,6 +1536,7 @@ footer .footer__legal {
 
 .view__one .card-container .userCard p {
   margin-bottom: 0.7rem;
+  pointer-events: none;
 }
 
 .view__one .card-container .userCard .btn {
@@ -1567,10 +1652,9 @@ footer .footer__legal {
 }
 
 .view__two .__form .form__btn:hover, .view__two .__form .form__btn:focus {
-  background: white;
+  background: black;
   outline: none;
-  color: #379bff;
-  border: 1px solid #379bff;
+  color: white;
 }
 
 .view__two .form__info {
@@ -1582,8 +1666,140 @@ footer .footer__legal {
   border: 2px solid red !important;
 }
 
+/********************************************************************************/
+/* setup edit a user */
+/********************************************************************************/
 .view__three {
-  background: lightgoldenrodyellow;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.view__three h2 {
+  padding: 1rem;
+}
+
+.view__three .__form {
+  padding: 2rem;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  width: clamp(50%, 100%, 500px);
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: min-content minmax(150px, 1fr);
+      grid-template-columns: -webkit-min-content minmax(150px, 1fr);
+      grid-template-columns: min-content minmax(150px, 1fr);
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  font-size: 0.95rem;
+}
+
+.view__three .__form .form__label {
+  text-align: center;
+  margin: auto 0;
+}
+
+.view__three .__form input,
+.view__three .__form select {
+  border: 1px solid #379bff;
+  color: #379bff;
+  padding-left: 0.5rem;
+}
+
+.view__three .__form input:focus,
+.view__three .__form select:focus {
+  background: #379bff;
+  color: white;
+  outline: none;
+  border: 2px solid #379bff;
+}
+
+.view__three .__form input::-webkit-input-placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .__form input:-ms-input-placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .__form input::-ms-input-placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .__form input::placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .__form .form__btn {
+  width: 100%;
+  height: 20px;
+  background: #379bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  margin: 0.25rem auto;
+}
+
+.view__three .__form .form__btn:hover, .view__three .__form .form__btn:focus {
+  background: black;
+  outline: none;
+  color: white;
+}
+
+.view__three .search__input {
+  width: 50%;
+  padding: .5rem;
+  margin: .5rem;
+  border: 1px solid #379bff;
+  color: #379bff;
+  padding-left: 0.5rem;
+}
+
+.view__three .search__input:focus {
+  background: #379bff;
+  color: white;
+  outline: none;
+  border: 2px solid #379bff;
+}
+
+.view__three .search__input::-webkit-input-placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .search__input:-ms-input-placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .search__input::-ms-input-placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .search__input::placeholder {
+  padding-left: 0.5rem;
+  color: #379bff;
+}
+
+.view__three .form__info {
+  padding: 1rem;
+}
+
+.view__three .invalid {
+  background-color: rgba(255, 0, 0, 0.25) !important;
+  border: 2px solid red !important;
 }
 
 .view__four {
