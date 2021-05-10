@@ -23,7 +23,7 @@ const MenuItems = [
     {
         id:4,
         to: "/dashboard/viewthree",
-        name: "ViewThree",
+        name: "Edit User",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },

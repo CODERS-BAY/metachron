@@ -82,9 +82,6 @@ function ViewTwo() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.passwordConfirm]);
     
-
-
-
     const [addMessage, setAddMessage] = useState("");
 
     function onSubmit(event) {
@@ -131,7 +128,8 @@ function ViewTwo() {
             setAddMessage({ msg: "take care of your input" });
         }
     }
-  
+    
+    /* back to main view and list all users */
     function handleCheckUsers() {
         window.location.href = "/dashboard/viewone";
     }
@@ -155,7 +153,7 @@ function ViewTwo() {
                     required
                 />
 
-                <label className="form__label" htmlFor="password">password:*</label>
+                <label className="form__label" htmlFor="password">pwd:*</label>
                 <input
                     className={`form__input ${comparePasswordFields.class}`}
                     id="inputPassword"
@@ -163,11 +161,11 @@ function ViewTwo() {
                     name="password"
                     onChange={handleInputChange}
                     value={state.password}
-                    placeholder="enter username"
+                    placeholder="enter password"
                     // autoComplete="none"
                     required
                 />
-                <label className="form__label" htmlFor="passwordConfirm">confirm:*</label>
+                <label className="form__label" htmlFor="passwordConfirm">re - pwd:*</label>
                 <input
                     className={`form__input ${comparePasswordFields.class}`}
                     id="inputPasswordConfirm"

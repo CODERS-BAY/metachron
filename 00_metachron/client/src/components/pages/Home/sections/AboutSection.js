@@ -5,12 +5,19 @@ function AboutSection() {
     return (
         <div className="container about__section" id="about"
             style={{
-                backgroundImage: 'url("/images/light-bg.jpg")',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                // backgroundImage: 'url("/images/light-bg.jpg")',
+                // backgroundRepeat: 'no-repeat',
+                // backgroundSize: 'cover',
+                // backgroundPosition: 'center'
             }}
         >
+
+            <div className="lines">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
+
             <div className="wrapper__content__about">
                 <div className="heading__about">
                     <h2>
@@ -30,10 +37,10 @@ function AboutSection() {
                     <p>
                         A system which aims to handle the course organization
                         and all the participants of the CODERS.BAY.
-                        All the data that i use is stored in some databases. 
+                        All the data that i use is stored in a database. 
                     </p>
                     <p>    
-                        The communication with my subsystems are stateless with REST.
+                        The communication with my subsystem is stateless with REST.
                         The data sent and consumed use the common known JSON format.
                     </p>
                 </div>

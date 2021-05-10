@@ -7,7 +7,7 @@ let userdatainfoSeedData = [
         place: "Musterstadt",
         email: "max@muster.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Max-Muster",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -19,7 +19,7 @@ let userdatainfoSeedData = [
         place: "Lackenhause",
         email: "frida@lackner.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Frida-Lackner",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -31,7 +31,7 @@ let userdatainfoSeedData = [
         place: "Bauernhausen",
         email: "olf@bauer.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Olf-Bauer",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -43,7 +43,7 @@ let userdatainfoSeedData = [
         place: "Markthau",
         email: "carla@mau.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Carla-Mau",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -55,7 +55,7 @@ let userdatainfoSeedData = [
         place: "Svenstadt",
         email: "sven@olfson.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Sven-Olfson",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -67,7 +67,7 @@ let userdatainfoSeedData = [
         place: "Siedlstadt",
         email: "chris@siedl.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Chris-Siedl",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -79,7 +79,7 @@ let userdatainfoSeedData = [
         place: "Preda",
         email: "iris@gran.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Iris-Gran",
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -91,7 +91,7 @@ let userdatainfoSeedData = [
         place: "Eiga",
         email: "folan@elan.com",
         phone: "1234567890",
-        github: "somewhereOnGitHub",
+        github: "Folan-Elan",
         createdAt: new Date(),
         updatedAt: new Date()
     },

@@ -279,6 +279,30 @@ exports.findOneUserSet = async (req, res) => {
     }
 };
 
+/* findOne userset by username (user-role-data) */
+exports.findOneUserSetByUsername = async (req, res) => {
+    const username = req.params.username;
+    try {
+        const userset = await User.findOne({
+            include: [
+                {
+                    model: Userrole
+                },
+                {
+                    model: Userdatainfo
+                }
+            ],
+            where: {
+                username: username
+            }
+        });
+        return res.json(userset);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};
+
 /* delete userset by username */
 exports.deleteUserSet = async (req, res) => {
     const { username } = req.body;
