@@ -22,7 +22,6 @@ function ViewTwo() {
         github: ""
     });
 
-
     /* handle user input */
     const handleInputChange = (event) => {
         setState((prevState) => ({
@@ -49,7 +48,7 @@ function ViewTwo() {
             });
         }, 1500);
     }, [state.username]);
-    
+
     // checking user email
     const [invalidUserEmail, setinvalidUserEmail] = useState({ class: "" });
     useEffect(() => {
@@ -81,54 +80,64 @@ function ViewTwo() {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.passwordConfirm]);
-    
+
     const [addMessage, setAddMessage] = useState("");
 
     function onSubmit(event) {
         event.preventDefault();
         // console.log(state);
-        // creating userset
-        if (comparePasswordFields.class === "" && invalidUsername.class === "") {
-            axios.post(`${url}usersets`, {
-                firstName: state.firstName,
-                lastName: state.lastName,
-                address: state.address,
-                zip: state.zip,
-                place: state.place,
-                email: state.email,
-                phone: state.phone,
-                github: state.github,
-                username: state.username,
-                password: state.password,
-                userrole_id: state.userrole_id
-            }).then((response) => {
-                console.log("userdata successfully inserted");
-                setAddMessage({ msg: "user successfully added" })
-                // console.log(response.data);
-            }).catch((error) => {
-                setAddMessage({ msg: "server error occurred" })
-                console.log(error);
-            });
-            setState({
-                username: "",
-                password: "",
-                passwordConfirm: "",
-                userrole_id: "",
-                firstName: "",
-                lastName: "",
-                address: "",
-                zip: "",
-                place: "",
-                email: "",
-                phone: "",
-                github: ""
-            });
+
+        if (window.confirm(`ensure insertion of entry!`)) {
+            // creating userset
+            if (comparePasswordFields.class === "" && invalidUsername.class === "") {
+                axios.post(`${url}usersets`, {
+                    firstName: state.firstName,
+                    lastName: state.lastName,
+                    address: state.address,
+                    zip: state.zip,
+                    place: state.place,
+                    email: state.email,
+                    phone: state.phone,
+                    github: state.github,
+                    username: state.username,
+                    password: state.password,
+                    userrole_id: state.userrole_id
+                }).then((response) => {
+                    console.log("userdata successfully inserted");
+                    setAddMessage({ msg: "user successfully added" });
+                    // console.log(response.data);
+                }).catch((error) => {
+                    setAddMessage({ msg: "server error occurred" });
+                    console.log(error);
+                });
+                setState({
+                    username: "",
+                    password: "",
+                    passwordConfirm: "",
+                    userrole_id: "",
+                    firstName: "",
+                    lastName: "",
+                    address: "",
+                    zip: "",
+                    place: "",
+                    email: "",
+                    phone: "",
+                    github: ""
+                });
+            } else {
+                // alert("something's wrong here, check again!");
+                setAddMessage({ msg: "take care of your input" });
+            }
         } else {
-            // alert("something's wrong here, check again!");
-            setAddMessage({ msg: "take care of your input" });
+            console.log("insertion aborted");
+            setAddMessage({ msg: "insertion canceled" });
         }
     }
-    
+
+    setTimeout(() => {
+        setAddMessage({ msg: "" });
+    }, 2500);
+
     /* back to main view and list all users */
     function handleCheckUsers() {
         window.location.href = "/dashboard/viewone";

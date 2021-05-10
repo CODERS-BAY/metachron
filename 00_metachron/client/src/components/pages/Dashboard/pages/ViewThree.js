@@ -7,13 +7,13 @@ function ViewThree() {
 
     const url = "http://localhost:3001/";
 
-
-
     const [state, setState] = useState({
+        uuid: "",
         username: "",
         password: "",
         passwordConfirm: "",
         userrole_id: "",
+        userdata_id: "",
         firstName: "",
         lastName: "",
         address: "",
@@ -24,7 +24,6 @@ function ViewThree() {
         github: ""
     });
 
-    /**********************************************************************/
     const [searchTerm, setSearchTerm] = useState("");
 
     // get all users from db
@@ -49,15 +48,16 @@ function ViewThree() {
     }, []);
 
     useEffect(() => {
-
         const form = document.querySelector(".__form");
         if (searchTerm === "") {
             form.style.pointerEvents = "none";
             setState({
+                uuid: "",
                 username: "",
                 password: "",
                 passwordConfirm: "",
                 userrole_id: "",
+                userdata_id: "",
                 firstName: "",
                 lastName: "",
                 address: "",
@@ -74,10 +74,12 @@ function ViewThree() {
                     .then((response) => {
                         // console.log(response.data);
                         setState({
+                            uuid: response.data.uuid,
                             username: response.data.username,
                             password: response.data.password,
                             passwordConfirm: response.data.password,
                             userrole_id: response.data.userrole_id,
+                            userdata_id: response.data.userdata_id,
                             firstName: response.data.Userdatainfo.firstName,
                             lastName: response.data.Userdatainfo.lastName,
                             address: response.data.Userdatainfo.address,
@@ -94,16 +96,19 @@ function ViewThree() {
         }
     }, [searchTerm]);
 
-
-    /* handle user input */
-    const handleInputChange = (event) => {
+    /* handle user search input */
+    const handleSearchInputChange = (event) => {
         event.preventDefault();
         setSearchTerm(event.target.value);
     }
 
-
-
-    /**********************************************************************/
+    /* handle user input */
+    const handleInputChange = (event) => {
+        setState((prevState) => ({
+            ...prevState,
+            [event.target.name]: event.target.value
+        }));
+    }
 
     /* back to main view and list all users */
     function handleCheckUsers(event) {
@@ -111,10 +116,52 @@ function ViewThree() {
         window.location.href = "/dashboard/viewone";
     }
 
+    const [editMessage, setEditMessage] = useState("");
+
     /* on submit edit user */
-    function onSubmit() {
-        console.log("onsubmit");
+    function onSubmit(event) {
+        event.preventDefault();
+
+        const updateUser = {
+            uuid: state.uuid,
+            username: state.username,
+            password: state.password,
+            passwordConfirm: state.passwordConfirm,
+            userrole_id: state.userrole_id,
+            userdata_id: state.userdata_id,
+            firstName: state.firstName,
+            lastName: state.lastName,
+            address: state.address,
+            zip: state.zip,
+            place: state.place,
+            email: state.email,
+            phone: state.phone,
+            github: state.github
+        }
+
+        if (window.confirm(`ensure editation of entry!`)) {
+            console.log("editation confirmed");
+            axios.put(`${url}usersets`, updateUser)
+                .then((response) => {
+                    // console.log(response.data);
+                    console.log("user successfully updated");
+                    setEditMessage({ msg: "user successfully updated" });
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setEditMessage({ msg: "server error occurred" });
+                });
+            localStorage.removeItem("searchUserCredentials");
+            setSearchTerm("");
+        } else {
+            console.log("editation aborted");
+            setEditMessage({ msg: "editation canceled" });
+        }        
     }
+    
+    setTimeout(() => {
+        setEditMessage({ msg: "" });
+    }, 2500);
 
     return (
         <div className="view view__three">
@@ -129,7 +176,7 @@ function ViewThree() {
                 placeholder="which user are you looking for ..."
                 className="search__input"
                 value={searchTerm}
-                onChange={handleInputChange}
+                onChange={handleSearchInputChange}
             />
             <datalist id="usersets">
                 {users.map(user => (
@@ -306,7 +353,7 @@ function ViewThree() {
                 </button>
             </form>
             <p className="form__info">
-                "editMessage.msg"
+                {editMessage.msg}
             </p>
         </div>
     );
