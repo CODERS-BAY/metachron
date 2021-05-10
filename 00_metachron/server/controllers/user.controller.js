@@ -308,18 +308,18 @@ exports.deleteUserSet = async (req, res) => {
     const { username } = req.body;
 
     try {
-        
+
         //find user to delete
         const user = await User.findOne({
             where: {
                 username: username,
             }
         });
-        
+
         if (user === null) {
             return res.json({ msg: "no such user found" });
         }
-        
+
         // delete from event table
         await Event.destroy({
             where: {
@@ -365,4 +365,74 @@ exports.deleteUserSet = async (req, res) => {
 };
 
 
-/* update user */
+/* update userset */
+
+/* findOne userset and update (user-role-data) */
+exports.updateUserset = async (req, res) => {
+    const { uuid, username, password, userrole_id, userdata_id, firstName, lastName, address, zip, place, email, phone, github } = req.body;
+
+    let profilePic;
+    if (userrole_id === "1") {
+        profilePic = "https://image.shutterstock.com/image-vector/glowing-neon-crossed-arrows-icon-600w-1937094904.jpg";
+    }
+    else if (userrole_id === "2") {
+        profilePic = "https://image.shutterstock.com/image-vector/glowing-neon-old-wooden-wheel-600w-1937095906.jpg";
+    } else {
+        profilePic = "https://image.shutterstock.com/image-vector/glowing-neon-document-icon-isolated-600w-1606897852.jpg";
+    }
+
+    function cryptPassword(hash) {
+        return bcrypt.hashSync(hash, saltRounds);
+    }
+
+    try {
+
+        const updateUserTable = await User.findOne({
+            where: {
+                uuid: uuid
+            }
+        });
+        const updateUserdatainfoTable = await Userdatainfo.findOne({
+            where: {
+                id: userdata_id
+            }
+        });
+
+        updateUserTable.update({
+            username: username,
+            password: cryptPassword(password),
+            pic_path: profilePic,
+            userrole_id: userrole_id,
+        });
+
+        updateUserdatainfoTable.update({
+            firstName: firstName,
+            lastName: lastName,
+            address: address,
+            zip: zip,
+            place: place,
+            email: email,
+            phone: phone,
+            github: github,
+        });
+
+        const updateUserset = await User.findOne({
+            include: [
+                {
+                    model: Userrole
+                },
+                {
+                    model: Userdatainfo
+                }
+            ],
+            where: {
+                uuid: uuid
+            }
+        });
+        return res.json({ msg: "user successfully updated" });
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};

@@ -46,6 +46,9 @@ router.get("/usersets", userController.findAllUserSets);
 // create userset (user-userrole-userdata)
 router.post("/usersets", userController.createUserSet);
 
+// update userset (user-userrole-userdata)
+router.put("/usersets", userController.updateUserset);
+
 // get one userset by username (user-userrole-userdata)
 router.get("/usersets/:username", userController.findOneUserSetByUsername);
 
