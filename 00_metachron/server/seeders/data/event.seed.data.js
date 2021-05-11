@@ -1,3 +1,4 @@
+/* define eventSeedData */
 let eventSeedData = [
     {
         room: "Room A",
@@ -529,4 +530,5 @@ let eventSeedData = [
     },
 ];
 
+/* export */
 module.exports = eventSeedData;

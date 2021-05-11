@@ -1,5 +1,5 @@
+/* define user_attend_on_eventSeedData */
 let user_attend_on_eventSeedData = [
-
     /* event 1 */
     /* group 1 */
     {
@@ -1022,4 +1022,5 @@ let user_attend_on_eventSeedData = [
     },
 ];
 
+/* export */
 module.exports = user_attend_on_eventSeedData;

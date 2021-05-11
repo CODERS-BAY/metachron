@@ -92,6 +92,15 @@ function ToolBar() {
         }
     }, []);
 
+    /**
+     * useEffect cleanup
+     */
+    useEffect(() => {
+        return () => {
+            console.log("garbage collector has done its work");
+        };
+    }, []);
+
     return (
         <div>
             <div className="tool__navbar">
@@ -116,7 +125,7 @@ function ToolBar() {
                 <div className="dashboard__loggout">
                     <a href="/login" onClick={handleClickLogout}>
                         Logout
-                                </a>
+                    </a>
                 </div>
             </div>
         </div>

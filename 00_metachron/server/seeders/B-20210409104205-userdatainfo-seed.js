@@ -1,7 +1,8 @@
 'use strict';
-
+/* import seeddata */
 const userdatainfoSeedData = require("./data/userdatainfo.seed.data");
 
+/* export seed */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**

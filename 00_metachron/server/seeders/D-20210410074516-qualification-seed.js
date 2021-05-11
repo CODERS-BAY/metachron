@@ -1,7 +1,8 @@
 'use strict';
-
+/* import seeddata */
 const qualificationSeedData = require("../seeders/data/qualification.seed.data");
 
+/* export seed */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**

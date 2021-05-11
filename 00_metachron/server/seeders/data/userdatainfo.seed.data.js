@@ -1,3 +1,4 @@
+/* define userdatainfoSeedData */
 let userdatainfoSeedData = [
     {
         firstName: "Max",
@@ -241,4 +242,5 @@ let userdatainfoSeedData = [
     },
 ];
 
+/* export */
 module.exports = userdatainfoSeedData;

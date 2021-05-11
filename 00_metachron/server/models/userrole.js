@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+/* export model definition Userrole */
 module.exports = (sequelize, DataTypes) => {
   class Userrole extends Model {
     /**

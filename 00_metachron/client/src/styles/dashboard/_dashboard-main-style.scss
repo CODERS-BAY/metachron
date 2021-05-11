@@ -83,7 +83,7 @@
   /* setup dashboard sidebar */
   /********************************************************************************/
   .tool__control {
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 200px;
@@ -174,7 +174,9 @@
   transform: translateX(-200px);
 }
 .view.swipe {
-  margin-left: -200px;
+  // margin-left: -200px;
+  margin-left: 0px;
+  // margin: 0 auto;
 }
 .tool__nav__btn.swipe .tool__btn__burger {
   transform: rotate(450deg);

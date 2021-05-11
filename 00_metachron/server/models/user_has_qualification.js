@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+/* export model definition user_has_qualification */
 module.exports = (sequelize, DataTypes) => {
   class user_has_qualification extends Model {
     /**

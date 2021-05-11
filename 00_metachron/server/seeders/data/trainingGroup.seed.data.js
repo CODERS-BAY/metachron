@@ -1,3 +1,4 @@
+/* define trainingGroupSeedData */
 let trainingGroupSeedData = [
     {
         startDate: new Date("2021-01-01"),
@@ -51,4 +52,5 @@ let trainingGroupSeedData = [
     }
 ];
 
+/* export */
 module.exports = trainingGroupSeedData;

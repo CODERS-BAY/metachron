@@ -143,6 +143,15 @@ function ViewTwo() {
         window.location.href = "/dashboard/viewone";
     }
 
+    /**
+     * useEffect cleanup
+     */
+    useEffect(() => {
+        return () => {
+            console.log("garbage collector has done its work");
+        };
+    }, []);
+
     return (
         <div className="view view__two">
             <h2>Add User</h2>

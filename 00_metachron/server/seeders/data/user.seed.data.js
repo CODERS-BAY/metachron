@@ -1,5 +1,7 @@
+/* import uuid */
 const uuid = require("uuid");
 
+/* define userSeedData */
 let userSeedData = [
   {
     "uuid": uuid.v4(),
@@ -203,4 +205,5 @@ let userSeedData = [
   }
 ];
 
+/* export */
 module.exports = userSeedData;
