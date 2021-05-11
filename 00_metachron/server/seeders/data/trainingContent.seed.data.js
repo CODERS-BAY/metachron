@@ -1,3 +1,4 @@
+/* define trainingContentSeedData */
 let trainingContentSeedData = [
     {
         title: "WEB",
@@ -19,4 +20,5 @@ let trainingContentSeedData = [
     },
 ];
 
+/* export */
 module.exports = trainingContentSeedData;

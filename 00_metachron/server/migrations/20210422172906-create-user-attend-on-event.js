@@ -1,4 +1,5 @@
 'use strict';
+/* export migration user_attend_on_event */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('user_attend_on_event', {

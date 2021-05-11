@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+/* export model definition Userdatainfo */
 module.exports = (sequelize, DataTypes) => {
   class Userdatainfo extends Model {
     /**

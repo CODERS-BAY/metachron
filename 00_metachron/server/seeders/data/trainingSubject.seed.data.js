@@ -1,3 +1,4 @@
+/* define trainingSubjectSeedData */
 let trainingSubjectSeedData = [
     {
         title: "Coding 1",
@@ -26,4 +27,5 @@ let trainingSubjectSeedData = [
     },
 ];
 
+/* export */
 module.exports = trainingSubjectSeedData;

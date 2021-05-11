@@ -1,3 +1,4 @@
+/* define user_has_trainingGroupSeedData */
 let user_has_trainingGroupSeedData = [
     {
         supervisor: 2,
@@ -113,4 +114,5 @@ let user_has_trainingGroupSeedData = [
     },
 ];
 
+/* export */
 module.exports = user_has_trainingGroupSeedData;

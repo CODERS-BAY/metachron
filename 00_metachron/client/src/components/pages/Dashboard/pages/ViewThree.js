@@ -163,6 +163,15 @@ function ViewThree() {
         setEditMessage({ msg: "" });
     }, 2500);
 
+    /**
+     * useEffect cleanup
+     */
+    useEffect(() => {
+        return () => {
+            console.log("garbage collector has done its work");
+        };
+    }, []);
+
     return (
         <div className="view view__three">
             <h2>Edit User</h2>

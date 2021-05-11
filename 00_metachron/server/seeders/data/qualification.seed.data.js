@@ -1,3 +1,4 @@
+/* define qualificationSeedData */
 let qualificationSeedData = [
     {
         skillset: "HTML5",
@@ -81,4 +82,5 @@ let qualificationSeedData = [
     },
 ];
 
+/* export */
 module.exports = qualificationSeedData;

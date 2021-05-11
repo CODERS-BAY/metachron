@@ -1,5 +1,5 @@
 'use strict';
-
+/* general imports */
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -15,6 +15,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+/* define filesystem */
 fs
   .readdirSync(__dirname)
   .filter(file => {
@@ -34,4 +35,5 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 // db.Sequelize = Sequelize;
 
+/* export */
 module.exports = db;

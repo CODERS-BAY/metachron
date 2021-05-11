@@ -1,7 +1,8 @@
 'use strict';
-
+/* import seeddata */
 const user_attend_on_eventSeedData = require("./data/user_attend_on_event.seed.data");
 
+/* export seed */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**

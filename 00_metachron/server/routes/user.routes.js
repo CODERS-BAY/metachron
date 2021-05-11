@@ -1,16 +1,21 @@
+/* general imports */
 const express = require("express");
 
 const { sequelize } = require("../models");
 
+/* bcrypt import */
 const bcrypt = require("bcrypt");
 
+/* model imports */
 const { User } = require("../models");
 const { Userrole } = require("../models");
 const { Userdatainfo } = require("../models");
 const { Qualification } = require("../models");
 
+/* define express router */
 const router = express.Router();
 
+/* import controller for user routes */
 const userController = require("../controllers/user.controller.js");
 
 // create user
@@ -40,22 +45,23 @@ router.get("/userroles", userController.findAllUserroles);
 // create userdatainfo
 router.post("/userdata", userController.createUserdatainfo);
 
-// get all usersets (user-userrole-userdata)
+// get all usersets (user-userrole-userdatainfo)
 router.get("/usersets", userController.findAllUserSets);
 
-// create userset (user-userrole-userdata)
+// create userset (user-userrole-userdatainfo)
 router.post("/usersets", userController.createUserSet);
 
-// update userset (user-userrole-userdata)
+// update userset (user-userrole-userdatainfo)
 router.put("/usersets", userController.updateUserset);
 
-// get one userset by username (user-userrole-userdata)
+// get one userset by username (user-userrole-userdatainfo)
 router.get("/usersets/:username", userController.findOneUserSetByUsername);
 
-// get one userset by uuid (user-userrole-userdata)
+// get one userset by uuid (user-userrole-userdatainfo)
 router.get("/usersets/:uuid", userController.findOneUserSet);
 
-// delete userset (user-userdata)
+// delete userset (user-userdatainfo)
 router.delete("/usersets/delete", userController.deleteUserSet);
 
+/* export */
 module.exports = router;

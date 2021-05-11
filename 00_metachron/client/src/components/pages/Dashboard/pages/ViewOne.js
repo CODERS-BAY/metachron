@@ -11,7 +11,7 @@ function ViewOne() {
     const [toDelete, setToDelete] = useState({ username: "" });
     function handleDeleteClick(user, event) {
         event.preventDefault();
-        
+
         if (window.confirm(`ensure deletion of entry from database!`)) {
             console.log("deletion confirmed");
             axios.delete(`${url}usersets/delete`, {
@@ -64,15 +64,40 @@ function ViewOne() {
         userCard.style.border = "none";
     }
 
+
+    /**************************************************************** */
+    const userModal = (
+        <div className="userModal" onClick={handleModalClose}>
+            MODAL
+        </div>
+    );
+
+    function handleModalClose (event) {
+        event.preventDefault();
+        const modal = document.getElementsByClassName("userModal")[0];
+        modal.style.display = "none"; 
+        const view = document.getElementsByClassName("view")[0];
+        view.style.overflow = "auto";
+    }
+
+    function handleCardOpenClick(user, event) {
+        event.preventDefault();
+        const modal = document.getElementsByClassName("userModal")[0];
+        modal.style.display = "flex";
+        modal.innerHTML = `maybe some info about ${user.username} qualification??`;
+    }
+    /**************************************************************** */
+
     /* filtered users */
     const userFilterSnippets = users.map((user) => {
         if (user.Userrole.name === clickNavLink) {
             return (
-                <div key={user.uuid} 
-                id={user.uuid}
-                className={`userCard ${user.Userrole.name}`}
-                onMouseOver={(event) => handleMouseOver(user.uuid, event)}
-                onMouseOut={(event) => handleMouseOut(user.uuid, event)}
+                <div key={user.uuid}
+                    id={user.uuid}
+                    className={`userCard ${user.Userrole.name}`}
+                    onMouseOver={(event) => handleMouseOver(user.uuid, event)}
+                    onMouseOut={(event) => handleMouseOut(user.uuid, event)}
+                    onClick={(event) => handleCardOpenClick(user, event)}
                 >
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
@@ -105,6 +130,7 @@ function ViewOne() {
                     className={`userCard`}
                     onMouseOver={(event) => handleMouseOver(user.uuid, event)}
                     onMouseOut={(event) => handleMouseOut(user.uuid, event)}
+                    onClick={(event) => handleCardOpenClick(user, event)}
                 >
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
@@ -136,7 +162,7 @@ function ViewOne() {
     function handleAddClick() {
         window.location.href = "/dashboard/viewtwo";
     }
-   
+
     const emptyUserCard = (
         <div className="userCard emptyUserCard" onClick={handleAddClick}>
             <p>
@@ -146,7 +172,6 @@ function ViewOne() {
         </div>
     );
 
-
     const [activeLink, setActiveLink] = useState();
     useEffect(() => {
         setClickNavLink("all");
@@ -154,17 +179,25 @@ function ViewOne() {
     }, []);
 
     function handleEditClick(user, event) {
-
         const searchUserCredentials = {
             uuid: user.uuid,
             username: user.username
         }
-
         localStorage.setItem("searchUserCredentials", JSON.stringify(searchUserCredentials));
         window.location.href = "/dashboard/viewthree";
     }
 
+    /**
+     * useEffect cleanup
+     */
+    useEffect(() => {
+        return () => {
+            console.log("garbage collector has done its work");
+        };
+    }, []);
+
     return (
+        <>
         <div className="view view__one">
             <h2>List all Users</h2>
             <div className="filter-control">
@@ -187,7 +220,9 @@ function ViewOne() {
                 {emptyUserCard}
                 {userFilterSnippets}
             </div>
-        </div>
+            </div>
+            {userModal}
+        </>
     );
 }
 

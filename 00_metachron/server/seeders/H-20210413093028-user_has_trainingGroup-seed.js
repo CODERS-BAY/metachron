@@ -1,7 +1,8 @@
 'use strict';
-
+/* import seeddata */
 const user_has_trainingGroupSeedData = require("../seeders/data/user_has_trainingGroup.seed.data");
 
+/* export seed */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**

@@ -1,7 +1,9 @@
+/* general imports */
 const express = require("express");
 
 const { sequelize } = require("../models");
 
+/* model imports */
 const { User } = require("../models");
 const { Userrole } = require("../models");
 const { Userdatainfo } = require("../models");
@@ -17,11 +19,11 @@ const { TrainingSubject } = require("../models");
 const { TrainingContent } = require("../models");
 
 
-
+/* bcrypt import */
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
-/* create user */
+/* route create user */
 exports.createUser = async (req, res) => {
     const { username, password, pic_path, userrole_id, userdata_id } = req.body;
     try {
@@ -40,7 +42,7 @@ exports.createUser = async (req, res) => {
     }
 };
 
-/* create user role */
+/* route create userrole */
 exports.createUserRole = async (req, res) => {
     const { name } = req.body;
     try {
@@ -55,7 +57,7 @@ exports.createUserRole = async (req, res) => {
     }
 };
 
-/* create user data */
+/* route create userdatainfo */
 exports.createUserdatainfo = async (req, res) => {
     const { firstName, lastName, address, zip, place, email, phone, github } = req.body;
     try {
@@ -77,7 +79,7 @@ exports.createUserdatainfo = async (req, res) => {
     }
 };
 
-/* create user set **************************************************/
+/* route create userset */
 exports.createUserSet = async (req, res) => {
     const { username, password, userrole_id, firstName, lastName, address, zip, place, email, phone, github } = req.body;
 
@@ -122,7 +124,7 @@ exports.createUserSet = async (req, res) => {
     }
 };
 
-/* findOne user by uuid */
+/* route findOne user by uuid */
 exports.findOneUser = async (req, res) => {
     const uuid = req.params.uuid;
     try {
@@ -138,7 +140,7 @@ exports.findOneUser = async (req, res) => {
     }
 };
 
-/* findDuplicate user by username ******************************/
+/* route findDuplicate user by username */
 exports.findDuplicateUser = async (req, res) => {
     const { username } = req.body;
     try {
@@ -157,7 +159,8 @@ exports.findDuplicateUser = async (req, res) => {
         return res.status(500).json(error);
     }
 };
-/* findDuplicate user email ******************************/
+
+/* route findDuplicate user by email */
 exports.findDuplicateUserEmail = async (req, res) => {
     const { email } = req.body;
     try {
@@ -177,7 +180,7 @@ exports.findDuplicateUserEmail = async (req, res) => {
     }
 };
 
-/* verify User by username and password */
+/* route verify user by username and password */
 exports.verifyUser = async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -213,7 +216,7 @@ exports.verifyUser = async (req, res) => {
     }
 };
 
-/* findAll users */
+/* route findAll users */
 exports.findAllUsers = async (req, res) => {
     try {
         const users = await User.findAll();
@@ -224,7 +227,7 @@ exports.findAllUsers = async (req, res) => {
     }
 };
 
-/* findAll userroles */
+/* route findAll userroles */
 exports.findAllUserroles = async (req, res) => {
     try {
         const userrole = await Userrole.findAll();
@@ -235,7 +238,7 @@ exports.findAllUserroles = async (req, res) => {
     }
 };
 
-/* findAll usersets (user-role-data) */
+/* route findAll usersets (user-userrole-userdatainfo) */
 exports.findAllUserSets = async (req, res) => {
     try {
         const usersets = await User.findAll({
@@ -255,7 +258,7 @@ exports.findAllUserSets = async (req, res) => {
     }
 };
 
-/* findOne userset by uuid (user-role-data) */
+/* route findOne userset by uuid (user-userrole-userdatainfo) */
 exports.findOneUserSet = async (req, res) => {
     const uuid = req.params.uuid;
     try {
@@ -279,7 +282,7 @@ exports.findOneUserSet = async (req, res) => {
     }
 };
 
-/* findOne userset by username (user-role-data) */
+/* route findOne userset by username (user-userrole-userdatainfo) */
 exports.findOneUserSetByUsername = async (req, res) => {
     const username = req.params.username;
     try {
@@ -303,7 +306,7 @@ exports.findOneUserSetByUsername = async (req, res) => {
     }
 };
 
-/* delete userset by username */
+/* route delete userset by username (user-userrole-userdatainfo) */
 exports.deleteUserSet = async (req, res) => {
     const { username } = req.body;
 
@@ -365,9 +368,7 @@ exports.deleteUserSet = async (req, res) => {
 };
 
 
-/* update userset */
-
-/* findOne userset and update (user-role-data) */
+/* route findeOne userset and update (user-userrole-userdatainfo) */
 exports.updateUserset = async (req, res) => {
     const { uuid, username, password, userrole_id, userdata_id, firstName, lastName, address, zip, place, email, phone, github } = req.body;
 
@@ -386,7 +387,6 @@ exports.updateUserset = async (req, res) => {
     }
 
     try {
-
         const updateUserTable = await User.findOne({
             where: {
                 uuid: uuid
@@ -430,7 +430,7 @@ exports.updateUserset = async (req, res) => {
             }
         });
         return res.json({ msg: "user successfully updated" });
-        
+
     } catch (error) {
         console.log(error);
         return res.status(500).json(error);

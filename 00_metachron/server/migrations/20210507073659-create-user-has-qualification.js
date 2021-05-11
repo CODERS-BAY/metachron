@@ -1,4 +1,5 @@
 'use strict';
+/* export migration user_has_qualification */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('user_has_qualification', {

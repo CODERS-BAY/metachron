@@ -1,4 +1,5 @@
 'use strict';
+/* export migration qualification */
 module.exports = {
   up: async (queryInterface, DataTypes) => {
     await queryInterface.createTable('qualification', {

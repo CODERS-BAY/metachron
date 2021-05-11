@@ -1,4 +1,5 @@
 "use strict";
+/* export migration userrole */
 module.exports = {
   up: async (queryInterface, DataTypes) => {
     await queryInterface.createTable("userrole", {

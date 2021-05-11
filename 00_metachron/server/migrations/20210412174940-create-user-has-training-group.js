@@ -1,4 +1,5 @@
 'use strict';
+/* export migration user_has_trainingGroup */
 module.exports = {
   up: async (queryInterface, DataTypes) => {
     await queryInterface.createTable('user_has_trainingGroup', {

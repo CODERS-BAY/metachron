@@ -564,7 +564,7 @@ body .overflow {
 }
 
 .about__section .lines .line::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 15vh;
@@ -1239,7 +1239,7 @@ footer .footer__legal {
 }
 
 .container__dashboard .tool__control {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 200px;
@@ -1356,7 +1356,7 @@ footer .footer__legal {
 }
 
 .view.swipe {
-  margin-left: -200px;
+  margin-left: 0px;
 }
 
 .tool__nav__btn.swipe .tool__btn__burger {
@@ -1365,6 +1365,7 @@ footer .footer__legal {
 }
 
 .view {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -1376,9 +1377,10 @@ footer .footer__legal {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 80px 10px;
+  margin-left: 200px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  padding: 80px 10px;
 }
 
 .view__main__dashboard {
@@ -1392,10 +1394,24 @@ footer .footer__legal {
 /********************************************************************************/
 /* setup list all/filter users-grid */
 /********************************************************************************/
-.view__one {
-  min-height: 100%;
+.userModal {
+  position: fixed;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  position: relative;
+  height: 100vh;
+  background: black;
+  opacity: 1;
+  color: white;
+  cursor: pointer;
+}
+
+.view__one {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1444,10 +1460,6 @@ footer .footer__legal {
 
 .view__one .filter-control ul .filter--link--active {
   color: black;
-}
-
-.view__one .filter-control .red {
-  background: red;
 }
 
 .view__one .card-container {
@@ -1759,8 +1771,8 @@ footer .footer__legal {
 
 .view__three .search__input {
   width: 50%;
-  padding: .5rem;
-  margin: .5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
   border: 1px solid #379bff;
   color: #379bff;
   padding-left: 0.5rem;

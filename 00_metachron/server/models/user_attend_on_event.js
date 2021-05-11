@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+/* export model definition user_attend_on_event */
 module.exports = (sequelize, DataTypes) => {
   class user_attend_on_event extends Model {
     /**

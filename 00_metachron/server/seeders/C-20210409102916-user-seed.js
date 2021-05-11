@@ -1,10 +1,12 @@
 'use strict';
-
+/* import seeddata */
 const userSeedData = require("./data/user.seed.data");
-const bcrypt = require("bcrypt");
 
+/* import bcrypt */
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+/* hash password information */
 function cryptPassword(password) {
   return bcrypt.hashSync(password, saltRounds);
 }
@@ -19,7 +21,7 @@ function getData() {
 }
 const data = getData();
 
-
+/* export seed */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**

@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+/* export model definition Event */
 module.exports = (sequelize, DataTypes) => {
   class Event extends Model {
     /**

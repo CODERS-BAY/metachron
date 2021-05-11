@@ -1,3 +1,4 @@
+/* define user_has_qualificationSeedData */
 let user_has_qualificationSeedData = [
     {
         user_id: 1,
@@ -385,4 +386,5 @@ let user_has_qualificationSeedData = [
     },
 ];
 
+/* export */
 module.exports = user_has_qualificationSeedData;

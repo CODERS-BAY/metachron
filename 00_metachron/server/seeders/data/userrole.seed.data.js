@@ -1,3 +1,4 @@
+/* define userroleSeedData */
 let userroleSeedData = [
     {
         name: "admin",
@@ -16,4 +17,5 @@ let userroleSeedData = [
     }
 ];
 
+/* export */
 module.exports = userroleSeedData;

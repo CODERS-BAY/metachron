@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+/* export model definition Qualification */
 module.exports = (sequelize, DataTypes) => {
   class Qualification extends Model {
     /**
