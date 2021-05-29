@@ -63,5 +63,11 @@ router.get("/usersets/:uuid", userController.findOneUserSet);
 // delete userset (user-userdatainfo)
 router.delete("/usersets/delete", userController.deleteUserSet);
 
+// get all qualifications
+router.get("/qualifications", userController.findAllQualifications);
+
+// get all trainer usersets with their qualifications
+router.get("/trainersets/qualifications", userController.findAllUserSetsWithQualifications);
+
 /* export */
 module.exports = router;

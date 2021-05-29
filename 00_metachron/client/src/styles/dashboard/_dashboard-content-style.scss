@@ -21,22 +21,6 @@
 /********************************************************************************/
 /* setup list all/filter users-grid */
 /********************************************************************************/
-.userModal {
-    position: fixed;
-    
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    opacity: 1;
-    color: white;
-    cursor: pointer;
-  }
-
-
 .view__one {
   display: flex;
   flex-direction: column;
@@ -61,7 +45,8 @@
         cursor: pointer;
         color: lightgray;
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: rgb(55, 155, 255);
         }
         &:focus {
@@ -103,6 +88,36 @@
         height: 150px;
         background-color: white;
         clip-path: polygon(
+          33% 0%,
+          66% 0%,
+          66% 33%,
+          99% 33%,
+          99% 66%,
+          66% 66%,
+          66% 99%,
+          33% 99%,
+          33% 66%,
+          0% 66%,
+          0% 33%,
+          33% 33%
+        );
+
+        -moz-clip-path: polygon(
+          33% 0%,
+          66% 0%,
+          66% 33%,
+          99% 33%,
+          99% 66%,
+          66% 66%,
+          66% 99%,
+          33% 99%,
+          33% 66%,
+          0% 66%,
+          0% 33%,
+          33% 33%
+        );
+        
+        -webkit-clip-path: polygon(
           33% 0%,
           66% 0%,
           66% 33%,
@@ -373,8 +388,104 @@
   }
 }
 
+/********************************************************************************/
+/* setup qualifications */
+/********************************************************************************/
 .view__four {
-  background: lightpink;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    padding: 1rem;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+
+    .trainerCard {
+      position: relative;
+      padding: 2rem;
+      height: 100%;
+      font-size: 0.95rem;
+      background-color: snow;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      line-height: 1.3rem;
+      // cursor: pointer;
+      pointer-events: none;
+
+      perspective: 1000px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+
+      .card__txt {
+        font-family: "Playfair Display", serif;
+      }
+
+      .card__line {
+        width: 75%;
+        height: 3px;
+        background-color: rgb(55, 155, 255);
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1rem;
+        background-color: rgb(55, 155, 255);
+        width: 50px;
+        height: auto;
+        clip-path: circle();
+      }
+
+      // p {
+      //   margin-bottom: 0.7rem;
+      //   pointer-events: none;
+      // }
+
+      .skillsets {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        // padding: .5rem;
+        border: 1px solid red;
+        
+        .skills {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          pointer-events: visible;
+          
+          min-width: fit-content;
+          border: 1px solid red;
+          padding: .15rem;
+          
+          & label {
+            // cursor: pointer;
+            background: lightblue;
+          }
+          
+          & input[type=checkbox] {
+            // cursor: pointer;
+            background: grey;
+          }
+          
+          &:hover {
+            // background: yellow;
+          }
+        }
+      }
+    }
+  }
 }
 
 .view__five {

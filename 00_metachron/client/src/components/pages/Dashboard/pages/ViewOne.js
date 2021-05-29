@@ -50,9 +50,13 @@ function ViewOne() {
     const [clickNavLink, setClickNavLink] = useState([]);
     function handleClickFilter(event) {
         event.preventDefault();
-        setClickNavLink(event.target.getAttribute("value"));
+        let value = event.target.getAttribute("value");
+        
+        if (value === "all") setClickNavLink("all");
+        else if (value === "admin") setClickNavLink("admin");
+        else if (value === "trainer") setClickNavLink("trainer");
+        else if (value === "student") setClickNavLink("student");
     }
-
 
     /* border for hover usercards */
     function handleMouseOver(uuid, event) {
@@ -64,30 +68,6 @@ function ViewOne() {
         userCard.style.border = "none";
     }
 
-
-    /**************************************************************** */
-    const userModal = (
-        <div className="userModal" onClick={handleModalClose}>
-            MODAL
-        </div>
-    );
-
-    function handleModalClose (event) {
-        event.preventDefault();
-        const modal = document.getElementsByClassName("userModal")[0];
-        modal.style.display = "none"; 
-        const view = document.getElementsByClassName("view")[0];
-        view.style.overflow = "auto";
-    }
-
-    function handleCardOpenClick(user, event) {
-        event.preventDefault();
-        const modal = document.getElementsByClassName("userModal")[0];
-        modal.style.display = "flex";
-        modal.innerHTML = `maybe some info about ${user.username} qualification??`;
-    }
-    /**************************************************************** */
-
     /* filtered users */
     const userFilterSnippets = users.map((user) => {
         if (user.Userrole.name === clickNavLink) {
@@ -97,7 +77,6 @@ function ViewOne() {
                     className={`userCard ${user.Userrole.name}`}
                     onMouseOver={(event) => handleMouseOver(user.uuid, event)}
                     onMouseOut={(event) => handleMouseOut(user.uuid, event)}
-                    onClick={(event) => handleCardOpenClick(user, event)}
                 >
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
@@ -130,7 +109,6 @@ function ViewOne() {
                     className={`userCard`}
                     onMouseOver={(event) => handleMouseOver(user.uuid, event)}
                     onMouseOut={(event) => handleMouseOut(user.uuid, event)}
-                    onClick={(event) => handleCardOpenClick(user, event)}
                 >
                     <img src={user.pic_path} alt={`profile-pic-${user.username}`} />
                     <p>
@@ -220,8 +198,8 @@ function ViewOne() {
                 {emptyUserCard}
                 {userFilterSnippets}
             </div>
-            </div>
-            {userModal}
+        </div>
+
         </>
     );
 }
