@@ -436,3 +436,42 @@ exports.updateUserset = async (req, res) => {
         return res.status(500).json(error);
     }
 };
+
+/* route findAll qualifications */
+exports.findAllQualifications = async (req, res) => {
+    try {
+        const qualification = await Qualification.findAll();
+        return res.json(qualification);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};
+
+
+/************************************************************************* */
+/* route findAll usersets (user-userrole-userdatainfo-qualifications) */
+exports.findAllUserSetsWithQualifications = async (req, res) => {
+    try {
+        const trainerSets = await User.findAll({
+            include: [
+                {
+                    model: Userrole
+                },
+                {
+                    model: Userdatainfo
+                },
+                {
+                    model: Qualification
+                }
+            ],
+            where: {
+                userrole_id: 2
+            }
+        });
+        return res.json(trainerSets);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+};

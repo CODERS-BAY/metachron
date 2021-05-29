@@ -30,7 +30,7 @@ const MenuItems = [
     {
         id:5,
         to: "/dashboard/viewfour",
-        name: "ViewFour",
+        name: "Qualifications",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
