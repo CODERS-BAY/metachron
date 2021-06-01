@@ -20,6 +20,12 @@ const Routes = () => (
         <Route exact path="/dashboard/viewtwo" component={Dashboard} />
         <Route exact path="/dashboard/viewthree" component={Dashboard} />
         <Route exact path="/dashboard/viewfour" component={Dashboard} />
+        <Route exact path="/dashboard/viewfive" component={Dashboard} />
+        <Route exact path="/dashboard/viewsix" component={Dashboard} />
+        <Route exact path="/dashboard/viewseven" component={Dashboard} />
+        <Route exact path="/dashboard/vieweight" component={Dashboard} />
+        <Route exact path="/dashboard/viewnine" component={Dashboard} />
+        <Route exact path="/dashboard/viewten" component={Dashboard} />
         {/* 404 */}
         <Route component={PageNotFound} />
     </Switch>

@@ -125,6 +125,7 @@
         height: 100%;
         color: black;
         text-decoration: none;
+        transition: all 0.25s ease-in-out;
 
         &:hover {
           background-color: rgb(221, 221, 221);
@@ -149,6 +150,7 @@
     cursor: pointer;
     width: 200px;
     background: black;
+    transition: all 0.25s ease-in-out;
 
     & a {
       padding: 0.5rem;
@@ -159,6 +161,7 @@
       height: 50px;
       color: white;
       text-decoration: none;
+      transition: all 0.25s ease-in-out;
 
       &:hover {
         background-color: rgb(55, 155, 255);

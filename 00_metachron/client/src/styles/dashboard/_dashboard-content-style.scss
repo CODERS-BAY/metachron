@@ -116,7 +116,7 @@
           0% 33%,
           33% 33%
         );
-        
+
         -webkit-clip-path: polygon(
           33% 0%,
           66% 0%,
@@ -457,28 +457,30 @@
         flex-wrap: wrap;
         // padding: .5rem;
         border: 1px solid red;
-        
+
         .skills {
           display: flex;
           justify-content: center;
           align-items: center;
 
           pointer-events: visible;
-          
+
           min-width: fit-content;
           border: 1px solid red;
-          padding: .15rem;
-          
+          padding: 0.15rem;
+
           & label {
-            // cursor: pointer;
+            // padding: 0.15rem;
+            cursor: pointer;
+            font-size: 0.95rem;
             background: lightblue;
           }
-          
-          & input[type=checkbox] {
-            // cursor: pointer;
+
+          & input[type="checkbox"] {
+            cursor: pointer;
             background: grey;
           }
-          
+
           &:hover {
             // background: yellow;
           }
@@ -488,8 +490,124 @@
   }
 }
 
+/********************************************************************************/
+/* setup add a new qualification */
+/********************************************************************************/
 .view__five {
-  background: lightcoral;
+  flex-direction: column;
+
+  h2 {
+    padding: 1rem;
+  }
+
+  .__form {
+    padding: 2rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    width: clamp(50%, 100%, 500px);
+    height: 100%;
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+
+    font-size: 0.95rem;
+
+    .form__label {
+      text-align: center;
+      margin: auto 0;
+      border: 1px solid red;
+    }
+
+    ul.cloud {
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid red;
+      list-style: none;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      grid-auto-rows: auto;
+      grid-auto-flow: dense;
+      
+      gap: .25rem;
+      
+      li {
+        padding: .25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        background: lightgrey;
+        
+        p {
+          line-height: .75rem;
+        }
+      }
+    }
+    
+    
+  }
+
+  .form__info {
+    padding: 1rem;
+  }
+
+  input,
+  select {
+    border: 1px solid rgb(55, 155, 255);
+    color: rgb(55, 155, 255);
+    padding-left: 0.5rem;
+
+    &:focus {
+      background: rgb(55, 155, 255);
+      color: white;
+      outline: none;
+      border: 2px solid rgb(55, 155, 255);
+    }
+  }
+
+  input::placeholder {
+    padding-left: 0.5rem;
+    color: rgb(55, 155, 255);
+  }
+
+  .form__btn {
+    width: 100%;
+    height: 20px;
+    background: rgb(55, 155, 255);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    margin: 0.25rem auto;
+
+    pointer-events: none;
+
+    &:hover,
+    &:focus {
+      background: black;
+      outline: none;
+      color: white;
+      // border: 1px solid rgb(55, 155, 255);
+    }
+  }
+
+  .invalid {
+    background-color: rgba(255, 0, 0, 0.25) !important;
+    border: 2px solid red !important;
+    color: red;
+  }
+  
+  .danger {
+    background-color: rgba(255, 0, 0, 0.25) !important;
+    color: red !important;
+  }
 }
 
 .view__six {

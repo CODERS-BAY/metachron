@@ -30,14 +30,14 @@ const MenuItems = [
     {
         id:5,
         to: "/dashboard/viewfour",
-        name: "Qualifications",
+        name: " List all Trainer Qualifications",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {
         id:6,
         to: "/dashboard/viewfive",
-        name: "ViewFive",
+        name: "Qualifications",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
