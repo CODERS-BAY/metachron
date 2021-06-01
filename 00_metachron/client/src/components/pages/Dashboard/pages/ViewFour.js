@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Skillboard from "../partials/SkillBoard";
 
 function ViewFour() {
 
@@ -21,64 +20,15 @@ function ViewFour() {
 
     /******************************/
 
-
-    /* all skills */
-    const [allPossibleSkills, setAllPossibleSkills] = useState([]);
-    useEffect(() => {
-        axios.get(`${url}qualifications`)
-            .then((response) => {
-                // console.log(response.data);
-                setAllPossibleSkills(response.data);
-            }).catch((error) => {
-                console.log(error);
-            });
-    }, []);
-
-    const [checked, setChecked] = useState(true);
-
-    function handleChangeCheck() {
-        console.log("handleChangeCheck working");
-    }
-
     /* filtered trainers */
     const trainerSnippets = trainers.map((trainer) => {
         if (trainer.Userrole.name === "trainer") {
-        
+
             const trainerSkillArray = [];
-            trainer.Qualifications.map((qual) => {
-                trainerSkillArray.push(qual.skillset);
-                return null;
+            trainer.Qualifications.forEach((skill) => {
+                trainerSkillArray.push(skill.id);
             });
 
-            const completeSkillSet = allPossibleSkills.map((skill) => {
-                if (trainerSkillArray.includes(skill.skillset)) {
-                    return (
-                        <div className="skills" key={skill.skillset}>
-                            <input 
-                                type="checkbox" 
-                                id={skill.skillset} 
-                                name={skill.skillset} 
-                                defaultChecked={checked}
-                                onChange={() => setChecked(!checked)}
-                            />
-                            <label htmlFor={skill.skillset}>{skill.skillset}</label>
-                        </div>
-                    );
-                } else {
-                    return (
-                        <div className="skills" key={skill.skillset}>
-                            <input 
-                                type="checkbox" 
-                                id={skill.skillset}
-                                name={skill.skillset} 
-                                onChange={() => setChecked(!checked)}
-                            />
-                            <label htmlFor={skill.skillset}>{skill.skillset}</label>
-                        </div>
-                    );
-                }
-
-            });
 
             return (
                 <div key={trainer.uuid}
@@ -94,7 +44,7 @@ function ViewFour() {
                         Qualifications:
                         <br />
                         <div className="skillsets">
-                            {completeSkillSet}
+                            <Skillboard trainerSkillArray={trainerSkillArray} />
                         </div>
                     </div>
                 </div>
