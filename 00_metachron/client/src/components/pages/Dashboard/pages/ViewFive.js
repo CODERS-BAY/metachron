@@ -5,8 +5,8 @@ function ViewFive() {
 
     const url = "http://localhost:3001/";
 
+    // get all possible and existing qualifications
     const [allPossibleSkills, setAllPossibleSkills] = useState([]);
-
     useEffect(() => {
         axios.get(`${url}qualifications`)
             .then((response) => {
@@ -45,7 +45,7 @@ function ViewFive() {
         }
     }
 
-    // check input and set event btn
+    // disable button for check input and set event btn
     useEffect(() => {
         const btn = document.getElementById("addQualification");
         if (addValidation) {
@@ -55,7 +55,7 @@ function ViewFive() {
         }
     }, [addValidation]);
 
-
+    // existing skills li elements for render
     const existingSkills = allPossibleSkills.map((skill) => {
         if (inputAddQualification.toLowerCase() === skill.skillset.toLowerCase()) {
             return (
@@ -74,10 +74,6 @@ function ViewFive() {
 
     /* on submit create qualification */
     function onSubmit(event) {
-
-
-        console.log("submit working");
-
         const createQualification = {
             skillset: inputAddQualification.toUpperCase()
         }
@@ -101,11 +97,57 @@ function ViewFive() {
         }
     }
 
+    // disable button for deleting a qualification
+    const [deleteValidation, setDeleteValidation] = useState(false);
+    useEffect(() => {
+        const btn = document.getElementById("deleteQualification");
+        if (deleteValidation) {
+            btn.style.pointerEvents = "all";
+        } else {
+            btn.style.pointerEvents = "none";
+        }
+    }, [deleteValidation]);
 
-    // setTimeout(() => {
-    //     setAddMessage("");
-    // }, 2500);
+    // get value of skill to delete
+    const [skillToDelete, setSkillToDelete] = useState("");
+    function handleListChangeQualifications(event) {
+        if (event.target.value !== "DEFAULT") {
+            setDeleteValidation(true);
+            setSkillToDelete(event.target.value);
+            console.log("selected qualification to delete: " + event.target.value);
+        } else {
+            console.log("no selected qualification to delete");
+        }
+    }
 
+    /* on delete create qualification */
+    function onDelete(event) {
+        if (window.confirm(`ensure deletion of entry!`)) {
+            console.log("deletion confirmed");
+            axios.delete(`${url}qualifications/delete`, {
+                data: {
+                        skillset: skillToDelete,
+                    }
+                })
+                .then((response) => {
+                    // console.log(response.data);
+                    console.log("qualification successfully deleted");
+                    setAddMessage({ msg: "qualification successfully deleted" });
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setAddMessage({ msg: "server error occurred" });
+                });
+        } else {
+            event.preventDefault();
+            console.log("deletion aborted");
+            setAddMessage({ msg: "deletion aborted" });
+        }
+    }
+
+    setTimeout(() => {
+        setAddMessage("");
+    }, 2500);
 
     /**
      * useEffect cleanup
@@ -120,11 +162,29 @@ function ViewFive() {
         <div className="view view__five">
             <h2>Qualifications</h2>
 
-            <form className="__form" autoComplete="none" id="qualifications" onSubmit={onSubmit}>
+            <form className="__form" autoComplete="none" id="qualifications">
                 <label className="form__label" htmlFor="txt">all existing qualifications</label>
                 <ul className="cloud">
                     {existingSkills}
                 </ul>
+
+                <label htmlFor="allQualifications" className="form__label">delete a specific qualification?</label>
+                <select id="allQualifications" name="allQualifications" defaultValue="DEFAULT" onChange={handleListChangeQualifications}>
+                    <option value="DEFAULT">-- which qualification are you looking for ...</option>
+                    {allPossibleSkills.map(skill => (
+                        <option key={skill.id} value={skill.skillset}>
+                            {skill.skillset}
+                        </option>
+                    ))}
+                </select>
+                <button
+                    className="form__btn"
+                    id="deleteQualification"
+                    name="deleteQualification"
+                    onClick={onDelete}
+                >
+                    delete qualification
+                </button>
 
                 <label htmlFor={inputAddQualification} className="form__label">which qualification do you want to add?</label>
                 <input
@@ -141,6 +201,7 @@ function ViewFive() {
                     className="form__btn"
                     id="addQualification"
                     name="addQualification"
+                    onClick={onSubmit}
                 >
                     add qualification
                 </button>
@@ -154,33 +215,3 @@ function ViewFive() {
 }
 
 export default ViewFive;
-
-
-
-
-
-// <label htmlFor="allQualifications" className="form__label">delete a specific qualification?</label>
-//                 <input
-//                     type="text"
-//                     list="allQualifications"
-//                     name="allQualifications"
-//                     id="allQualifications"
-//                     placeholder="which qualification are you looking for ..."
-//                     className="search__input"
-//                     value=""
-//                     onChange=""
-//                 />
-//                 <datalist id="allQualifications">
-//                     {allPossibleSkills.map(skill => (
-//                         <option
-//                             key={skill.id}
-//                             value={skill.skillset}
-//                         />
-//                     ))}
-//                 </datalist>
-//                 <button
-//                     className="form__btn"
-//                     name="deleteQualification"
-//                 >
-//         delete qualification
-//                 </button>

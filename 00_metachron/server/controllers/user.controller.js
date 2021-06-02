@@ -463,6 +463,37 @@ exports.createQualification = async (req, res) => {
     }
 };
 
+/****************************************************************************** */
+/* route delete qualification */
+exports.deleteQualification = async (req, res) => {
+    const { skillset } = req.body;
+    try {
+        
+        // find qualification to delete
+        const qualification = await Qualification.findOne({
+            where: { 
+                skillset: skillset
+            }
+        });
+
+        if (qualification === null) {
+            return res.json({ msg: "no such qualification found" });
+        }
+
+        // delete from qualification table
+        await Qualification.destroy({
+            where: {
+                skillset: skillset
+            }
+        });
+
+        return res.json({ msg: `qualification ${skillset} successfully deleted` });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json(error);
+    }
+};
+
 /* route findAll trainersets (user-userrole-userdatainfo-qualifications) */
 exports.findAllUserSetsWithQualifications = async (req, res) => {
     try {
