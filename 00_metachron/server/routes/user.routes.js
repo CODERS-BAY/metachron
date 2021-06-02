@@ -63,6 +63,9 @@ router.get("/usersets/:uuid", userController.findOneUserSet);
 // delete userset (user-userdatainfo)
 router.delete("/usersets/delete", userController.deleteUserSet);
 
+// delete userset (user-userdatainfo)
+router.delete("/qualifications/delete", userController.deleteQualification);
+
 // get all qualifications
 router.get("/qualifications", userController.findAllQualifications);
 
