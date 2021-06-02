@@ -20,7 +20,10 @@ function SkillBoard(props) {
     function onHandleChange(event) {
         event.preventDefault();
         console.log("onHandleChange working");
+    
     }
+
+
 
 
     const wholeSkillBoard = allPossibleSkills.map((skill, idx) => {

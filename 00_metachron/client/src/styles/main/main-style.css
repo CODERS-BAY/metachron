@@ -1912,7 +1912,7 @@ footer .footer__legal {
 
 .view__four .card-container .trainerCard .skillsets .skills label {
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   background: lightblue;
 }
 
@@ -1955,13 +1955,11 @@ footer .footer__legal {
 .view__five .__form .form__label {
   text-align: center;
   margin: auto 0;
-  border: 1px solid red;
 }
 
 .view__five .__form ul.cloud {
   width: 100%;
   height: 100%;
-  border: 1px solid red;
   list-style: none;
   display: -ms-grid;
   display: grid;
@@ -1983,10 +1981,17 @@ footer .footer__legal {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: lightgrey;
+  background: #379bff;
+  color: white;
+}
+
+.view__five .__form ul.cloud li:hover {
+  color: #379bff;
+  background: rgba(55, 155, 255, 0.25);
 }
 
 .view__five .__form ul.cloud li p {
+  font-size: 0.8rem;
   line-height: .75rem;
 }
 
@@ -2040,7 +2045,6 @@ footer .footer__legal {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   margin: 0.25rem auto;
-  pointer-events: none;
 }
 
 .view__five .form__btn:hover, .view__five .form__btn:focus {

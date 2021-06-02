@@ -448,9 +448,22 @@ exports.findAllQualifications = async (req, res) => {
     }
 };
 
+/* route create qualification */
+exports.createQualification = async (req, res) => {
+    const { skillset } = req.body;
+    try {
+        const qualification = await Qualification.create({
+            skillset: skillset,
+        });
+        return res.json(qualification);
 
-/************************************************************************* */
-/* route findAll usersets (user-userrole-userdatainfo-qualifications) */
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json(error);
+    }
+};
+
+/* route findAll trainersets (user-userrole-userdatainfo-qualifications) */
 exports.findAllUserSetsWithQualifications = async (req, res) => {
     try {
         const trainerSets = await User.findAll({

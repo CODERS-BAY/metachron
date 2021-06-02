@@ -11,7 +11,7 @@ let qualificationSeedData = [
         updatedAt: new Date()
     },
     {
-        skillset: "JavaScript",
+        skillset: "JAVASCRIPT",
 /*3*/     createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -36,47 +36,47 @@ let qualificationSeedData = [
         updatedAt: new Date()
     },
     {
-        skillset: "Bootstrap",
+        skillset: "BOOTSTRAP",
 /*8*/     createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "jQuery",
+        skillset: "JQUERY",
 /*9*/     createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "Laravel",
+        skillset: "LARAVEL",
 /*10*/    createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "React",
+        skillset: "REACT",
 /*11*/    createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "NodeJs",
+        skillset: "NODEJS",
 /*12*/    createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "Angular",
+        skillset: "ANGULAR",
 /*13*/    createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "Datenbanken",
+        skillset: "DATENBANKEN",
 /*14*/    createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "Netzwerktechnik",
+        skillset: "NETZWERKTECHNIK",
 /*15*/    createdAt: new Date(),
         updatedAt: new Date()
     },
     {
-        skillset: "Linux",
+        skillset: "LINUX",
 /*16*/    createdAt: new Date(),
         updatedAt: new Date()
     },

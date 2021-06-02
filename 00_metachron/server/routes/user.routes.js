@@ -66,6 +66,9 @@ router.delete("/usersets/delete", userController.deleteUserSet);
 // get all qualifications
 router.get("/qualifications", userController.findAllQualifications);
 
+// create qualification
+router.post("/qualifications", userController.createQualification);
+
 // get all trainer usersets with their qualifications
 router.get("/trainersets/qualifications", userController.findAllUserSetsWithQualifications);
 
