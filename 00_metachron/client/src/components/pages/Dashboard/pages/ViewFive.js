@@ -9,15 +9,15 @@ function ViewFive() {
 
     useEffect(() => {
         axios.get(`${url}qualifications`)
-        .then((response) => {
-            // console.log(response.data);
-            setAllPossibleSkills(response.data);
-        }).catch((error) => {
-            console.log(error);
-        });
+            .then((response) => {
+                // console.log(response.data);
+                setAllPossibleSkills(response.data);
+            }).catch((error) => {
+                console.log(error);
+            });
     }, []);
-    
-    
+
+
     const skillsArray = [];
     allPossibleSkills.forEach(skill => {
         skillsArray.push(skill.skillset.toLowerCase());
@@ -27,16 +27,34 @@ function ViewFive() {
     const [inputAddQualification, setInputAddQualification] = useState("");
     const [invalid, setInvalid] = useState("");
 
+    const [addValidation, setAddValidation] = useState(false);
+    const [addMessage, setAddMessage] = useState("");
+
     function handleInputChange(event) {
         event.preventDefault();
         setInputAddQualification(event.target.value);
         // console.log(event.target.value);
         if (skillsArray.includes(event.target.value)) {
             setInvalid({ class: "invalid" });
+            setAddValidation(false);
+            setAddMessage({ msg: "this qualification already exists" })
         } else {
             setInvalid({ class: "" });
+            setAddValidation(true);
+            setAddMessage({ msg: "ready to add new qualification" })
         }
     }
+
+    // check input and set event btn
+    useEffect(() => {
+        const btn = document.getElementById("addQualification");
+        if (addValidation) {
+            btn.style.pointerEvents = "all";
+        } else {
+            btn.style.pointerEvents = "none";
+        }
+    }, [addValidation]);
+
 
     const existingSkills = allPossibleSkills.map((skill) => {
         if (inputAddQualification.toLowerCase() === skill.skillset.toLowerCase()) {
@@ -54,6 +72,41 @@ function ViewFive() {
         }
     });
 
+    /* on submit create qualification */
+    function onSubmit(event) {
+
+
+        console.log("submit working");
+
+        const createQualification = {
+            skillset: inputAddQualification.toUpperCase()
+        }
+
+        if (window.confirm(`ensure insertion of entry!`)) {
+            console.log("insertion confirmed");
+            axios.post(`${url}qualifications`, createQualification)
+                .then((response) => {
+                    // console.log(response.data);
+                    console.log("qualification successfully inserted");
+                    setAddMessage({ msg: "qualification successfully inserted" });
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setAddMessage({ msg: "server error occurred" });
+                });
+        } else {
+            event.preventDefault();
+            console.log("insertion aborted");
+            setAddMessage({ msg: "insertion aborted" });
+        }
+    }
+
+
+    // setTimeout(() => {
+    //     setAddMessage("");
+    // }, 2500);
+
+
     /**
      * useEffect cleanup
      */
@@ -67,7 +120,7 @@ function ViewFive() {
         <div className="view view__five">
             <h2>Qualifications</h2>
 
-            <form className="__form" autoComplete="none" id="qualifications">
+            <form className="__form" autoComplete="none" id="qualifications" onSubmit={onSubmit}>
                 <label className="form__label" htmlFor="txt">all existing qualifications</label>
                 <ul className="cloud">
                     {existingSkills}
@@ -86,6 +139,7 @@ function ViewFive() {
                 />
                 <button
                     className="form__btn"
+                    id="addQualification"
                     name="addQualification"
                 >
                     add qualification
@@ -93,7 +147,7 @@ function ViewFive() {
 
             </form>
             <p className="form__info">
-                editMessage here
+                {addMessage.msg}
             </p>
         </div>
     );

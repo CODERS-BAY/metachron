@@ -472,7 +472,7 @@
           & label {
             // padding: 0.15rem;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             background: lightblue;
           }
 
@@ -519,14 +519,12 @@
     .form__label {
       text-align: center;
       margin: auto 0;
-      border: 1px solid red;
     }
 
     ul.cloud {
       width: 100%;
       height: 100%;
 
-      border: 1px solid red;
       list-style: none;
 
       display: grid;
@@ -542,9 +540,16 @@
         justify-content: center;
         align-items: center;
         
-        background: lightgrey;
+        background: rgb(55, 155, 255);
+        color: white;
         
+          &:hover {
+            color: rgb(55, 155, 255);
+            background: rgba(55, 155, 255, 0.25);  
+          }
+
         p {
+          font-size: 0.8rem;
           line-height: .75rem;
         }
       }
@@ -587,7 +592,7 @@
     transition: all 0.25s ease-in-out;
     margin: 0.25rem auto;
 
-    pointer-events: none;
+    // pointer-events: none;
 
     &:hover,
     &:focus {
