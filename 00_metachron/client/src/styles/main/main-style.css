@@ -1390,12 +1390,87 @@ footer .footer__legal {
   transition: all 0.5s ease-in-out;
 }
 
+/********************************************************************************/
+/* setup main dashboard view grid */
+/********************************************************************************/
 .view__main__dashboard {
-  background: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .view__main__dashboard h2 {
   padding: 1rem;
+}
+
+.view__main__dashboard .card-container {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+  grid-auto-flow: dense;
+}
+
+.view__main__dashboard .card-container a {
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
+  background: lightgray !important;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.view__main__dashboard .card-container a:hover, .view__main__dashboard .card-container a:focus {
+  background-color: #379bff !important;
+  color: white !important;
+}
+
+.view__main__dashboard .card-container a .emptyCard {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view__main__dashboard .card-container a .card {
+  padding: 2rem;
+  height: 100%;
+  font-size: 0.95rem;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  line-height: 1.3rem;
+  text-align: center;
+}
+
+.view__main__dashboard .card-container a .card .card__txt {
+  font-family: "Playfair Display", serif;
+}
+
+.view__main__dashboard .card-container a .card .card__line {
+  width: 75%;
+  height: 3px;
+  background-color: #379bff;
 }
 
 /********************************************************************************/
@@ -1836,7 +1911,7 @@ footer .footer__legal {
 
 .view__four .card-container .trainerCard {
   position: relative;
-  padding: 2rem;
+  padding: 1rem;
   height: 100%;
   font-size: 0.95rem;
   background-color: snow;
@@ -1889,7 +1964,7 @@ footer .footer__legal {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border: 1px solid red;
+  padding: 0.5rem 0;
 }
 
 .view__four .card-container .trainerCard .skillsets .skills {
@@ -1906,19 +1981,41 @@ footer .footer__legal {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  border: 1px solid red;
   padding: 0.15rem;
 }
 
 .view__four .card-container .trainerCard .skillsets .skills label {
   cursor: pointer;
   font-size: 0.8rem;
-  background: lightblue;
 }
 
 .view__four .card-container .trainerCard .skillsets .skills input[type="checkbox"] {
   cursor: pointer;
-  background: grey;
+}
+
+.view__four .card-container .trainerCard .skillsets .skills:hover {
+  background: #379bff;
+  color: white;
+}
+
+.view__four .card-container .trainerCard .form__btn {
+  width: 100%;
+  height: 20px;
+  background: #379bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  pointer-events: all;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  margin: 0.25rem auto;
+}
+
+.view__four .card-container .trainerCard .form__btn:hover, .view__four .card-container .trainerCard .form__btn:focus {
+  background: black;
+  outline: none;
+  color: white;
 }
 
 /********************************************************************************/
