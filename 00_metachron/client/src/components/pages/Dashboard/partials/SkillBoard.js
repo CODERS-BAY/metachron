@@ -17,44 +17,47 @@ function SkillBoard(props) {
             });
     }, []);
 
+    const [activeQualifications, setActiveQualifications] = useState([]);
+
+    // generate custom qualification list, with boolean values if marked
+    useEffect(() => {
+        allPossibleSkills.forEach((skill) => {
+            let valid = false;
+            if (props.trainerSkillArray.includes(skill.id)) {
+                valid = true;
+            }
+            setActiveQualifications(qualifications => [...qualifications, { trainer_id: props.trainer_id, skill: skill.skillset, marked: valid }]);
+        });
+    }, [allPossibleSkills, props.trainerSkillArray, props.trainer_id]);
+    // console.log(activeQualifications);
+
+
+
     function onHandleChange(event) {
-        event.preventDefault();
-        console.log("onHandleChange working");
-    
+        // event.preventDefault();
+        // console.log("onHandleChange working");
+        console.log(event.target.value + " " + event.target.checked);
     }
 
 
 
 
-    const wholeSkillBoard = allPossibleSkills.map((skill, idx) => {
-        if (props.trainerSkillArray.includes(skill.id)) {
-            return (
-                <div className="skills" key={idx}>
-                    <input
-                        type="checkbox"
-                        id={skill.skillset}
-                        name={skill.skillset}
-                        value={skill.skillset}
-                        checked
-                        onChange={onHandleChange}
-                    />
-                    <label htmlFor={skill.skillset}>&nbsp;{skill.skillset}</label>
-                </div>
-            );
-        } else {
-            return (
-                <div className="skills" key={idx}>
-                    <input
-                        type="checkbox"
-                        id={skill.skillset}
-                        name={skill.skillset}
-                        value={skill.skillset}
-                        onChange={onHandleChange}
-                    />
-                    <label htmlFor={skill.skillset}>&nbsp;{skill.skillset}</label>
-                </div>
-            );
-        }
+
+    // display wholeskillboard
+    const wholeSkillBoard = activeQualifications.map((qual) => {
+        return (
+            <div className="skills" key={qual.skill + qual.trainer_id}>
+                <input
+                    type="checkbox"
+                    id={qual.skill + "_" + qual.trainer_id}
+                    name={qual.skill}
+                    value={qual.skill}
+                    defaultChecked={qual.marked}
+                    onChange={onHandleChange}
+                />
+                <label htmlFor={qual.skill + "_" + qual.trainer_id}>&nbsp;{qual.skill}</label>
+            </div>
+        );
     });
 
     return (

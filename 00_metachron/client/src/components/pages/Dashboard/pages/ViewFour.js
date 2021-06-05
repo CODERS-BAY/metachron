@@ -17,8 +17,10 @@ function ViewFour() {
             });
     }, []);
 
-
-    /******************************/
+    function saveChangeQualification(event) {
+        event.preventDefault();
+        console.log("saveChangeQualification clicked");
+    }
 
     /* filtered trainers */
     const trainerSnippets = trainers.map((trainer) => {
@@ -44,8 +46,16 @@ function ViewFour() {
                         Qualifications:
                         <br />
                         <div className="skillsets">
-                            <Skillboard trainerSkillArray={trainerSkillArray} />
+                            <Skillboard trainerSkillArray={trainerSkillArray} trainer_id={trainer.uuid} />
                         </div>
+                        <button
+                            className="form__btn"
+                            id="saveChangeQualification"
+                            name="saveChangeQualification"
+                            onClick={saveChangeQualification}
+                        >
+                            save changes
+                        </button>
                     </div>
                 </div>
             );
