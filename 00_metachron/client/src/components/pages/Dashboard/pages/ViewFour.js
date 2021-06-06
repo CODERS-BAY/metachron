@@ -17,10 +17,25 @@ function ViewFour() {
             });
     }, []);
 
-    function saveChangeQualification(event) {
-        event.preventDefault();
-        console.log("saveChangeQualification clicked");
-    }
+    // setup for updating specific trainer skills
+    const [changeTrainer, setChangeTrainer] = useState("");
+
+    useEffect(() => {
+        // console.log(changeTrainer);
+        const updateSpecificTrainerSkills = {
+            skillName: changeTrainer.skillName,
+            skillStatus: changeTrainer.skillStatus,
+            skillForTrainer: changeTrainer.skillForTrainer
+        }
+        axios.put(`${url}qualifications`, updateSpecificTrainerSkills)
+            .then((response) => {
+                // console.log(response.data);
+                console.log("qualifications successfully updated");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [changeTrainer]);
 
     /* filtered trainers */
     const trainerSnippets = trainers.map((trainer) => {
@@ -43,19 +58,12 @@ function ViewFour() {
                         <br />
                         RealName: <span className="card__txt">{trainer.Userdatainfo.firstName} {trainer.Userdatainfo.lastName}</span>
                         <br />
-                        Qualifications:
+                        Qualifications*:
                         <br />
                         <div className="skillsets">
-                            <Skillboard trainerSkillArray={trainerSkillArray} trainer_id={trainer.uuid} />
+                            <Skillboard trainerSkillArray={trainerSkillArray} trainer_id={trainer.uuid} changeTrainer={setChangeTrainer} />
                         </div>
-                        <button
-                            className="form__btn"
-                            id="saveChangeQualification"
-                            name="saveChangeQualification"
-                            onClick={saveChangeQualification}
-                        >
-                            save changes
-                        </button>
+                        <cite>*choose thoughtfully & be careful! <br /> changes are applied instantly!</cite>
                     </div>
                 </div>
             );

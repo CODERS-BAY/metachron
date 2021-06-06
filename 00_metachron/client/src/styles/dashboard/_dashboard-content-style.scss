@@ -508,6 +508,19 @@
         clip-path: circle();
       }
 
+      cite {
+        // background: rgba(0, 0, 0, .05);
+        color: rgba(55, 155, 255, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: .75rem;
+        line-height: 100%;
+        padding: .25rem;
+      
+      }
       // p {
       //   margin-bottom: 0.7rem;
       //   pointer-events: none;
@@ -551,6 +564,7 @@
       }
 
       .form__btn {
+        display: none;
         width: 100%;
         height: 20px;
         background: rgb(55, 155, 255);

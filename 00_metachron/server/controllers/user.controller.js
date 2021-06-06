@@ -463,15 +463,65 @@ exports.createQualification = async (req, res) => {
     }
 };
 
-/****************************************************************************** */
+/***************************************************************** */
+/* route change qualification from trainer */
+exports.updateQualificationFromTrainer = async (req, res) => {
+    const { skillName, skillStatus, skillForTrainer } = req.body;
+
+    try {
+        // to find the original id from trainer
+        const specificUser = await User.findOne({
+            where: {
+                uuid: skillForTrainer
+            }
+        });
+        // to find the original id from qualification
+        const specificQualification = await Qualification.findOne({
+            where: {
+                skillset: skillName
+            }
+        });
+
+        /* where all the magic happens */
+        // check skillStatus
+        if (skillStatus === true) {
+            // enable qualification
+            await user_has_qualification.create({
+                user_id: specificUser.id,
+                qualification_id: specificQualification.id
+            });
+            // return res.json({ msg: `qualification successfully enabled for trainer` });
+            return res.json({ msg: `qualification ${specificQualification.skillset} successfully enabled for trainer ${specificUser.username}` });
+        }
+        // check skillStatus
+        else if (skillStatus === false) {
+            // delete from qualification table
+            await user_has_qualification.destroy({
+                where: {
+                    qualification_id: specificQualification.id,
+                    user_id: specificUser.id
+                }
+            });
+            // return res.json({ msg: `qualification successfully disabled for trainer` });
+            return res.json({ msg: `qualification ${specificQualification.skillset} successfully disabled for trainer ${specificUser.username}` });
+        } else {
+            return res.json({ msg: "something went wrong" });
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+
+}
+
 /* route delete qualification */
 exports.deleteQualification = async (req, res) => {
     const { skillset } = req.body;
     try {
-        
+
         // find qualification to delete
         const qualification = await Qualification.findOne({
-            where: { 
+            where: {
                 skillset: skillset
             }
         });

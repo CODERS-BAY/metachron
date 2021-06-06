@@ -17,6 +17,7 @@ function SkillBoard(props) {
             });
     }, []);
 
+    // const [activeQualifications, setActiveQualifications] = useState([]);
     const [activeQualifications, setActiveQualifications] = useState([]);
 
     // generate custom qualification list, with boolean values if marked
@@ -28,28 +29,23 @@ function SkillBoard(props) {
             }
             setActiveQualifications(qualifications => [...qualifications, { trainer_id: props.trainer_id, skill: skill.skillset, marked: valid }]);
         });
-    }, [allPossibleSkills, props.trainerSkillArray, props.trainer_id]);
+        // eslint-disable-next-line
+    }, [allPossibleSkills]);
     // console.log(activeQualifications);
 
-
-
     function onHandleChange(event) {
-        // event.preventDefault();
-        // console.log("onHandleChange working");
-        console.log(event.target.value + " " + event.target.checked);
+        // console.log(event.target.value + " " + event.target.checked + " " + event.target.title);
+        props.changeTrainer({ skillName: event.target.value, skillStatus: event.target.checked, skillForTrainer: event.target.title });
     }
 
-
-
-
-
     // display wholeskillboard
-    const wholeSkillBoard = activeQualifications.map((qual) => {
+    const wholeSkillBoard = activeQualifications.map((qual, idx) => {
         return (
-            <div className="skills" key={qual.skill + qual.trainer_id}>
+            <div className="skills" key={qual.skill + qual.trainer_id + idx}>
                 <input
                     type="checkbox"
                     id={qual.skill + "_" + qual.trainer_id}
+                    title={qual.trainer_id}
                     name={qual.skill}
                     value={qual.skill}
                     defaultChecked={qual.marked}

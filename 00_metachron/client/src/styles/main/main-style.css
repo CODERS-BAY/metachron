@@ -1952,6 +1952,24 @@ footer .footer__legal {
           clip-path: circle();
 }
 
+.view__four .card-container .trainerCard cite {
+  color: #379bff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: .75rem;
+  line-height: 100%;
+  padding: .25rem;
+}
+
 .view__four .card-container .trainerCard .skillsets {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1999,6 +2017,7 @@ footer .footer__legal {
 }
 
 .view__four .card-container .trainerCard .form__btn {
+  display: none;
   width: 100%;
   height: 20px;
   background: #379bff;
