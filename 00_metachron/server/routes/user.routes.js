@@ -75,5 +75,8 @@ router.post("/qualifications", userController.createQualification);
 // get all trainer usersets with their qualifications
 router.get("/trainersets/qualifications", userController.findAllUserSetsWithQualifications);
 
+// update qualifications for trainer
+router.put("/qualifications", userController.updateQualificationFromTrainer);
+
 /* export */
 module.exports = router;
