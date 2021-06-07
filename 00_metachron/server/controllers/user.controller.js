@@ -484,7 +484,10 @@ exports.updateQualificationFromTrainer = async (req, res) => {
 
         /* where all the magic happens */
         // check skillStatus
-        if (skillStatus === true) {
+        if (skillStatus === "") {
+            return res.json({ msg: `qualifications successfully loaded` });
+        }
+        else if (skillStatus === true) {
             // enable qualification
             await user_has_qualification.create({
                 user_id: specificUser.id,
@@ -508,7 +511,7 @@ exports.updateQualificationFromTrainer = async (req, res) => {
             return res.json({ msg: "something went wrong" });
         }
     } catch (error) {
-        console.log(error);
+        console.log("\n******** " + error.message + "\n");
         return res.status(500).json(error);
     }
 
