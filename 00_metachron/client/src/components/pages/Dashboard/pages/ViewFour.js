@@ -18,7 +18,11 @@ function ViewFour() {
     }, []);
 
     // setup for updating specific trainer skills
-    const [changeTrainer, setChangeTrainer] = useState("");
+    const [changeTrainer, setChangeTrainer] = useState({
+        skillName: "",
+        skillStatus: "",
+        skillForTrainer: ""
+    });
 
     useEffect(() => {
         // console.log(changeTrainer);
@@ -27,10 +31,10 @@ function ViewFour() {
             skillStatus: changeTrainer.skillStatus,
             skillForTrainer: changeTrainer.skillForTrainer
         }
+
         axios.put(`${url}qualifications`, updateSpecificTrainerSkills)
             .then((response) => {
-                // console.log(response.data);
-                console.log("qualifications successfully updated");
+                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -45,8 +49,6 @@ function ViewFour() {
             trainer.Qualifications.forEach((skill) => {
                 trainerSkillArray.push(skill.id);
             });
-
-
             return (
                 <div key={trainer.uuid}
                     id={trainer.uuid}
@@ -79,8 +81,6 @@ function ViewFour() {
             console.log("garbage collector has done its work");
         };
     }, []);
-
-
 
     return (
         <div className="view view__four">
