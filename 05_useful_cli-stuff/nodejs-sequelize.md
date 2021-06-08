@@ -19,6 +19,7 @@
 \
 sequelize:\
 \
+(to run sequelize commands on windows put npx in front // npx sequelize db:migrate)\
 	- sequelize db:create\
 	- sequelize model:generate --name User --attributes username:string\
 	- sequelize db:drop\
