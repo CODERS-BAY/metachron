@@ -53,3 +53,5 @@ yarn-error.log*
 00_metachron/server/node_modules/
 
 .history/
+
+04_database/_docker_database_containers/.data/
