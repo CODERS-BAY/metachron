@@ -16,7 +16,7 @@ const { Qualification } = require("../models");
 const router = express.Router();
 
 /* import controller for user routes */
-const userController = require("../controllers/user.controller.js");
+const userController = require("../controllers/user.controller");
 
 // create user
 router.post("/users", userController.createUser);

@@ -1579,7 +1579,6 @@ footer .footer__legal {
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   line-height: 1.3rem;
-  cursor: pointer;
   -webkit-perspective: 1000px;
           perspective: 1000px;
   -webkit-transition: -webkit-transform 0.8s;
@@ -1592,6 +1591,10 @@ footer .footer__legal {
 
 .view__one .card-container .userCard .card__txt {
   font-family: "Playfair Display", serif;
+}
+
+.view__one .card-container .userCard .card__txt a {
+  pointer-events: all;
 }
 
 .view__one .card-container .userCard .card__line {
@@ -2180,6 +2183,9 @@ footer .footer__legal {
   color: red !important;
 }
 
+/********************************************************************************/
+/* setup list training groups */
+/********************************************************************************/
 .view__six {
   background: lightgreen;
 }
