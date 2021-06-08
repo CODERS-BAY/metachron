@@ -32,6 +32,9 @@ app.get("/", (req, res) => {
 /* define user routes */ 
 app.use("/", require("./routes/user.routes"));
 
+/* define course routes */ 
+app.use("/", require("./routes/course.routes"));
+
 /* set port, listen for requests */
 if (require.main === module) {
     app.listen(port, async () => {

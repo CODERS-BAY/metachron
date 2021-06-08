@@ -44,7 +44,7 @@ const MenuItems = [
     {
         id:7,
         to: "/dashboard/viewsix",
-        name: "ViewSix",
+        name: "Training Groups",
         className: "tool__link",
         activeClassName: "tool__link--active"
     },
