@@ -41,6 +41,18 @@ function ViewFour() {
             });
     }, [changeTrainer]);
 
+
+    /* border for hover usercards */
+    function handleMouseOver(uuid, event) {
+        const trainerCard = document.getElementById(uuid);
+        trainerCard.style.border = "2px solid rgb(55,155,255)";
+    }
+    function handleMouseOut(uuid, event) {
+        const trainerCard = document.getElementById(uuid);
+        trainerCard.style.border = "none";
+    }
+
+
     /* filtered trainers */
     const trainerSnippets = trainers.map((trainer) => {
         if (trainer.Userrole.name === "trainer") {
@@ -53,6 +65,8 @@ function ViewFour() {
                 <div key={trainer.uuid}
                     id={trainer.uuid}
                     className={`trainerCard ${trainer.Userrole.name}`}
+                    onMouseOver={(event) => handleMouseOver(trainer.uuid, event)}
+                    onMouseOut={(event) => handleMouseOut(trainer.uuid, event)}
                 >
                     <img src={trainer.pic_path} alt={`profile-pic-${trainer.username}`} />
                     <div>
@@ -72,6 +86,9 @@ function ViewFour() {
         }
         return null;
     });
+
+    
+
 
     /**
      * useEffect cleanup

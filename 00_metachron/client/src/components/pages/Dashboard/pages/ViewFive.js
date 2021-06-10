@@ -116,6 +116,7 @@ function ViewFive() {
             setSkillToDelete(event.target.value);
             console.log("selected qualification to delete: " + event.target.value);
         } else {
+            setDeleteValidation(false);
             console.log("no selected qualification to delete");
         }
     }
