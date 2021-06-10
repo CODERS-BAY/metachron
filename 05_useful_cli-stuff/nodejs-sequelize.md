@@ -32,7 +32,7 @@ sequelize:\
 	- sequelize seed:undo (:all)\
 \
 	- sequelize db:migrate:status (shows us whats up and whats down)\
-	-sequelize db:migrate:undo (:all)\
+	- sequelize db:migrate:undo (:all)\
 \
 \
 \
