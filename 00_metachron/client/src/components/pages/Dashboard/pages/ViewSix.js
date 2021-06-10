@@ -36,6 +36,10 @@ function ViewSix() {
     //     trainingGroupCard.style.border = "none";
     // }
 
+        // table trainingGroup all relations // participants
+        // button events (new view)
+        // event details (new view)
+
 
     /**
      * useEffect cleanup

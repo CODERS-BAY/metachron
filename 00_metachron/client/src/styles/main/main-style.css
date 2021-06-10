@@ -1966,7 +1966,7 @@ footer .footer__legal {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: .5rem;
   font-size: .75rem;
   line-height: 100%;
   padding: .25rem;
@@ -1985,7 +1985,7 @@ footer .footer__legal {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0.5rem 0;
-  margin: 0.25rem;
+  margin: 0.15rem;
 }
 
 .view__four .card-container .trainerCard .skillsets .skills {
