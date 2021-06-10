@@ -39,7 +39,7 @@
       width: 100%;
       height: 100%;
 
-          transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
 
       &:hover,
       &:focus {
@@ -85,7 +85,6 @@
 /* setup list all/filter users-grid */
 /********************************************************************************/
 .view__one {
-  display: flex;
   flex-direction: column;
 
   h2 {
@@ -107,6 +106,7 @@
         padding: 0 0.25rem;
         cursor: pointer;
         color: lightgray;
+        transition: all 0.5s ease-in-out;
 
         &:hover,
         &:focus {
@@ -136,6 +136,7 @@
       cursor: pointer;
       position: relative;
       display: flex;
+      transition: all 0.5s ease-in-out !important;
 
       &:hover {
         background-color: rgb(55, 155, 255) !important;
@@ -194,7 +195,7 @@
           0% 33%,
           33% 33%
         );
-
+        
         animation: popping 1s infinite alternate;
         -webkit-animation: popping 1s infinite alternate;
       }
@@ -485,9 +486,8 @@
       border-radius: 15px;
       line-height: 1.3rem;
       // cursor: pointer;
-      pointer-events: none;
+      pointer-events: visible;
 
-      perspective: 1000px;
       transition: transform 0.8s;
       transform-style: preserve-3d;
 
@@ -536,6 +536,7 @@
         align-items: center;
         flex-wrap: wrap;
         padding: 0.5rem 0;
+        margin: 0.25rem;
         // border: 1px solid red;
 
         .skills {
@@ -593,7 +594,7 @@
 }
 
 /********************************************************************************/
-/* setup add a new qualification */
+/* setup delete & add a new qualification */
 /********************************************************************************/
 .view__five {
   flex-direction: column;
@@ -644,6 +645,8 @@
 
         background: rgb(55, 155, 255);
         color: white;
+
+        transition: all 0.5s ease-in-out;
 
         &:hover {
           color: rgb(55, 155, 255);
@@ -719,7 +722,156 @@
 /* setup list training groups */
 /********************************************************************************/
 .view__six {
-  background: lightgreen;
+  flex-direction: column;
+
+  h2 {
+    padding: 1rem;
+  }
+
+  .filter-control {
+    width: 100%;
+
+    & ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 1rem;
+      font-style: italic;
+
+      .filter--link {
+        padding: 0 0.25rem;
+        cursor: pointer;
+        color: lightgray;
+
+        &:hover,
+        &:focus {
+          color: rgb(55, 155, 255);
+        }
+        &:focus {
+          color: black;
+        }
+      }
+      .filter--link--active {
+        color: black;
+      }
+    }
+  }
+
+  .card-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+
+    .emptyTrainingGroupCard {
+      background-color: lightgray !important;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      transition: all 0.5s ease-in-out !important;
+
+      &:hover {
+        background-color: rgb(55, 155, 255) !important;
+        color: white !important;
+      }
+
+      .plusSymbole {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        clip-path: polygon(
+          33% 0%,
+          66% 0%,
+          66% 33%,
+          99% 33%,
+          99% 66%,
+          66% 66%,
+          66% 99%,
+          33% 99%,
+          33% 66%,
+          0% 66%,
+          0% 33%,
+          33% 33%
+        );
+
+        -moz-clip-path: polygon(
+          33% 0%,
+          66% 0%,
+          66% 33%,
+          99% 33%,
+          99% 66%,
+          66% 66%,
+          66% 99%,
+          33% 99%,
+          33% 66%,
+          0% 66%,
+          0% 33%,
+          33% 33%
+        );
+
+        -webkit-clip-path: polygon(
+          33% 0%,
+          66% 0%,
+          66% 33%,
+          99% 33%,
+          99% 66%,
+          66% 66%,
+          66% 99%,
+          33% 99%,
+          33% 66%,
+          0% 66%,
+          0% 33%,
+          33% 33%
+        );
+
+        animation: popping 1s infinite alternate;
+        -webkit-animation: popping 1s infinite alternate;
+      }
+    }
+
+    .trainingGroupCard {
+      position: relative;
+      padding: 2rem;
+      height: 100%;
+      font-size: 0.95rem;
+      background-color: snow;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      line-height: 1.3rem;
+      // cursor: pointer;
+      pointer-events: visible;
+
+      .card__txt {
+        font-family: "Playfair Display", serif;
+
+        a {
+          pointer-events: all;
+        }
+      }
+
+      .card__line {
+        width: 75%;
+        height: 3px;
+        background-color: rgb(55, 155, 255);
+      }
+
+      p {
+        margin-bottom: 0.7rem;
+        pointer-events: none;
+      }
+    }
+  }
+
+
+
 }
 
 .view__seven {

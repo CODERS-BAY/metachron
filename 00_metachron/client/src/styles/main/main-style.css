@@ -1477,9 +1477,6 @@ footer .footer__legal {
 /* setup list all/filter users-grid */
 /********************************************************************************/
 .view__one {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1513,6 +1510,8 @@ footer .footer__legal {
   padding: 0 0.25rem;
   cursor: pointer;
   color: lightgray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .view__one .filter-control ul .filter--link:hover, .view__one .filter-control ul .filter--link:focus {
@@ -1546,6 +1545,8 @@ footer .footer__legal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
 }
 
 .view__one .card-container .emptyUserCard:hover {
@@ -1922,9 +1923,7 @@ footer .footer__legal {
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   line-height: 1.3rem;
-  pointer-events: none;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
+  pointer-events: visible;
   -webkit-transition: -webkit-transform 0.8s;
   transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
@@ -1986,6 +1985,7 @@ footer .footer__legal {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0.5rem 0;
+  margin: 0.25rem;
 }
 
 .view__four .card-container .trainerCard .skillsets .skills {
@@ -2041,7 +2041,7 @@ footer .footer__legal {
 }
 
 /********************************************************************************/
-/* setup add a new qualification */
+/* setup delete & add a new qualification */
 /********************************************************************************/
 .view__five {
   -webkit-box-orient: vertical;
@@ -2102,6 +2102,8 @@ footer .footer__legal {
           align-items: center;
   background: #379bff;
   color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .view__five .__form ul.cloud li:hover {
@@ -2187,7 +2189,127 @@ footer .footer__legal {
 /* setup list training groups */
 /********************************************************************************/
 .view__six {
-  background: lightgreen;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.view__six h2 {
+  padding: 1rem;
+}
+
+.view__six .filter-control {
+  width: 100%;
+}
+
+.view__six .filter-control ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.view__six .filter-control ul .filter--link {
+  padding: 0 0.25rem;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.view__six .filter-control ul .filter--link:hover, .view__six .filter-control ul .filter--link:focus {
+  color: #379bff;
+}
+
+.view__six .filter-control ul .filter--link:focus {
+  color: black;
+}
+
+.view__six .filter-control ul .filter--link--active {
+  color: black;
+}
+
+.view__six .card-container {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+}
+
+.view__six .card-container .emptyTrainingGroupCard {
+  background-color: lightgray !important;
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.view__six .card-container .emptyTrainingGroupCard:hover {
+  background-color: #379bff !important;
+  color: white !important;
+}
+
+.view__six .card-container .emptyTrainingGroupCard .plusSymbole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 99% 33%, 99% 66%, 66% 66%, 66% 99%, 33% 99%, 33% 66%, 0% 66%, 0% 33%, 33% 33%);
+  -moz-clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 99% 33%, 99% 66%, 66% 66%, 66% 99%, 33% 99%, 33% 66%, 0% 66%, 0% 33%, 33% 33%);
+  -webkit-clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 99% 33%, 99% 66%, 66% 66%, 66% 99%, 33% 99%, 33% 66%, 0% 66%, 0% 33%, 33% 33%);
+  animation: popping 1s infinite alternate;
+  -webkit-animation: popping 1s infinite alternate;
+}
+
+.view__six .card-container .trainingGroupCard {
+  position: relative;
+  padding: 2rem;
+  height: 100%;
+  font-size: 0.95rem;
+  background-color: snow;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  line-height: 1.3rem;
+  pointer-events: visible;
+}
+
+.view__six .card-container .trainingGroupCard .card__txt {
+  font-family: "Playfair Display", serif;
+}
+
+.view__six .card-container .trainingGroupCard .card__txt a {
+  pointer-events: all;
+}
+
+.view__six .card-container .trainingGroupCard .card__line {
+  width: 75%;
+  height: 3px;
+  background-color: #379bff;
+}
+
+.view__six .card-container .trainingGroupCard p {
+  margin-bottom: 0.7rem;
+  pointer-events: none;
 }
 
 .view__seven {
