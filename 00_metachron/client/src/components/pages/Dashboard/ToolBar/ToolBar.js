@@ -1,7 +1,4 @@
-import React from "react";
-
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import MenuItems from "./MenuItems";
 
@@ -26,7 +23,6 @@ function ToolBar() {
             toolNavBtn.classList.remove("swipe");
         }
     });
-
 
     /* populate nav */
     const MenuItemComponents = MenuItems.map((MenuItem) => {

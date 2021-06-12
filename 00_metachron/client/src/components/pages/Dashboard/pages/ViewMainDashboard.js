@@ -13,7 +13,7 @@ function ViewMainDashboard() {
                 <DashboardCard title={"Edit User"} linkTo={"/dashboard/viewthree"} text={"Testtext here, maybe short prev"} />
                 <DashboardCard title={"List all Trainer Qualifications"} linkTo={"/dashboard/viewfour"} text={"Testtext here, maybe short prev"} />
                 <DashboardCard title={"Qualifications"} linkTo={"/dashboard/viewfive"} text={"Testtext here, maybe short prev"} />
-                <DashboardCard title={"Training Groups"} linkTo={"/dashboard/viewsix"} text={"Testtext here, maybe short prev"} />
+                <DashboardCard title={"List all Training Groups"} linkTo={"/dashboard/viewsix"} text={"Testtext here, maybe short prev"} />
             </div>
         </div>
     );

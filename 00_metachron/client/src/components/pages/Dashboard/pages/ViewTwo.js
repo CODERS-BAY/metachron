@@ -20,6 +20,30 @@ function ViewTwo() {
         github: ""
     });
 
+    const [addValidation, setAddValidation] = useState(false);
+    useEffect(() => {
+
+        if(state.username === "" || state.pwd === "" 
+                || state.passwordConfirm === "" || state.userrole_id === "" 
+                || state.firstName === "" || state.lastName === "" 
+                || state.address === "" || state.zip === "" || state.place === "" || state.email === "") {
+            setAddValidation(false);
+        } else {
+            setAddValidation(true);
+        }
+
+        const btn = document.getElementById("addUser");
+        if (addValidation) {
+            btn.style.pointerEvents = "all";
+        } else {
+            btn.style.pointerEvents = "none";
+        }
+
+    }, [state, addValidation]);
+
+
+
+
     /* handle user input */
     const handleInputChange = (event) => {
         setState((prevState) => ({
@@ -307,6 +331,7 @@ function ViewTwo() {
                 <button
                     className="form__btn"
                     name="addUser"
+                    id="addUser"
                     type="submit">
                     add user
                 </button>
