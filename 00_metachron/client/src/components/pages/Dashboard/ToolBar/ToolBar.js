@@ -27,7 +27,7 @@ function ToolBar() {
     /* populate nav */
     const MenuItemComponents = MenuItems.map((MenuItem) => {
         return (
-            <li key={MenuItem.id}>
+            <li key={MenuItem.id} id={`sniplink_${MenuItem.id}`}>
                 <NavLink
                     className={MenuItem.className}
                     activeClassName={MenuItem.activeClassName}
@@ -87,6 +87,25 @@ function ToolBar() {
             window.location.href = "/login";
         }
     }, []);
+
+    /* check userrole to display specific nav-items */
+    useEffect(() => {
+        // const navLinkItemListAllUsers = document.getElementById("sniplink_2");
+        const navLinkItemAddUser = document.getElementById("sniplink_3");
+        const navLinkItemEditUser = document.getElementById("sniplink_4");
+        const navLinkItemListAllTrainerQualifications = document.getElementById("sniplink_5");
+        const navLinkItemQualifications = document.getElementById("sniplink_6");
+        const navLinkItemListAllTrainingGroups = document.getElementById("sniplink_7");
+
+        if (userrole === "Student") {
+            // navLinkItemListAllUsers.classList.add("dnone");
+            navLinkItemAddUser.classList.add("dnone");
+            navLinkItemEditUser.classList.add("dnone");
+            navLinkItemListAllTrainerQualifications.classList.add("dnone");
+            navLinkItemQualifications.classList.add("dnone");
+            navLinkItemListAllTrainingGroups.classList.add("dnone");
+        }
+    },[userrole]);
 
     /**
      * useEffect cleanup
