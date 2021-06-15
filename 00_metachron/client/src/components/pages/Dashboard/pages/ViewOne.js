@@ -49,7 +49,7 @@ function ViewOne() {
     function handleClickFilter(event) {
         event.preventDefault();
         let value = event.target.getAttribute("value");
-        
+
         if (value === "all") setClickNavLink("all");
         else if (value === "admin") setClickNavLink("admin");
         else if (value === "trainer") setClickNavLink("trainer");
@@ -163,6 +163,44 @@ function ViewOne() {
         window.location.href = "/dashboard/viewthree";
     }
 
+    /* set logged userrole */
+    const [userrole, setUserrole] = useState("");
+
+    /* check if localStorage is populated */
+    useEffect(() => {
+        // get JSON string
+        const userCredentials = localStorage.getItem("userCredentials");
+        // parse JSON string to js object
+        const retrievedCredentials = JSON.parse(userCredentials);
+        
+        if (retrievedCredentials.userrole_id === 1) {
+            setUserrole("Admin");
+        } else if (retrievedCredentials.userrole_id === 2) {
+            setUserrole("Trainer");
+        } else {
+            setUserrole("Student");
+        }
+    }, [users]);
+    
+    /* disable buttons if userrole is student */
+    useEffect(() => {
+        const userCard = document.getElementsByClassName("userCard")[0];
+        const btnsEdit = document.querySelectorAll(".btn__edit");
+        const btnsDelete = document.querySelectorAll(".btn__delete");
+
+        if (userrole === "Student") {
+            userCard.classList.add("dnone");
+            btnsEdit.forEach((btn) => {
+                    btn.style.pointerEvents = "none";
+                    btn.style.backgroundColor = "lightgrey";
+                });
+                btnsDelete.forEach((btn) => {
+                    btn.style.pointerEvents = "none";
+                    btn.style.backgroundColor = "lightgrey";
+            });
+        }
+    }, [users, userrole]);
+
     /**
      * useEffect cleanup
      */
@@ -174,29 +212,29 @@ function ViewOne() {
 
     return (
         <>
-        <div className="view view__one">
-            <h2>List all Users</h2>
-            <div className="filter-control">
-                <ul onClick={handleClickFilter}>
-                    <p>Listview: </p>
-                    {filterNavlinks.map((filterNavLink) => {
-                        return (
-                            <li key={filterNavLink.id}
-                                id={filterNavLink.id}
-                                onClick={() => setActiveLink(filterNavLink.id)}
-                                className={`${filterNavLink.className} ${activeLink === filterNavLink.id ? filterNavLink.activeClassName : ""}`}
-                                value={filterNavLink.value}>
-                                {filterNavLink.name}
-                            </li>
-                        );
-                    })}
-                </ul>
+            <div className="view view__one">
+                <h2>List all Users</h2>
+                <div className="filter-control">
+                    <ul onClick={handleClickFilter}>
+                        <p>Listview: </p>
+                        {filterNavlinks.map((filterNavLink) => {
+                            return (
+                                <li key={filterNavLink.id}
+                                    id={filterNavLink.id}
+                                    onClick={() => setActiveLink(filterNavLink.id)}
+                                    className={`${filterNavLink.className} ${activeLink === filterNavLink.id ? filterNavLink.activeClassName : ""}`}
+                                    value={filterNavLink.value}>
+                                    {filterNavLink.name}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+                <div className="card-container">
+                    {emptyUserCard}
+                    {userFilterSnippets}
+                </div>
             </div>
-            <div className="card-container">
-                {emptyUserCard}
-                {userFilterSnippets}
-            </div>
-        </div>
 
         </>
     );

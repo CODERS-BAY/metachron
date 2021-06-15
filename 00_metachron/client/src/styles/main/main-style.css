@@ -1371,6 +1371,13 @@ footer .footer__legal {
           transform: rotate(450deg);
 }
 
+/********************************************************************************/
+/* setup dashboard-nav */
+/********************************************************************************/
+.dnone {
+  display: none !important;
+}
+
 .view {
   position: relative;
   width: 100%;
