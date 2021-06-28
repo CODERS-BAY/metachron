@@ -1,3 +1,5 @@
+@use "../../styles/main/main-style.scss" as *;
+
 .view {
   position: relative;
   width: 100%;
@@ -19,7 +21,7 @@
   flex-direction: column;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
@@ -28,13 +30,13 @@
     height: 100%;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-rows: 150px;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: 225px;
     grid-auto-flow: dense;
 
     & a {
       text-decoration: none;
-      color: black;
+      color: $clr-mono-500;
       border-radius: 15px;
       background: lightgray !important;
       width: 100%;
@@ -44,8 +46,8 @@
 
       &:hover,
       &:focus {
-        background-color: rgb(55, 155, 255) !important;
-        color: white !important;
+        background-color: $clr-primary-500 !important;
+        color: $clr-mono-100 !important;
       }
 
       .emptyCard {
@@ -57,12 +59,12 @@
       }
 
       .card {
-        padding: 2rem;
+        padding: ($spacing * 2);
         height: 100%;
-        font-size: 0.95rem;
+        font-size: ($spacing * 0.95);
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
-        line-height: 1.3rem;
+        line-height: ($spacing * 1.3);
         text-align: center;
 
         .card__txt {
@@ -72,7 +74,7 @@
         .card__line {
           width: 75%;
           height: 3px;
-          background-color: rgb(55, 155, 255);
+          background-color: $clr-primary-500;
         }
 
         p {
@@ -89,7 +91,7 @@
   flex-direction: column;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
@@ -101,25 +103,25 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      font-size: 1rem;
+      font-size: ($spacing);
       font-style: italic;
 
       .filter--link {
-        padding: 0 0.25rem;
+        padding: 0 ($spacing / 4);
         cursor: pointer;
         color: lightgray;
         transition: all 0.5s ease-in-out;
 
         &:hover,
         &:focus {
-          color: rgb(55, 155, 255);
+          color: $clr-primary-500;
         }
         &:focus {
-          color: black;
+          color: $clr-mono-500;
         }
       }
       .filter--link--active {
-        color: black;
+        color: $clr-mono-500;
       }
     }
   }
@@ -141,8 +143,8 @@
       transition: all 0.5s ease-in-out !important;
 
       &:hover {
-        background-color: rgb(55, 155, 255) !important;
-        color: white !important;
+        background-color: $clr-primary-500 !important;
+        color: $clr-mono-100 !important;
       }
 
       .plusSymbole {
@@ -152,7 +154,7 @@
         transform: translate(-50%, -50%);
         width: 150px;
         height: 150px;
-        background-color: white;
+        background-color: $clr-mono-100;
         clip-path: polygon(
           33% 0%,
           66% 0%,
@@ -205,13 +207,13 @@
 
     .userCard {
       position: relative;
-      padding: 2rem;
+      padding: ($spacing * 2);
       height: 100%;
-      font-size: 0.95rem;
+      font-size: ($spacing * 0.95);
       background-color: snow;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
       border-radius: 15px;
-      line-height: 1.3rem;
+      line-height: ($spacing * 1.3);
       // cursor: pointer;
 
       perspective: 1000px;
@@ -229,49 +231,49 @@
       .card__line {
         width: 75%;
         height: 3px;
-        background-color: rgb(55, 155, 255);
+        background-color: $clr-primary-500;
       }
 
       img {
         position: absolute;
         top: 0;
         right: 0;
-        margin: 1rem;
-        background-color: rgb(55, 155, 255);
+        margin: ($spacing);
+        background-color: $clr-primary-500;
         width: 50px;
         height: auto;
         clip-path: circle();
       }
 
       p {
-        margin-bottom: 0.7rem;
+        margin-bottom: ($spacing * 0.7);
         pointer-events: none;
       }
 
       .btn {
         width: 100%;
         height: 20px;
-        background: rgb(55, 155, 255);
-        color: white;
+        background: $clr-primary-500;
+        color: $clr-mono-100;
         border: none;
         border-radius: 30px;
         cursor: pointer;
         transition: all 0.25s ease-in-out;
-        margin: 0.25rem auto;
+        margin: ($spacing / 4) auto;
       }
 
       .btn__edit:hover,
       .btn__edit:focus {
-        background: black;
+        background: $clr-mono-500;
         outline: none;
-        color: white;
+        color: $clr-mono-100;
       }
 
       .btn__delete:hover,
       .btn__delete:focus {
-        background: red;
+        background: $clr-danger-200;
         outline: none;
-        color: white;
+        color: $clr-mono-100;
       }
     }
   }
@@ -284,12 +286,12 @@
   flex-direction: column;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
   .__form {
-    padding: 2rem;
+    padding: ($spacing * 2);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -302,7 +304,7 @@
     grid-auto-rows: auto;
     grid-auto-flow: dense;
 
-    font-size: 0.95rem;
+    font-size: ($spacing * 0.95);
 
     .form__label {
       text-align: center;
@@ -311,49 +313,49 @@
 
     input,
     select {
-      border: 1px solid rgb(55, 155, 255);
-      color: rgb(55, 155, 255);
-      padding-left: 0.5rem;
+      border: 1px solid $clr-primary-500;
+      color: $clr-primary-500;
+      padding-left: ($spacing / 2);
 
       &:focus {
-        background: rgb(55, 155, 255);
-        color: white;
+        background: $clr-primary-500;
+        color: $clr-mono-100;
         outline: none;
-        border: 2px solid rgb(55, 155, 255);
+        border: 2px solid $clr-primary-500;
       }
     }
 
     input::placeholder {
-      padding-left: 0.5rem;
-      color: rgb(55, 155, 255);
+      padding-left: ($spacing / 2);
+      color: $clr-primary-500;
     }
 
     .form__btn {
       width: 100%;
       height: 20px;
-      background: rgb(55, 155, 255);
-      color: white;
+      background: $clr-primary-500;
+      color: $clr-mono-100;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.25s ease-in-out;
-      margin: 0.25rem auto;
+      margin: ($spacing / 4) auto;
 
       &:hover,
       &:focus {
-        background: black;
+        background: $clr-mono-500;
         outline: none;
-        color: white;
-        // border: 1px solid rgb(55, 155, 255);
+        color: $clr-mono-100;
+        // border: 1px solid $clr-primary-500;
       }
     }
   }
   .form__info {
-    padding: 1rem;
+    padding: ($spacing);
   }
   .invalid {
-    background-color: rgba(255, 0, 0, 0.25) !important;
-    border: 2px solid red !important;
+    background-color: $clr-danger-100 !important;
+    border: 2px solid $clr-danger-200 !important;
   }
 }
 
@@ -364,12 +366,12 @@
   flex-direction: column;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
   .__form {
-    padding: 2rem;
+    padding: ($spacing * 2);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -382,7 +384,7 @@
     grid-auto-rows: auto;
     grid-auto-flow: dense;
 
-    font-size: 0.95rem;
+    font-size: ($spacing * 0.95);
 
     .form__label {
       text-align: center;
@@ -391,72 +393,72 @@
 
     input,
     select {
-      border: 1px solid rgb(55, 155, 255);
-      color: rgb(55, 155, 255);
-      padding-left: 0.5rem;
+      border: 1px solid $clr-primary-500;
+      color: $clr-primary-500;
+      padding-left: ($spacing / 2);
 
       &:focus {
-        background: rgb(55, 155, 255);
-        color: white;
+        background: $clr-primary-500;
+        color: $clr-mono-100;
         outline: none;
-        border: 2px solid rgb(55, 155, 255);
+        border: 2px solid $clr-primary-500;
       }
     }
 
     input::placeholder {
-      padding-left: 0.5rem;
-      color: rgb(55, 155, 255);
+      padding-left: ($spacing / 2);
+      color: $clr-primary-500;
     }
 
     .form__btn {
       width: 100%;
       height: 20px;
-      background: rgb(55, 155, 255);
-      color: white;
+      background: $clr-primary-500;
+      color: $clr-mono-100;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.25s ease-in-out;
-      margin: 0.25rem auto;
+      margin: ($spacing / 4) auto;
 
       &:hover,
       &:focus {
-        background: black;
+        background: $clr-mono-500;
         outline: none;
-        color: white;
-        // border: 1px solid rgb(55, 155, 255);
+        color: $clr-mono-100;
+        // border: 1px solid $clr-primary-500;
       }
     }
   }
 
   .search__input {
     width: 50%;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    border: 1px solid rgb(55, 155, 255);
-    color: rgb(55, 155, 255);
-    padding-left: 0.5rem;
+    padding: ($spacing / 2);
+    margin: ($spacing / 2);
+    border: 1px solid $clr-primary-500;
+    color: $clr-primary-500;
+    padding-left: ($spacing / 2);
 
     &:focus {
-      background: rgb(55, 155, 255);
-      color: white;
+      background: $clr-primary-500;
+      color: $clr-mono-100;
       outline: none;
-      border: 2px solid rgb(55, 155, 255);
+      border: 2px solid $clr-primary-500;
     }
 
     &::placeholder {
-      padding-left: 0.5rem;
-      color: rgb(55, 155, 255);
+      padding-left: ($spacing / 2);
+      color: $clr-primary-500;
     }
   }
 
   .form__info {
-    padding: 1rem;
+    padding: ($spacing);
   }
 
   .invalid {
-    background-color: rgba(255, 0, 0, 0.25) !important;
-    border: 2px solid red !important;
+    background-color: $clr-danger-100 !important;
+    border: 2px solid $clr-danger-200 !important;
   }
 }
 
@@ -468,7 +470,7 @@
   flex-direction: column;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
@@ -483,13 +485,13 @@
 
     .trainerCard {
       position: relative;
-      padding: 1rem;
+      padding: ($spacing);
       height: 100%;
-      font-size: 0.95rem;
+      font-size: ($spacing * 0.95);
       background-color: snow;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
       border-radius: 15px;
-      line-height: 1.3rem;
+      line-height: ($spacing * 1.3);
       // cursor: pointer;
       pointer-events: visible;
 
@@ -503,15 +505,15 @@
       .card__line {
         width: 75%;
         height: 3px;
-        background-color: rgb(55, 155, 255);
+        background-color: $clr-primary-500;
       }
 
       img {
         position: absolute;
         top: 0;
         right: 0;
-        margin: 1rem;
-        background-color: rgb(55, 155, 255);
+        margin: ($spacing);
+        background-color: $clr-primary-500;
         width: 50px;
         height: auto;
         clip-path: circle();
@@ -519,18 +521,18 @@
 
       cite {
         // background: rgba(0, 0, 0, .05);
-        color: rgba(55, 155, 255, 1);
+        color: $clr-primary-500;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-top: 0.5rem;
-        font-size: 0.75rem;
+        margin-top: ($spacing / 2);
+        font-size: ($spacing * 0.75);
         line-height: 100%;
-        padding: 0.25rem;
+        padding: ($spacing / 4);
       }
       // p {
-      //   margin-bottom: 0.7rem;
+      //   margin-bottom: ($spacing * 0.7);
       //   pointer-events: none;
       // }
 
@@ -539,9 +541,9 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        padding: 0.5rem 0;
-        margin: 0.15rem;
-        // border: 1px solid red;
+        padding: ($spacing / 2) 0;
+        margin: ($spacing * 0.15);
+        // border: 1px solid $clr-danger-200;
 
         .skills {
           display: flex;
@@ -551,13 +553,13 @@
           pointer-events: visible;
 
           min-width: fit-content;
-          // border: 1px solid red;
-          padding: 0.15rem;
+          // border: 1px solid $clr-danger-200;
+          padding: ($spacing * 0.15);
 
           & label {
-            // padding: 0.15rem;
+            // padding: ($spacing * 0.15);
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: ($spacing * 0.8);
             // background: rgba(55, 155, 255, 0.25);
           }
 
@@ -566,8 +568,8 @@
           }
 
           &:hover {
-            background: rgb(55, 155, 255);
-            color: white;
+            background: $clr-primary-500;
+            color: $clr-mono-100;
           }
         }
       }
@@ -576,21 +578,21 @@
         display: none;
         width: 100%;
         height: 20px;
-        background: rgb(55, 155, 255);
-        color: white;
+        background: $clr-primary-500;
+        color: $clr-mono-100;
         border: none;
         border-radius: 30px;
         cursor: pointer;
         pointer-events: all;
         transition: all 0.25s ease-in-out;
-        margin: 0.25rem auto;
+        margin: ($spacing / 4) auto;
 
         &:hover,
         &:focus {
-          background: black;
+          background: $clr-mono-500;
           outline: none;
-          color: white;
-          // border: 1px solid rgb(55, 155, 255);
+          color: $clr-mono-100;
+          // border: 1px solid $clr-primary-500;
         }
       }
     }
@@ -604,12 +606,12 @@
   flex-direction: column;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
   .__form {
-    padding: 2rem;
+    padding: ($spacing * 2);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -622,7 +624,7 @@
     grid-auto-rows: auto;
     grid-auto-flow: dense;
 
-    font-size: 0.95rem;
+    font-size: ($spacing * 0.95);
 
     .form__label {
       text-align: center;
@@ -640,86 +642,86 @@
       grid-auto-rows: auto;
       grid-auto-flow: dense;
 
-      gap: 0.25rem;
+      gap: ($spacing / 4);
 
       li {
-        padding: 0.25rem;
+        padding: ($spacing / 4);
         display: flex;
         justify-content: center;
         align-items: center;
 
-        background: rgb(55, 155, 255);
-        color: white;
+        background: $clr-primary-500;
+        color: $clr-mono-100;
 
         transition: all 0.5s ease-in-out;
 
         &:hover {
-          color: rgb(55, 155, 255);
+          color: $clr-primary-500;
           background: rgba(55, 155, 255, 0.25);
         }
 
         p {
-          font-size: 0.8rem;
-          line-height: 0.75rem;
+          font-size: ($spacing * 0.8);
+          line-height: ($spacing * 0.75);
         }
       }
     }
   }
 
   .form__info {
-    padding: 1rem;
+    padding: ($spacing);
   }
 
   input,
   select {
-    border: 1px solid rgb(55, 155, 255);
-    color: rgb(55, 155, 255);
-    padding-left: 0.5rem;
+    border: 1px solid $clr-primary-500;
+    color: $clr-primary-500;
+    padding-left: ($spacing / 2);
 
     &:focus {
-      background: rgb(55, 155, 255);
-      color: white;
+      background: $clr-primary-500;
+      color: $clr-mono-100;
       outline: none;
-      border: 2px solid rgb(55, 155, 255);
+      border: 2px solid $clr-primary-500;
     }
   }
 
   input::placeholder {
-    padding-left: 0.5rem;
-    color: rgb(55, 155, 255);
+    padding-left: ($spacing / 2);
+    color: $clr-primary-500;
   }
 
   .form__btn {
     width: 100%;
     height: 20px;
-    background: rgb(55, 155, 255);
-    color: white;
+    background: $clr-primary-500;
+    color: $clr-mono-100;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
-    margin: 0.25rem auto;
+    margin: ($spacing / 4) auto;
 
     // pointer-events: none;
 
     &:hover,
     &:focus {
-      background: black;
+      background: $clr-mono-500;
       outline: none;
-      color: white;
-      // border: 1px solid rgb(55, 155, 255);
+      color: $clr-mono-100;
+      // border: 1px solid $clr-primary-500;
     }
   }
 
   .invalid {
-    background-color: rgba(255, 0, 0, 0.25) !important;
-    border: 2px solid red !important;
-    color: red;
+    background-color: $clr-danger-100 !important;
+    border: 2px solid $clr-danger-200 !important;
+    color: $clr-danger-200;
   }
 
   .danger {
-    background-color: rgba(255, 0, 0, 0.25) !important;
-    color: red !important;
+    background-color: $clr-danger-100 !important;
+    color: $clr-danger-200 !important;
   }
 }
 
@@ -731,7 +733,7 @@
   justify-content: flex-start;
 
   h2 {
-    padding: 1rem;
+    padding: ($spacing);
     text-align: center;
   }
 
@@ -743,24 +745,24 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      font-size: 1rem;
+      font-size: ($spacing);
       font-style: italic;
 
       .filter--link {
-        padding: 0 0.25rem;
+        padding: 0 ($spacing / 4);
         cursor: pointer;
         color: lightgray;
 
         &:hover,
         &:focus {
-          color: rgb(55, 155, 255);
+          color: $clr-primary-500;
         }
         &:focus {
-          color: black;
+          color: $clr-mono-500;
         }
       }
       .filter--link--active {
-        color: black;
+        color: $clr-mono-500;
       }
     }
   }
@@ -775,13 +777,13 @@
 
     .trainingGroupCard {
       position: relative;
-      padding: 2rem;
+      padding: ($spacing * 2);
       height: 100%;
-      font-size: 0.95rem;
+      font-size: ($spacing * 0.95);
       background-color: snow;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
       border-radius: 15px;
-      line-height: 1.3rem;
+      line-height: ($spacing * 1.3);
       // cursor: pointer;
       pointer-events: visible;
 
@@ -809,7 +811,7 @@
             flex-wrap: wrap;
 
             & li {
-              padding: 0 0.25rem;
+              padding: 0 ($spacing / 4);
             }
           }
         }
@@ -822,7 +824,7 @@
             flex-wrap: wrap;
 
             & li {
-              padding: 0 0.25rem;
+              padding: 0 ($spacing / 4);
             }
           }
         }
@@ -839,38 +841,38 @@
       .card__line {
         width: 75%;
         height: 3px;
-        background-color: rgb(55, 155, 255);
+        background-color: $clr-primary-500;
       }
 
       p {
-        margin-bottom: 0.7rem;
+        margin-bottom: ($spacing * 0.7);
         pointer-events: none;
       }
 
       .btn {
         width: 100%;
         height: 20px;
-        background: rgb(55, 155, 255);
-        color: white;
+        background: $clr-primary-500;
+        color: $clr-mono-100;
         border: none;
         border-radius: 30px;
         cursor: pointer;
         transition: all 0.25s ease-in-out;
-        margin: 0.25rem auto;
+        margin: ($spacing / 4) auto;
       }
 
       .btn__edit:hover,
       .btn__edit:focus {
-        background: black;
+        background: $clr-mono-500;
         outline: none;
-        color: white;
+        color: $clr-mono-100;
       }
 
       .btn__delete:hover,
       .btn__delete:focus {
-        background: red;
+        background: $clr-danger-200;
         outline: none;
-        color: white;
+        color: $clr-mono-100;
       }
     }
   }

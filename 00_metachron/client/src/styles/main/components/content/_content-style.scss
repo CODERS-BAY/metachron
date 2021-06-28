@@ -1,3 +1,4 @@
+@use "../../main-style.scss" as *;
 /*
 *   display content
 */
@@ -10,11 +11,11 @@
   position: relative;
 
   .accent {
-    color: rgb(55, 155, 255);
+    color: $clr-primary-500;
   }
 
   .accent--inverted {
-    color: white;
+    color: $clr-mono-100;
   }
 }
 
@@ -25,7 +26,7 @@
 /* section home */
 /********************************************************************************/
 .home__section {
-  background: white;
+  background: $clr-mono-100;
   overflow: hidden;
 
   .wrapper__typewriter {
@@ -35,14 +36,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: ($spacing * 4);
     font-size: 12vw;
     // font-size: clamp(50px, 12vw, 20vw);
     letter-spacing: -0.05em;
     line-height: 80%;
 
     .Typewriter__cursor {
-      color: rgb(55, 155, 255);
+      color: $clr-primary-500;
     }
   }
 
@@ -59,18 +60,18 @@
 
     & a {
       text-decoration: none;
-      color: black;
+      color: $clr-mono-500;
       display: inline-flex;
 
       .container__snippet__txt {
         cursor: pointer;
         font-family: "Playfair Display", serif;
-        font-size: 1rem;
+        font-size: ($spacing);
         letter-spacing: 0.05em;
       }
 
       &:hover {
-        color: rgb(55, 155, 255);
+        color: $clr-primary-500;
       }
     }
 
@@ -80,7 +81,7 @@
       bottom: -25px;
       height: 45px;
       width: 1px;
-      background-color: black;
+      background-color: $clr-mono-500;
     }
   }
 }
@@ -91,7 +92,7 @@
 .about__section {
   overflow: hidden;
 
-  background: rgb(0, 0, 0);
+  background: $clr-mono-500;
 
   .lines {
     position: absolute;
@@ -108,7 +109,7 @@
       height: 100%;
       top: 0;
       left: 50%;
-      background: rgba(255, 255, 255, 0);
+      // background: $clr-mono-100;
       overflow: hidden;
 
       &::after {
@@ -121,9 +122,9 @@
         left: 0;
         background: linear-gradient(
           to bottom,
-          rgba(255, 255, 255, 0) 0%,
-          rgb(55, 155, 255) 75%,
-          rgb(55, 155, 255) 100%
+          $clr-mono-500 0%,
+          $clr-primary-500 75%,
+          $clr-primary-500 100%
         );
         animation: drop 5s 0s infinite;
         animation-fill-mode: forwards;
@@ -160,7 +161,7 @@
   .wrapper__content__about {
     width: 100%;
     height: 100%;
-    padding: 4rem;
+    padding: ($spacing * 4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,24 +170,24 @@
     .heading__about {
       width: 100%;
       text-align: center;
-      color: white;
+      color: $clr-mono-100;
       font-size: 5vw;
       line-height: 150%;
-      padding-bottom: 1.5rem;
+      padding-bottom: ($spacing * 1.5);
     }
 
     .txt__about {
       max-width: 60%;
-      padding-top: 1.5rem;
+      padding-top: ($spacing * 1.5);
       position: relative;
 
       & p {
         text-align: center;
-        color: white;
+        color: $clr-mono-100;
         font-family: "Playfair Display", serif;
-        font-size: 1.2rem;
+        font-size: ($spacing * 1.2);
         letter-spacing: 0.05em;
-        padding: 1rem 0;
+        padding: ($spacing) 0;
       }
 
       &::before {
@@ -197,7 +198,7 @@
         transform: translateX(-50%);
         width: 100px;
         height: 1px;
-        background-color: white;
+        background-color: $clr-mono-100;
       }
     }
   }
@@ -215,17 +216,17 @@
 
     & a {
       text-decoration: none;
-      color: white;
+      color: $clr-mono-100;
       display: inline-flex;
 
       .container__snippet__txt {
         cursor: pointer;
         font-family: "Playfair Display", serif;
-        font-size: 1rem;
+        font-size: ($spacing);
         letter-spacing: 0.05em;
       }
       &:hover {
-        color: rgb(55, 155, 255);
+        color: $clr-primary-500;
       }
     }
 
@@ -235,7 +236,7 @@
       bottom: -25px;
       height: 45px;
       width: 1px;
-      background-color: white;
+      background-color: $clr-mono-100;
     }
   }
 }
@@ -249,7 +250,7 @@
   .wrapper__content__contact {
     width: 100%;
     height: 100%;
-    padding: 4rem;
+    padding: ($spacing * 4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -258,24 +259,24 @@
     .heading__contact {
       width: 100%;
       text-align: center;
-      color: black;
+      color: $clr-mono-500;
       font-size: 5vw;
       line-height: 150%;
-      padding-bottom: 1.5rem;
+      padding-bottom: ($spacing * 1.5);
     }
 
     .txt__contact {
       max-width: 60%;
-      padding-top: 1.5rem;
+      padding-top: ($spacing * 1.5);
       position: relative;
 
       & p {
         text-align: center;
-        color: black;
+        color: $clr-mono-500;
         font-family: "Playfair Display", serif;
-        font-size: 1.2rem;
+        font-size: ($spacing * 1.2);
         letter-spacing: 0.05em;
-        padding: 1rem 0rem;
+        padding: ($spacing) ($spacing * 0);
       }
 
       &::before {
@@ -286,7 +287,7 @@
         transform: translateX(-50%);
         width: 100px;
         height: 1px;
-        background-color: black;
+        background-color: $clr-mono-500;
       }
 
       .txt__contact__link {
@@ -296,15 +297,15 @@
         align-items: center;
 
         & a {
-          color: black;
-          padding: 0rem 0.75rem;
+          color: $clr-mono-500;
+          padding: ($spacing * 0) ($spacing * 0.75);
 
           & i {
             font-size: 0.75em;
             cursor: pointer;
 
             &:hover {
-              color: rgb(55, 155, 255);
+              color: $clr-primary-500;
             }
           }
         }
@@ -326,28 +327,28 @@
 
     & a {
       text-decoration: none;
-      color: black;
+      color: $clr-mono-500;
       display: inline-flex;
 
       .container__snippet__txt {
         cursor: pointer;
         font-family: "Playfair Display", serif;
-        font-size: 1rem;
+        font-size: ($spacing);
         letter-spacing: 0.05em;
       }
 
       &:hover {
-        color: rgb(55, 155, 255);
+        color: $clr-primary-500;
       }
     }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: -2rem;
+      bottom: -($spacing * 2);
       height: 45px;
       width: 1px;
-      background-color: black;
+      background-color: $clr-mono-500;
     }
   }
 }

@@ -1,3 +1,5 @@
+@use "../../main-style.scss" as *;
+
 /*
 * Navigation, Overlay, Menuitems
 */
@@ -6,8 +8,8 @@
 /********************************************************************************/
 .nav__btn {
   position: fixed;
-  top: 1.75rem;
-  right: 1.75rem;
+  top: ($spacing * 1.75);
+  right: ($spacing * 1.75);
   width: 40px;
   height: 40px;
   display: flex;
@@ -19,7 +21,7 @@
   .nav__btn__burger {
     width: 35px;
     height: 4px;
-    background-color: rgb(55, 155, 255);
+    background-color: $clr-primary-500;
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
 
@@ -29,7 +31,7 @@
       position: absolute;
       width: 35px;
       height: 4px;
-      background-color: rgb(55, 155, 255);
+      background-color: $clr-primary-500;
       border-radius: 5px;
       transition: all 0.5s ease-in-out;
     }
@@ -51,9 +53,9 @@
 }
 .nav__btn.open .nav__btn__burger::before {
   transform: rotate(45deg) translate(0px, 0px);
-  background-color: rgb(55, 155, 255);
+  background-color: $clr-primary-500;
 }
 .nav__btn.open .nav__btn__burger::after {
   transform: rotate(-45deg) translate(0px, 0px);
-  background-color: rgb(55, 155, 255);
+  background-color: $clr-primary-500;
 }

@@ -1,4 +1,5 @@
 @import "../main/abstracts/color";
+@import "../main/abstracts/spacing";
 
 /********************************************************************************/
 /* root setup */
@@ -9,6 +10,11 @@
       --clr-#{$color}-#{$shade}: #{$value};
     }
   }
+}
+
+::selection {
+  background-color: $clr-primary-500;
+  color: $clr-mono-100;
 }
 
 @import "./fonts/_fonts.scss";

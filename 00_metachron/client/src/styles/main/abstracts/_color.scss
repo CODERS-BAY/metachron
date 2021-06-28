@@ -21,3 +21,18 @@ $colors: (
         500: hsl(0, 0%, 0%),
     )
 );
+
+$clr-primary-100: hsl(210, 100%, 90%);
+$clr-primary-200: hsl(210, 100%, 80%);
+$clr-primary-300: hsl(210, 100%, 75%);
+$clr-primary-400: hsl(210, 100%, 70%);
+$clr-primary-500: hsl(210, 100%, 61%);
+
+$clr-mono-100: hsl(0, 0%, 100%);
+$clr-mono-200: hsl(0, 0%, 90%);
+$clr-mono-300: hsl(0, 0%, 75%);
+$clr-mono-400: hsl(0, 0%, 50%);
+$clr-mono-500: hsl(0, 0%, 0%);
+
+$clr-danger-100: hsla(0, 100%, 50%, 0.25);
+$clr-danger-200: hsl(0, 100%, 50%);
