@@ -1,12 +1,14 @@
+@use "../../main-style.scss" as *;
+
 /********************************************************************************/
 /*  display footer */
 /********************************************************************************/
 footer {
   width: 100%;
   min-height: 25vh;
-  background-color: black;
-  color: white;
-  padding: 2rem;
+  background-color: $clr-mono-500;
+  color: $clr-mono-100;
+  padding: ($spacing * 2);
   display: block;
   z-index: 3;
   position: relative;
@@ -16,7 +18,7 @@ footer {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: rgb(55, 155, 255);
+    background-color: $clr-primary-500;
     height: 2px;
     width: 35%;
   }
@@ -31,8 +33,8 @@ footer {
 
       &::after {
         content: "";
-        margin: 2rem;
-        border-right: 1px solid white;
+        margin: ($spacing * 2);
+        border-right: 1px solid $clr-mono-100;
       }
     }
 
@@ -46,14 +48,14 @@ footer {
     width: fit-content;
 
     & li {
-      font-size: 0.875rem;
+      font-size: ($spacing * 0.875);
       color: #888;
       list-style-type: none;
-      padding: 0.75rem 1.5rem 0.75rem 0rem;
+      padding: ($spacing * 0.75) ($spacing * 1.5) ($spacing * 0.75) ($spacing * 0);
       cursor: pointer;
 
       &:hover {
-        color: rgb(55, 155, 255);
+        color: $clr-primary-500;
       }
     }
     a {
@@ -63,7 +65,7 @@ footer {
 
   .footer__legal {
     font-family: "Playfair Display", serif;
-    font-size: 0.875rem;
+    font-size: ($spacing * 0.875);
     letter-spacing: 0.02em;
     color: #888;
   }

@@ -20,6 +20,16 @@
   --clr-mono-500: black;
 }
 
+::-moz-selection {
+  background-color: #389cff;
+  color: white;
+}
+
+::selection {
+  background-color: #389cff;
+  color: white;
+}
+
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std Extra Light';
   font-style: normal;
@@ -190,6 +200,7 @@ body .overflow {
   overflow: hidden;
 }
 
+@use "../../main-style.scss" as *;
 /********************************************************************************/
 /* display 404 page not found */
 /********************************************************************************/
@@ -235,7 +246,7 @@ body .overflow {
 }
 
 .wrapper__notfound .notfound .accent {
-  color: #379bff;
+  color: #389cff;
 }
 
 .wrapper__notfound .notfound .notfound__btn {
@@ -243,7 +254,7 @@ body .overflow {
   width: -moz-fit-content;
   width: fit-content;
   height: auto;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -258,6 +269,7 @@ body .overflow {
   background: black;
 }
 
+@use "../../main-style.scss" as *;
 /*
 * Navigation, Overlay, Menuitems
 */
@@ -286,7 +298,7 @@ body .overflow {
 .nav__btn .nav__btn__burger {
   width: 35px;
   height: 4px;
-  background-color: #379bff;
+  background-color: #389cff;
   border-radius: 5px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -297,7 +309,7 @@ body .overflow {
   position: absolute;
   width: 35px;
   height: 4px;
-  background-color: #379bff;
+  background-color: #389cff;
   border-radius: 5px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -325,15 +337,16 @@ body .overflow {
 .nav__btn.open .nav__btn__burger::before {
   -webkit-transform: rotate(45deg) translate(0px, 0px);
           transform: rotate(45deg) translate(0px, 0px);
-  background-color: #379bff;
+  background-color: #389cff;
 }
 
 .nav__btn.open .nav__btn__burger::after {
   -webkit-transform: rotate(-45deg) translate(0px, 0px);
           transform: rotate(-45deg) translate(0px, 0px);
-  background-color: #379bff;
+  background-color: #389cff;
 }
 
+@use "../../main-style.scss" as *;
 /* 
 * display overlay, menu, navlinks
 */
@@ -417,7 +430,7 @@ body .overflow {
 }
 
 .nav__overlay .nav__items .nav__link:hover {
-  color: #379bff;
+  color: #389cff;
 }
 
 .nav__overlay .nav__items .nav__link:hover:hover::after {
@@ -427,7 +440,7 @@ body .overflow {
 
 .nav__overlay .nav__items .nav__link--active {
   text-decoration: line-through;
-  color: #379bff;
+  color: #389cff;
 }
 
 /********************************************************************************/
@@ -438,6 +451,7 @@ body .overflow {
   opacity: 1;
 }
 
+@use "../../main-style.scss" as *;
 /*
 *   display content
 */
@@ -451,7 +465,7 @@ body .overflow {
 }
 
 .container .accent {
-  color: #379bff;
+  color: #389cff;
 }
 
 .container .accent--inverted {
@@ -489,7 +503,7 @@ body .overflow {
 }
 
 .home__section .wrapper__typewriter .Typewriter__cursor {
-  color: #379bff;
+  color: #389cff;
 }
 
 .home__section .container__snippet {
@@ -523,7 +537,7 @@ body .overflow {
 }
 
 .home__section .container__snippet a:hover {
-  color: #379bff;
+  color: #389cff;
 }
 
 .home__section .container__snippet::after {
@@ -559,7 +573,6 @@ body .overflow {
   height: 100%;
   top: 0;
   left: 50%;
-  background: rgba(255, 255, 255, 0);
   overflow: hidden;
 }
 
@@ -571,8 +584,8 @@ body .overflow {
   width: 100%;
   top: -50%;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(75%, #379bff), to(#379bff));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #379bff 75%, #379bff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(75%, #389cff), to(#389cff));
+  background: linear-gradient(to bottom, black 0%, #389cff 75%, #389cff 100%);
   -webkit-animation: drop 5s 0s infinite;
           animation: drop 5s 0s infinite;
   -webkit-animation-fill-mode: forwards;
@@ -703,7 +716,7 @@ body .overflow {
 }
 
 .about__section .container__snippet a:hover {
-  color: #379bff;
+  color: #389cff;
 }
 
 .about__section .container__snippet::after {
@@ -801,7 +814,7 @@ body .overflow {
 }
 
 .contact__section .wrapper__content__contact .txt__contact .txt__contact__link a i:hover {
-  color: #379bff;
+  color: #389cff;
 }
 
 .contact__section .container__snippet {
@@ -836,7 +849,7 @@ body .overflow {
 }
 
 .contact__section .container__snippet a:hover {
-  color: #379bff;
+  color: #389cff;
 }
 
 .contact__section .container__snippet::after {
@@ -873,6 +886,7 @@ body .overflow {
   }
 }
 
+@use "../../main-style.scss" as *;
 /********************************************************************************/
 /* display login form */
 /********************************************************************************/
@@ -944,8 +958,8 @@ body .overflow {
 
 .form__login .form__input:focus {
   outline: none;
-  color: #379bff;
-  border-color: #379bff;
+  color: #389cff;
+  border-color: #389cff;
   border-left-width: 35px;
 }
 
@@ -1029,11 +1043,12 @@ body .overflow {
 }
 
 .form__login .form__btn:hover {
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: 1px solid black;
 }
 
+@use "../../main-style.scss" as *;
 /********************************************************************************/
 /*  display footer */
 /********************************************************************************/
@@ -1053,7 +1068,7 @@ footer::before {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #379bff;
+  background-color: #389cff;
   height: 2px;
   width: 35%;
 }
@@ -1102,7 +1117,7 @@ footer .footer__sub__menu ul li {
 }
 
 footer .footer__sub__menu ul li:hover {
-  color: #379bff;
+  color: #389cff;
 }
 
 footer .footer__sub__menu ul a {
@@ -1378,6 +1393,7 @@ footer .footer__legal {
   display: none !important;
 }
 
+@use "../../styles/main/main-style.scss" as *;
 .view {
   position: relative;
   width: 100%;
@@ -1421,9 +1437,9 @@ footer .footer__legal {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-auto-rows: 150px;
+  -ms-grid-columns: (minmax(225px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  grid-auto-rows: 225px;
   grid-auto-flow: dense;
 }
 
@@ -1439,7 +1455,7 @@ footer .footer__legal {
 }
 
 .view__main__dashboard .card-container a:hover, .view__main__dashboard .card-container a:focus {
-  background-color: #379bff !important;
+  background-color: #389cff !important;
   color: white !important;
 }
 
@@ -1478,7 +1494,7 @@ footer .footer__legal {
 .view__main__dashboard .card-container a .card .card__line {
   width: 75%;
   height: 3px;
-  background-color: #379bff;
+  background-color: #389cff;
 }
 
 /********************************************************************************/
@@ -1524,7 +1540,7 @@ footer .footer__legal {
 }
 
 .view__one .filter-control ul .filter--link:hover, .view__one .filter-control ul .filter--link:focus {
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__one .filter-control ul .filter--link:focus {
@@ -1559,7 +1575,7 @@ footer .footer__legal {
 }
 
 .view__one .card-container .emptyUserCard:hover {
-  background-color: #379bff !important;
+  background-color: #389cff !important;
   color: white !important;
 }
 
@@ -1610,7 +1626,7 @@ footer .footer__legal {
 .view__one .card-container .userCard .card__line {
   width: 75%;
   height: 3px;
-  background-color: #379bff;
+  background-color: #389cff;
 }
 
 .view__one .card-container .userCard img {
@@ -1618,7 +1634,7 @@ footer .footer__legal {
   top: 0;
   right: 0;
   margin: 1rem;
-  background-color: #379bff;
+  background-color: #389cff;
   width: 50px;
   height: auto;
   -webkit-clip-path: circle();
@@ -1633,7 +1649,7 @@ footer .footer__legal {
 .view__one .card-container .userCard .btn {
   width: 100%;
   height: 20px;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -1697,43 +1713,43 @@ footer .footer__legal {
 
 .view__two .__form input,
 .view__two .__form select {
-  border: 1px solid #379bff;
-  color: #379bff;
+  border: 1px solid #389cff;
+  color: #389cff;
   padding-left: 0.5rem;
 }
 
 .view__two .__form input:focus,
 .view__two .__form select:focus {
-  background: #379bff;
+  background: #389cff;
   color: white;
   outline: none;
-  border: 2px solid #379bff;
+  border: 2px solid #389cff;
 }
 
 .view__two .__form input::-webkit-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__two .__form input:-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__two .__form input::-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__two .__form input::placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__two .__form .form__btn {
   width: 100%;
   height: 20px;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -1798,43 +1814,43 @@ footer .footer__legal {
 
 .view__three .__form input,
 .view__three .__form select {
-  border: 1px solid #379bff;
-  color: #379bff;
+  border: 1px solid #389cff;
+  color: #389cff;
   padding-left: 0.5rem;
 }
 
 .view__three .__form input:focus,
 .view__three .__form select:focus {
-  background: #379bff;
+  background: #389cff;
   color: white;
   outline: none;
-  border: 2px solid #379bff;
+  border: 2px solid #389cff;
 }
 
 .view__three .__form input::-webkit-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .__form input:-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .__form input::-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .__form input::placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .__form .form__btn {
   width: 100%;
   height: 20px;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -1854,36 +1870,36 @@ footer .footer__legal {
   width: 50%;
   padding: 0.5rem;
   margin: 0.5rem;
-  border: 1px solid #379bff;
-  color: #379bff;
+  border: 1px solid #389cff;
+  color: #389cff;
   padding-left: 0.5rem;
 }
 
 .view__three .search__input:focus {
-  background: #379bff;
+  background: #389cff;
   color: white;
   outline: none;
-  border: 2px solid #379bff;
+  border: 2px solid #389cff;
 }
 
 .view__three .search__input::-webkit-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .search__input:-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .search__input::-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .search__input::placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__three .form__info {
@@ -1951,7 +1967,7 @@ footer .footer__legal {
 .view__four .card-container .trainerCard .card__line {
   width: 75%;
   height: 3px;
-  background-color: #379bff;
+  background-color: #389cff;
 }
 
 .view__four .card-container .trainerCard img {
@@ -1959,7 +1975,7 @@ footer .footer__legal {
   top: 0;
   right: 0;
   margin: 1rem;
-  background-color: #379bff;
+  background-color: #389cff;
   width: 50px;
   height: auto;
   -webkit-clip-path: circle();
@@ -1967,7 +1983,7 @@ footer .footer__legal {
 }
 
 .view__four .card-container .trainerCard cite {
-  color: #379bff;
+  color: #389cff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2027,7 +2043,7 @@ footer .footer__legal {
 }
 
 .view__four .card-container .trainerCard .skillsets .skills:hover {
-  background: #379bff;
+  background: #389cff;
   color: white;
 }
 
@@ -2035,7 +2051,7 @@ footer .footer__legal {
   display: none;
   width: 100%;
   height: 20px;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -2113,14 +2129,14 @@ footer .footer__legal {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #379bff;
+  background: #389cff;
   color: white;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .view__five .__form ul.cloud li:hover {
-  color: #379bff;
+  color: #389cff;
   background: rgba(55, 155, 255, 0.25);
 }
 
@@ -2135,43 +2151,43 @@ footer .footer__legal {
 
 .view__five input,
 .view__five select {
-  border: 1px solid #379bff;
-  color: #379bff;
+  border: 1px solid #389cff;
+  color: #389cff;
   padding-left: 0.5rem;
 }
 
 .view__five input:focus,
 .view__five select:focus {
-  background: #379bff;
+  background: #389cff;
   color: white;
   outline: none;
-  border: 2px solid #379bff;
+  border: 2px solid #389cff;
 }
 
 .view__five input::-webkit-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__five input:-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__five input::-ms-input-placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__five input::placeholder {
   padding-left: 0.5rem;
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__five .form__btn {
   width: 100%;
   height: 20px;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -2242,7 +2258,7 @@ footer .footer__legal {
 }
 
 .view__six .filter-control ul .filter--link:hover, .view__six .filter-control ul .filter--link:focus {
-  color: #379bff;
+  color: #389cff;
 }
 
 .view__six .filter-control ul .filter--link:focus {
@@ -2330,7 +2346,7 @@ footer .footer__legal {
 .view__six .card-container .trainingGroupCard .card__line {
   width: 75%;
   height: 3px;
-  background-color: #379bff;
+  background-color: #389cff;
 }
 
 .view__six .card-container .trainingGroupCard p {
@@ -2341,7 +2357,7 @@ footer .footer__legal {
 .view__six .card-container .trainingGroupCard .btn {
   width: 100%;
   height: 20px;
-  background: #379bff;
+  background: #389cff;
   color: white;
   border: none;
   border-radius: 30px;

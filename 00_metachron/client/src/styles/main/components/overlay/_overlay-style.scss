@@ -1,3 +1,4 @@
+@use "../../main-style.scss" as *;
 /* 
 * display overlay, menu, navlinks
 */
@@ -12,7 +13,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: white;
+  background-color: $clr-mono-100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,22 +30,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px dashed red;
+    // border: 1px dashed $clr-danger-200;
 
     .nav__link {
       cursor: pointer;
-      color: black;
+      color: $clr-mono-500;
       text-transform: uppercase;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       width: max-content;
-      // font-size: clamp(2rem, 8vh, 10vh);
+      // font-size: clamp(($spacing * 2), 8vh, 10vh);
       font-size: 8vh;
       height: 10vh;
       position: relative;
-      margin: 0.25rem 0;
+      margin: ($spacing / 4) 0;
       // border: 1px dashed blue;
 
       &::after {
@@ -56,12 +57,12 @@
         display: block;
         width: 0;
         height: 5px;
-        background: black;
+        background: $clr-mono-500;
         transition: width 0.3s ease 0s, left 0.3s ease 0s, right 0.3s ease 0s;
       }
     }
     .nav__link:hover {
-      color: rgb(55, 155, 255);
+      color: $clr-primary-500;
 
       &:hover::after {
         left: 0;
@@ -70,7 +71,7 @@
     }
     .nav__link--active {
       text-decoration: line-through;
-      color: rgb(55, 155, 255);
+      color: $clr-primary-500;
     }
   }
 }

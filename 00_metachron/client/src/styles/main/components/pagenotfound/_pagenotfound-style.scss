@@ -1,3 +1,5 @@
+@use "../../main-style.scss" as *;
+
 /********************************************************************************/
 /* display 404 page not found */
 /********************************************************************************/
@@ -12,7 +14,7 @@
   text-align: center;
 
   .notfound {
-    // border: 1px dashed red;
+    // border: 1px dashed $clr-danger-200;
 
     .notfound__main__heading {
       font-size: 10vw;
@@ -21,12 +23,12 @@
 
     .notfound__sub__heading {
       font-size: 4vw;
-      padding: 1rem 0rem;
+      padding: ($spacing) 0rem;
     }
 
     .notfound__404 {
       font-size: 3.5vw;
-      padding: 2rem;
+      padding: ($spacing * 2);
     }
 
     .notfound__txt {
@@ -36,22 +38,22 @@
     }
 
     .accent {
-      color: rgb(55, 155, 255);
+      color: $clr-primary-500;
     }
 
     .notfound__btn {
       width: fit-content;
       height: auto;
-      background: rgb(55, 155, 255);
-      color: white;
+      background: $clr-primary-500;
+      color: $clr-mono-100;
       border: none;
       border-radius: 30px;
       padding: 0.75rem;
       cursor: pointer;
       transition: all 0.25s ease-in-out;
-      margin-top: 2rem;
+      margin-top: ($spacing * 2);
       &:hover {
-        background: black;
+        background: $clr-mono-500;
       }
     }
   }
