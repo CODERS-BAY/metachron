@@ -169,6 +169,48 @@ function ViewSix() {
         );
     });
 
+    /* set logged userrole */
+    const [userrole, setUserrole] = useState("");
+
+    /* check if localStorage is populated */
+    useEffect(() => {
+        // get JSON string
+        const userCredentials = localStorage.getItem("userCredentials");
+        // parse JSON string to js object
+        const retrievedCredentials = JSON.parse(userCredentials);
+
+        if (retrievedCredentials.userrole_id === 1) {
+            setUserrole("Admin");
+        } else if (retrievedCredentials.userrole_id === 2) {
+            setUserrole("Trainer");
+        } else {
+            setUserrole("Student");
+        }
+    }, [allTrainingGroups]);
+
+    /* disable buttons if userrole is student */
+    useEffect(() => {
+        // const cardContainer = document.querySelectorAll("card-container");
+        const btnsEdit = document.querySelectorAll(".btn__edit");
+        const btnsDelete = document.querySelectorAll(".btn__delete");
+
+        if (userrole === "Student") {
+            // trainingGroupCard.classList.add("dnone");
+            btnsEdit.forEach((btn) => {
+                btn.style.pointerEvents = "none";
+                btn.style.backgroundColor = "lightgrey";
+            });
+            btnsDelete.forEach((btn) => {
+                btn.style.pointerEvents = "none";
+                btn.style.backgroundColor = "lightgrey";
+            });
+        }
+    }, [users, userrole]);
+
+
+
+
+
     /**
      * useEffect cleanup
      */

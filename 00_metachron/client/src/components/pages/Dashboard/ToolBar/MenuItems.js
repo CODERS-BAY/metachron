@@ -38,7 +38,7 @@ const MenuItems = [
         id:6,
         to: "/dashboard/viewfive",
         name: "Qualifications",
-        className: "tool__link linkSnip_6",
+        className: "tool__link",
         activeClassName: "tool__link--active"
     },
     {

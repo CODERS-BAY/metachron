@@ -95,7 +95,7 @@ function ToolBar() {
         const navLinkItemEditUser = document.getElementById("sniplink_4");
         const navLinkItemListAllTrainerQualifications = document.getElementById("sniplink_5");
         const navLinkItemQualifications = document.getElementById("sniplink_6");
-        const navLinkItemListAllTrainingGroups = document.getElementById("sniplink_7");
+        // const navLinkItemListAllTrainingGroups = document.getElementById("sniplink_7");
 
         if (userrole === "Student") {
             // navLinkItemListAllUsers.classList.add("dnone");
@@ -103,7 +103,7 @@ function ToolBar() {
             navLinkItemEditUser.classList.add("dnone");
             navLinkItemListAllTrainerQualifications.classList.add("dnone");
             navLinkItemQualifications.classList.add("dnone");
-            navLinkItemListAllTrainingGroups.classList.add("dnone");
+            // navLinkItemListAllTrainingGroups.classList.add("dnone");
         }
     },[userrole]);
 
