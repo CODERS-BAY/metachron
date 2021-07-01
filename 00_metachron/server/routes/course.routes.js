@@ -27,5 +27,9 @@ const courseController = require("../controllers/course.controller");
 // get all all trainingGroups with trainingSubject and the participants
 router.get("/traininggroups", courseController.findAllTrainingGroups);
 
+// get all all trainingGroupSupervisors
+router.get("/trainingGroupSupervisors", courseController.findTrainingGroupSupervisors);
+
+
 /* export */
 module.exports = router;
