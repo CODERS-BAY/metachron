@@ -19,7 +19,7 @@ const { TrainingSubject } = require("../models");
 const { TrainingContent } = require("../models");
 
 /* find all trainingGroups with trainingSubject and the participants */
-exports.findAllTrainingGroups = async (requ, res) => {
+exports.findAllTrainingGroups = async (req, res) => {
     try {
         const trainingGroup = await TrainingGroup.findAll({
             include: [
@@ -30,10 +30,22 @@ exports.findAllTrainingGroups = async (requ, res) => {
                     model: TrainingSubject
                 }
             ]
-                
-
         });
+
         return res.json(trainingGroup);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+    }
+}
+
+/* find all trainingGroupSupervisors */
+exports.findTrainingGroupSupervisors = async (req, res) => {
+    try {
+        const supervisors = await user_has_trainingGroup.findAll();
+        
+        return res.json(supervisors);
+
     } catch (error) {
         console.log(error);
         return res.status(500).json(error);

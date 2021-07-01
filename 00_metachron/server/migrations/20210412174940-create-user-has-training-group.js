@@ -5,7 +5,13 @@ module.exports = {
     await queryInterface.createTable('user_has_trainingGroup', {
       supervisor: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: {
+            tableName: "user"
+          },
+          foreignKey: "id"
+        },
       },
       hasCanceled: {
         type: DataTypes.TINYINT,

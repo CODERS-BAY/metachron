@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
           tableName: "user"
         },
         foreignKey: "id"
-      }
+      },
     },
     hasCanceled: {
       type: DataTypes.TINYINT,
