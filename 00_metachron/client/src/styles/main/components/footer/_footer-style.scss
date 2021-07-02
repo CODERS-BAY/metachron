@@ -30,6 +30,37 @@ footer {
 
     .footer__logo {
       font-size: 4vw;
+      position: relative;
+
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   // right: 0;
+      //   // bottom: 0;
+      //   background-color: $clr-primary-500;
+      //   width: 300px;
+      //   height: 100%;
+      //   margin-right: ($spacing * 4);
+      //   box-shadow: 0 0 ($spacing / 1) ($spacing / 1) $clr-primary-500;
+      //   mix-blend-mode: multiply;
+        
+      //   animation-duration: 10s;
+      //   animation-name: changeIt;
+      //   animation-iteration-count: infinite;
+      //   // animation-direction: alternate;
+      // }
+
+      // @keyframes changeIt {
+      //   from {
+      //     left: -300px;
+      //   }
+
+      //   to {
+      //     left: 800px;
+      //   }
+      // }
 
       &::after {
         content: "";

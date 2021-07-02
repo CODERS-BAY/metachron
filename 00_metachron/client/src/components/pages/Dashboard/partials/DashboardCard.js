@@ -31,7 +31,7 @@ function DashboardCard(props) {
         const cardLinkItemEditUser = document.getElementById("cardlink_4");
         const cardLinkItemListAllTrainerQualifications = document.getElementById("cardlink_5");
         const cardLinkItemQualifications = document.getElementById("cardlink_6");
-        const cardLinkItemListAllTrainingGroups = document.getElementById("cardlink_7");
+        // const cardLinkItemListAllTrainingGroups = document.getElementById("cardlink_7");
 
         if (userrole === "Student") {
             // cardLinkItemListAllUsers.classList.add("dnone");
@@ -39,7 +39,7 @@ function DashboardCard(props) {
             cardLinkItemEditUser.classList.add("dnone");
             cardLinkItemListAllTrainerQualifications.classList.add("dnone");
             cardLinkItemQualifications.classList.add("dnone");
-            cardLinkItemListAllTrainingGroups.classList.add("dnone");
+            // cardLinkItemListAllTrainingGroups.classList.add("dnone");
         }
     }, [userrole]);
 

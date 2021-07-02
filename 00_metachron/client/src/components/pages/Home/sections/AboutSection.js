@@ -1,5 +1,6 @@
 import React from "react";
 import { NavHashLink } from "react-router-hash-link";
+import Floating from "../sections/partials/Floating";
 
 function AboutSection() {
     return (
@@ -19,6 +20,7 @@ function AboutSection() {
             </div>
 
             <div className="wrapper__content__about">
+                {/*<Floating />*/}
                 <div className="heading__about">
                     <h2>
                         I'm&nbsp;
@@ -28,9 +30,9 @@ function AboutSection() {
                     </h2>
                     <h2>
                         <span className="accent">
-                            What&nbsp;
+                            What's&nbsp;
                         </span>
-                         the *!#?
+                         about organisation<span className="accent">?</span>
                     </h2>
                 </div>
                 <div className="txt__about">
