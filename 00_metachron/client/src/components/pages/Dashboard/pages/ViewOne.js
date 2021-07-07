@@ -193,10 +193,12 @@ function ViewOne() {
             btnsEdit.forEach((btn) => {
                     btn.style.pointerEvents = "none";
                     btn.style.backgroundColor = "lightgrey";
+                    btn.style.display = "none";
                 });
                 btnsDelete.forEach((btn) => {
                     btn.style.pointerEvents = "none";
                     btn.style.backgroundColor = "lightgrey";
+                    btn.style.display = "none";
             });
         }
     }, [users, userrole]);
