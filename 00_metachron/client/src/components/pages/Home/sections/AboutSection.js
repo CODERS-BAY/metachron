@@ -1,6 +1,6 @@
 import React from "react";
 import { NavHashLink } from "react-router-hash-link";
-import Floating from "../sections/partials/Floating";
+// import Floating from "../sections/partials/Floating";
 
 function AboutSection() {
     return (

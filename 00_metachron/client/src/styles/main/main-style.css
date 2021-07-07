@@ -663,13 +663,13 @@ body .overflow {
 }
 
 .about__section .wrapper__content__about .svg:nth-child(1) {
-  left: 58%;
-  -webkit-animation: raise1 11s linear infinite;
-          animation: raise1 11s linear infinite;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-transform: scale(-0.3) rotate(72deg);
-          transform: scale(-0.3) rotate(72deg);
+  left: 41%;
+  -webkit-animation: raise1 8s linear infinite;
+          animation: raise1 8s linear infinite;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-transform: scale(-0.3) rotate(358deg);
+          transform: scale(-0.3) rotate(358deg);
   z-index: -6;
   -webkit-filter: blur(-5px);
           filter: blur(-5px);
@@ -678,27 +678,27 @@ body .overflow {
 @-webkit-keyframes raise1 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(-0.3) rotate(292deg);
-            transform: scale(-0.3) rotate(292deg);
+    -webkit-transform: scale(-0.3) rotate(39deg);
+            transform: scale(-0.3) rotate(39deg);
   }
 }
 
 @keyframes raise1 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(-0.3) rotate(292deg);
-            transform: scale(-0.3) rotate(292deg);
+    -webkit-transform: scale(-0.3) rotate(39deg);
+            transform: scale(-0.3) rotate(39deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(2) {
-  left: 30%;
-  -webkit-animation: raise2 20s linear infinite;
-          animation: raise2 20s linear infinite;
-  -webkit-animation-delay: -4s;
-          animation-delay: -4s;
-  -webkit-transform: scale(0) rotate(7deg);
-          transform: scale(0) rotate(7deg);
+  left: -12%;
+  -webkit-animation: raise2 9s linear infinite;
+          animation: raise2 9s linear infinite;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-transform: scale(0) rotate(181deg);
+          transform: scale(0) rotate(181deg);
   z-index: -5;
   -webkit-filter: blur(-4px);
           filter: blur(-4px);
@@ -707,27 +707,27 @@ body .overflow {
 @-webkit-keyframes raise2 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0) rotate(89deg);
-            transform: scale(0) rotate(89deg);
+    -webkit-transform: scale(0) rotate(232deg);
+            transform: scale(0) rotate(232deg);
   }
 }
 
 @keyframes raise2 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0) rotate(89deg);
-            transform: scale(0) rotate(89deg);
+    -webkit-transform: scale(0) rotate(232deg);
+            transform: scale(0) rotate(232deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(3) {
-  left: 72%;
-  -webkit-animation: raise3 17s linear infinite;
-          animation: raise3 17s linear infinite;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-transform: scale(0.3) rotate(38deg);
-          transform: scale(0.3) rotate(38deg);
+  left: 75%;
+  -webkit-animation: raise3 18s linear infinite;
+          animation: raise3 18s linear infinite;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-transform: scale(0.3) rotate(185deg);
+          transform: scale(0.3) rotate(185deg);
   z-index: -4;
   -webkit-filter: blur(-3px);
           filter: blur(-3px);
@@ -736,27 +736,27 @@ body .overflow {
 @-webkit-keyframes raise3 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0.3) rotate(149deg);
-            transform: scale(0.3) rotate(149deg);
+    -webkit-transform: scale(0.3) rotate(329deg);
+            transform: scale(0.3) rotate(329deg);
   }
 }
 
 @keyframes raise3 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0.3) rotate(149deg);
-            transform: scale(0.3) rotate(149deg);
+    -webkit-transform: scale(0.3) rotate(329deg);
+            transform: scale(0.3) rotate(329deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(4) {
-  left: 2%;
-  -webkit-animation: raise4 15s linear infinite;
-          animation: raise4 15s linear infinite;
+  left: 81%;
+  -webkit-animation: raise4 21s linear infinite;
+          animation: raise4 21s linear infinite;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
-  -webkit-transform: scale(0.6) rotate(47deg);
-          transform: scale(0.6) rotate(47deg);
+  -webkit-transform: scale(0.6) rotate(275deg);
+          transform: scale(0.6) rotate(275deg);
   z-index: -3;
   -webkit-filter: blur(-2px);
           filter: blur(-2px);
@@ -765,27 +765,27 @@ body .overflow {
 @-webkit-keyframes raise4 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0.6) rotate(205deg);
-            transform: scale(0.6) rotate(205deg);
+    -webkit-transform: scale(0.6) rotate(101deg);
+            transform: scale(0.6) rotate(101deg);
   }
 }
 
 @keyframes raise4 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0.6) rotate(205deg);
-            transform: scale(0.6) rotate(205deg);
+    -webkit-transform: scale(0.6) rotate(101deg);
+            transform: scale(0.6) rotate(101deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(5) {
-  left: 71%;
-  -webkit-animation: raise5 15s linear infinite;
-          animation: raise5 15s linear infinite;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-transform: scale(0.9) rotate(77deg);
-          transform: scale(0.9) rotate(77deg);
+  left: -6%;
+  -webkit-animation: raise5 8s linear infinite;
+          animation: raise5 8s linear infinite;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-transform: scale(0.9) rotate(113deg);
+          transform: scale(0.9) rotate(113deg);
   z-index: -2;
   -webkit-filter: blur(-1px);
           filter: blur(-1px);
@@ -794,27 +794,27 @@ body .overflow {
 @-webkit-keyframes raise5 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0.9) rotate(119deg);
-            transform: scale(0.9) rotate(119deg);
+    -webkit-transform: scale(0.9) rotate(127deg);
+            transform: scale(0.9) rotate(127deg);
   }
 }
 
 @keyframes raise5 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(0.9) rotate(119deg);
-            transform: scale(0.9) rotate(119deg);
+    -webkit-transform: scale(0.9) rotate(127deg);
+            transform: scale(0.9) rotate(127deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(6) {
-  left: 5%;
-  -webkit-animation: raise6 13s linear infinite;
-          animation: raise6 13s linear infinite;
+  left: -8%;
+  -webkit-animation: raise6 11s linear infinite;
+          animation: raise6 11s linear infinite;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
-  -webkit-transform: scale(1.2) rotate(61deg);
-          transform: scale(1.2) rotate(61deg);
+  -webkit-transform: scale(1.2) rotate(51deg);
+          transform: scale(1.2) rotate(51deg);
   z-index: -1;
   -webkit-filter: blur(0px);
           filter: blur(0px);
@@ -823,27 +823,27 @@ body .overflow {
 @-webkit-keyframes raise6 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(1.2) rotate(29deg);
-            transform: scale(1.2) rotate(29deg);
+    -webkit-transform: scale(1.2) rotate(39deg);
+            transform: scale(1.2) rotate(39deg);
   }
 }
 
 @keyframes raise6 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(1.2) rotate(29deg);
-            transform: scale(1.2) rotate(29deg);
+    -webkit-transform: scale(1.2) rotate(39deg);
+            transform: scale(1.2) rotate(39deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(7) {
-  left: -7%;
-  -webkit-animation: raise7 8s linear infinite;
-          animation: raise7 8s linear infinite;
-  -webkit-animation-delay: -3s;
-          animation-delay: -3s;
-  -webkit-transform: scale(1.5) rotate(328deg);
-          transform: scale(1.5) rotate(328deg);
+  left: -14%;
+  -webkit-animation: raise7 19s linear infinite;
+          animation: raise7 19s linear infinite;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-transform: scale(1.5) rotate(347deg);
+          transform: scale(1.5) rotate(347deg);
   z-index: 0;
   -webkit-filter: blur(1px);
           filter: blur(1px);
@@ -852,27 +852,27 @@ body .overflow {
 @-webkit-keyframes raise7 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(1.5) rotate(77deg);
-            transform: scale(1.5) rotate(77deg);
+    -webkit-transform: scale(1.5) rotate(39deg);
+            transform: scale(1.5) rotate(39deg);
   }
 }
 
 @keyframes raise7 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(1.5) rotate(77deg);
-            transform: scale(1.5) rotate(77deg);
+    -webkit-transform: scale(1.5) rotate(39deg);
+            transform: scale(1.5) rotate(39deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(8) {
-  left: 20%;
-  -webkit-animation: raise8 15s linear infinite;
-          animation: raise8 15s linear infinite;
-  -webkit-animation-delay: -1s;
-          animation-delay: -1s;
-  -webkit-transform: scale(1.8) rotate(58deg);
-          transform: scale(1.8) rotate(58deg);
+  left: 50%;
+  -webkit-animation: raise8 16s linear infinite;
+          animation: raise8 16s linear infinite;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-transform: scale(1.8) rotate(339deg);
+          transform: scale(1.8) rotate(339deg);
   z-index: 1;
   -webkit-filter: blur(2px);
           filter: blur(2px);
@@ -881,27 +881,27 @@ body .overflow {
 @-webkit-keyframes raise8 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(1.8) rotate(338deg);
-            transform: scale(1.8) rotate(338deg);
+    -webkit-transform: scale(1.8) rotate(311deg);
+            transform: scale(1.8) rotate(311deg);
   }
 }
 
 @keyframes raise8 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(1.8) rotate(338deg);
-            transform: scale(1.8) rotate(338deg);
+    -webkit-transform: scale(1.8) rotate(311deg);
+            transform: scale(1.8) rotate(311deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(9) {
-  left: -9%;
-  -webkit-animation: raise9 10s linear infinite;
-          animation: raise9 10s linear infinite;
-  -webkit-animation-delay: -1s;
-          animation-delay: -1s;
-  -webkit-transform: scale(2.1) rotate(242deg);
-          transform: scale(2.1) rotate(242deg);
+  left: -19%;
+  -webkit-animation: raise9 15s linear infinite;
+          animation: raise9 15s linear infinite;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-transform: scale(2.1) rotate(204deg);
+          transform: scale(2.1) rotate(204deg);
   z-index: 2;
   -webkit-filter: blur(3px);
           filter: blur(3px);
@@ -910,27 +910,27 @@ body .overflow {
 @-webkit-keyframes raise9 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(2.1) rotate(329deg);
-            transform: scale(2.1) rotate(329deg);
+    -webkit-transform: scale(2.1) rotate(184deg);
+            transform: scale(2.1) rotate(184deg);
   }
 }
 
 @keyframes raise9 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(2.1) rotate(329deg);
-            transform: scale(2.1) rotate(329deg);
+    -webkit-transform: scale(2.1) rotate(184deg);
+            transform: scale(2.1) rotate(184deg);
   }
 }
 
 .about__section .wrapper__content__about .svg:nth-child(10) {
-  left: 58%;
+  left: 63%;
   -webkit-animation: raise10 12s linear infinite;
           animation: raise10 12s linear infinite;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-transform: scale(2.4) rotate(250deg);
-          transform: scale(2.4) rotate(250deg);
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-transform: scale(2.4) rotate(159deg);
+          transform: scale(2.4) rotate(159deg);
   z-index: 3;
   -webkit-filter: blur(4px);
           filter: blur(4px);
@@ -939,16 +939,16 @@ body .overflow {
 @-webkit-keyframes raise10 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(2.4) rotate(230deg);
-            transform: scale(2.4) rotate(230deg);
+    -webkit-transform: scale(2.4) rotate(108deg);
+            transform: scale(2.4) rotate(108deg);
   }
 }
 
 @keyframes raise10 {
   to {
     bottom: 150vh;
-    -webkit-transform: scale(2.4) rotate(230deg);
-            transform: scale(2.4) rotate(230deg);
+    -webkit-transform: scale(2.4) rotate(108deg);
+            transform: scale(2.4) rotate(108deg);
   }
 }
 
@@ -1857,13 +1857,11 @@ footer .footer__legal {
 
 .view__one .card-container {
   width: 100%;
-  height: 100%;
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 300px;
   grid-auto-flow: dense;
 }
 
@@ -1909,14 +1907,7 @@ footer .footer__legal {
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   line-height: 1.3rem;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
-  transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  pointer-events: visible;
 }
 
 .view__one .card-container .userCard .card__txt {
@@ -2578,8 +2569,8 @@ footer .footer__legal {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-grid-columns: (minmax(350px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-flow: dense;
 }
 
